@@ -5,29 +5,27 @@
  */
 function zakra_child_enqueue_styles() {
 
-	$parent_style = 'zakra-style'; //parent theme style handle 'zakra-style'
+	$parent_style = 'zakra-style'; // parent theme style handle 'zakra-style'
 
-	//Enqueue parent and chid theme style.css
+	// Enqueue parent and chid theme style.css
 	wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'zakra_child_style',
-	    get_stylesheet_directory_uri() . '/style.css',
-	    array( $parent_style ),
-	    wp_get_theme()->get('Version')
+		get_stylesheet_directory_uri() . '/style.css',
+		[ $parent_style ],
+		wp_get_theme()->get('Version')
 	);
 
 }
-add_action( 'wp_enqueue_scripts', 'zakra_child_enqueue_styles' );
 
 function remove_fontawesome() {
 	wp_dequeue_style( 'font-awesome' );
 	wp_dequeue_style( 'font-awesome-5-all' );
 	wp_dequeue_style( 'font-awesome-4-shim' );
 }
-add_action( 'wp_enqueue_scripts', 'remove_fontawesome', 20 );
 
 function terraso_meta_tags() {
 	if ( is_front_page() ) {
-	    echo '<meta name="description" content="Terraso is a set of software services and applications curated by Tech Matters for community leaders: landowners, agribusiness, small-holder farmers, pastoralists, indigenous people, local government, and investors." />';
+		echo '<meta name="description" content="Terraso is a set of software services and applications curated by Tech Matters for community leaders: landowners, agribusiness, small-holder farmers, pastoralists, indigenous people, local government, and investors." />';
 	}
 }
 
@@ -54,9 +52,11 @@ function terraso_wp_get_attachment_image( $html, $attachment_id, $size, $icon, $
 }
 
 function terraso_zakra_header_search_icon_data_attrs() {
-      return 'aria-label="' . esc_attr( 'Search' ) . '"';
+	return 'aria-label="' . esc_attr( 'Search' ) . '"';
 }
 
+add_action( 'wp_enqueue_scripts', 'zakra_child_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'remove_fontawesome', 20 );
 add_action( 'wp_head', 'terraso_meta_tags' );
 add_filter( 'ums_adminMenuAccessCap', 'terraso_ultimate_maps_cap' );
 add_filter( 'get_custom_logo_image_attributes', 'terraso_get_custom_logo_image_attributes', 10, 3 );
