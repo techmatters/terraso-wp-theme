@@ -43,9 +43,8 @@ function terraso_get_custom_logo_image_attributes( $custom_logo_attr, $custom_lo
 
 function terraso_wp_get_attachment_image( $html, $attachment_id, $size, $icon, $attr ) {
 	if ( false !== strpos( $html, ' width="1" height="1"' ) && 'custom-logo' === $attr['class'] && ! empty( $attr['height'] ) && ! empty( $attr['width'] ) ) {
-		var_dump('cleaning');
 		$html = str_replace( ' width="1" height="1"', '', $html );
-		exit;
+		return $h5ml;
 	}
 
 	return $html;
