@@ -24,7 +24,6 @@ html body .tg-icon {
 	height: 24px;
 	display: inline-block;
 	background-repeat: no-repeat;
-  content: '';
 }
 
 #mobile-primary-menu .search-form label::before,
