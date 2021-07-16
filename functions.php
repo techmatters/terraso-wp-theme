@@ -12,7 +12,7 @@ function zakra_child_enqueue_styles() {
 	wp_enqueue_style( 'zakra_child_style',
 		get_stylesheet_directory_uri() . '/style.css',
 		[ $parent_style ],
-		wp_get_theme()->get('Version')
+		'1.0.1'
 	);
 
 }
