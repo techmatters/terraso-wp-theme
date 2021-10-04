@@ -1,0 +1,377 @@
+.wp-block-group__inner-container {
+	max-width: 1140px;
+	margin: auto;
+	padding: 50px 0;
+}
+
+.wp-block-group.mobile-header {
+	padding: 0;
+
+	.wp-block-image {
+		margin: 0;
+	}
+
+	.wp-block-group__inner-container {
+		padding: 0;
+	}
+}
+
+.site-branding .custom-logo-link img {
+	width: 145px;
+}
+
+@media screen and (max-width: 768px) {
+	.wp-block-columns .intro {
+		padding-top: 30px;
+		padding-bottom: 30px;
+
+		hr {
+			display: none;
+		}
+	}
+
+	.wp-block-group {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.wp-block-image .alignright {
+		float: none;
+	}
+
+	.wp-block-columns.our-values .wp-block-column + .wp-block-column {
+		margin-top: 20px;
+	}
+
+	#content .tg-container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.tg-header-action-list .tg-header-action__item.tg-mobile-toggle .tg-icon-bars {
+		padding-left: 5px;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	#text-2 {
+		padding-left: 70px !important;
+	}
+}
+
+.wp-block-columns.has-bg,
+.wp-block-group.has-bg {
+	background-color: #f2f2f0;
+}
+
+.wp-block-group h2.section,
+.wp-block-columns h2.section {
+	border-bottom: 3px solid;
+	display: inline-block;
+	padding-bottom: 10px;
+}
+
+.wp-block-button .wp-block-button__link {
+	background-color: #78a659;
+	padding: 25px 50px;
+	color: white;
+	text-decoration: none;
+	font-size: 1.4em;
+
+	&:hover {
+		text-decoration: none;
+		color: white;
+	}
+}
+
+.wp-block-columns {
+	h1 {
+		font-weight: bold;
+		font-size: 2.2rem;
+	}
+
+	.intro {
+		padding: 0 30px;
+	}
+
+	&.key-funding .wp-block-column {
+		box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+		margin: 5px;
+		padding: 25px 20px 25px 20px;
+		border-radius: 20px;
+	}
+
+	&.our-values .wp-block-column {
+		box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+		margin: 5px;
+		padding: 25px 20px 25px 20px;
+		border-radius: 20px;
+
+		img {
+			max-height: 60px;
+		}
+	}
+
+	&.key-funding .wp-block-column + .wp-block-column {
+		margin-left: 20px;
+	}
+
+	.landscape-map {
+		margin-bottom: 40px;
+	}
+}
+
+.entry-content a {
+	text-decoration: underline;
+}
+
+.sticky-header,
+.tg-site-header-bottom {
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+.alignThisCentre {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignThisMiddle {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.tg-icon-arrow-up::after {
+	content: "\f106";
+	font-weight: bold;
+	font-size: 20px;
+	font-family: fontAwesome, sans-serif !important;
+}
+
+.footerListStyle a {
+	line-height: 2em;
+	color: #5e5547;
+	text-decoration: underline;
+}
+
+.elementor a {
+	text-decoration: underline;
+	color: #5e5547;
+}
+
+/* remove big gap on left of menu causing it to break into 2 on tablet */
+
+.tg-site-header--left .tg-block--two {
+	margin-left: 0 !important;
+}
+
+/* top bar links to buttons */
+
+.SupportUsBtn {
+	background-color: #78a659;
+	padding: 5px;
+	margin-right: 10px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.subscribeBtn {
+	background-color: #358eae !important;
+	margin-right: 10px;
+	padding: 5px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.requestDemoBtn {
+	background-color: #fff !important;
+	padding: 5px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+
+	a {
+		color: #5e5547 !important;
+	}
+}
+
+.archive-description a,
+.author-description a {
+	color: #5e5547;
+	text-decoration: underline;
+}
+
+.nav-previous a,
+.nav-next a {
+	color: #5e5547;
+}
+
+.tg-mobile-navigation li.menu-item-has-children.submenu--show > ul {
+	overflow-y: hidden;
+}
+
+.tg-site-footer .tg-site-footer-bar a {
+	text-decoration: underline;
+}
+
+header.tg-page-header.tg-page-header--left-right {
+	padding: 120px 0;
+}
+
+.tg-container.tg-container--flex.tg-container--flex-center.tg-container--flex-space-between h1 {
+	border-bottom: 3px solid #5e5547;
+	padding-bottom: 8px;
+}
+
+.tg-mobile-navigation li.menu-item-has-children .tg-submenu-toggle::after {
+	font-size: 15px;
+}
+
+/* override zakra */
+
+#content.site-content {
+	margin: 0;
+}
+
+.ilm-list {
+	list-style: none;
+}
+
+.wp-block-group {
+	.ums_map_opts {
+		margin: 3em auto;
+	}
+
+	&.contact-form {
+		.wp-block-table {
+			td {
+				border: none;
+				padding-right: 0;
+			}
+
+			tr td:first-child {
+				text-align: right;
+				vertical-align: top;
+				width: 37px;
+			}
+		}
+
+		svg {
+			width: 37px;
+			height: auto;
+
+			path {
+				fill: #78a659;
+			}
+		}
+	}
+
+	&.green-group .wp-block-column:first-child {
+		border-right: 3px solid #78a659;
+		padding-right: 1.5em;
+	}
+}
+
+.contact-form {
+	h3 {
+		margin: 0;
+	}
+}
+
+.ilm-group {
+	h3 {
+		height: 100px;
+		display: flex;
+		align-items: center;
+	}
+
+	p {
+		clear: left;
+	}
+
+	.wp-block-group {
+		padding: 20px;
+		border-left: 3px solid;
+
+		.wp-block-group__inner-container {
+			padding: 0;
+		}
+
+		&:nth-child(1) h3 {
+			color: #716c65;
+		}
+
+		&:nth-child(2) h3 {
+			color: #99542b;
+		}
+
+		&:nth-child(3) h3 {
+			color: #deb763;
+		}
+
+		&:nth-child(4) h3 {
+			color: #78a659;
+		}
+
+		&:nth-child(5) h3 {
+			color: #358eae;
+		}
+	}
+}
+
+.ilm-list li {
+	margin: 0 0 5px 0;
+	padding: 5px 0 5px 15px;
+	border-style: solid;
+	border-width: 0 0 0 3px;
+	box-shadow: 2px 2px 2px 2px rgba(227, 227, 227, 0.5);
+}
+
+.ilm-group .wp-block-group:nth-child(1),
+.ilm-list li:nth-child(1) {
+	border-color: #716c65;
+}
+
+.ilm-group .wp-block-group:nth-child(2),
+.ilm-list li:nth-child(2) {
+	border-color: #99542b;
+}
+
+.ilm-group .wp-block-group:nth-child(3),
+.ilm-list li:nth-child(3) {
+	border-color: #deb763;
+}
+
+.ilm-group .wp-block-group:nth-child(4),
+.ilm-list li:nth-child(4) {
+	border-color: #78a659;
+}
+
+.ilm-group .wp-block-group:nth-child(5),
+.ilm-list li:nth-child(5) {
+	border-color: #358eae;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.hidden {
+	display: none;
+}
+
+/* workaround Zakra bug where you can't hide header on home page */
+.home h1.entry-title {
+	display: none;
+}
+
+/* remove whitespce below main content area */
+#primary {
+	.entry-content {
+		margin-bottom: 0;
+	}
+
+	.hentry {
+		margin-bottom: 0;
+	}
+}
