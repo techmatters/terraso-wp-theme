@@ -10,7 +10,7 @@ function zakra_child_enqueue_styles() {
 	// Enqueue parent and chid theme style.css
 	wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'zakra_child_style',
-		get_stylesheet_directory_uri() . '/style.css',
+		get_stylesheet_directory_uri() . '/assets/css/main.min.css',
 		[ $parent_style ],
 		'1.0.1'
 	);
