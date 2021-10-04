@@ -1,3 +1,20 @@
+/*
+ * Colors
+ */
+
+// ILM
+$green: #78a659;
+$grey: #716c65;
+$brown: #99542b;
+$orange: #deb763;
+$blue: #358eae;
+
+// section background
+$light-brown: #f2f2f0;
+
+// footer
+$dark-brown: #5e5547;
+
 .wp-block-group__inner-container {
 	max-width: 1140px;
 	margin: auto;
@@ -22,7 +39,7 @@
 
 .wp-block-columns.has-bg,
 .wp-block-group.has-bg {
-	background-color: #f2f2f0;
+	background-color: $light-brown;
 }
 
 .wp-block-group h2.section,
@@ -33,7 +50,7 @@
 }
 
 .wp-block-button .wp-block-button__link {
-	background-color: #78a659;
+	background-color: $green;
 	padding: 25px 50px;
 	color: white;
 	text-decoration: none;
@@ -110,13 +127,13 @@
 
 .footerListStyle a {
 	line-height: 2em;
-	color: #5e5547;
+	color: $dark-brown;
 	text-decoration: underline;
 }
 
 .elementor a {
 	text-decoration: underline;
-	color: #5e5547;
+	color: $dark-brown;
 }
 
 /* remove big gap on left of menu causing it to break into 2 on tablet */
@@ -128,7 +145,7 @@
 /* top bar links to buttons */
 
 .SupportUsBtn {
-	background-color: #78a659;
+	background-color: $green;
 	padding: 5px;
 	margin-right: 10px;
 	margin-top: 2px;
@@ -220,13 +237,13 @@ header.tg-page-header.tg-page-header--left-right {
 			height: auto;
 
 			path {
-				fill: #78a659;
+				fill: $green;
 			}
 		}
 	}
 
 	&.green-group .wp-block-column:first-child {
-		border-right: 3px solid #78a659;
+		border-right: 3px solid $green;
 		padding-right: 1.5em;
 	}
 }
@@ -257,23 +274,23 @@ header.tg-page-header.tg-page-header--left-right {
 		}
 
 		&:nth-child(1) h3 {
-			color: #716c65;
+			color: $grey;
 		}
 
 		&:nth-child(2) h3 {
-			color: #99542b;
+			color: $brown;
 		}
 
 		&:nth-child(3) h3 {
-			color: #deb763;
+			color: $orange;
 		}
 
 		&:nth-child(4) h3 {
-			color: #78a659;
+			color: $green;
 		}
 
 		&:nth-child(5) h3 {
-			color: #358eae;
+			color: $blue;
 		}
 	}
 }
@@ -288,27 +305,27 @@ header.tg-page-header.tg-page-header--left-right {
 
 .ilm-group .wp-block-group:nth-child(1),
 .ilm-list li:nth-child(1) {
-	border-color: #716c65;
+	border-color: $grey;
 }
 
 .ilm-group .wp-block-group:nth-child(2),
 .ilm-list li:nth-child(2) {
-	border-color: #99542b;
+	border-color: $brown;
 }
 
 .ilm-group .wp-block-group:nth-child(3),
 .ilm-list li:nth-child(3) {
-	border-color: #deb763;
+	border-color: $orange;
 }
 
 .ilm-group .wp-block-group:nth-child(4),
 .ilm-list li:nth-child(4) {
-	border-color: #78a659;
+	border-color: $green;
 }
 
 .ilm-group .wp-block-group:nth-child(5),
 .ilm-list li:nth-child(5) {
-	border-color: #358eae;
+	border-color: $blue;
 }
 
 .invisible {
