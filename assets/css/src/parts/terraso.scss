@@ -214,6 +214,12 @@ header.tg-page-header.tg-page-header--left-right {
 }
 
 .wp-block-group {
+	&.faq {
+		.section:nth-child(n+2) {
+			margin-top: 2em;
+		}
+	}
+
 	.ums_map_opts {
 		margin: 3em auto;
 	}
