@@ -143,6 +143,10 @@ html body .tg-icon {
   margin-bottom: 40px;
 }
 
+.single-post .site-main h1 {
+  margin-bottom: 1em;
+}
+
 .entry-content a {
   text-decoration: underline;
 }
@@ -252,6 +256,10 @@ header.tg-page-header.tg-page-header--left-right {
 
 .ilm-list {
   list-style: none;
+}
+
+.wp-block-group.faq .section:nth-child(n+2) {
+  margin-top: 2em;
 }
 
 .wp-block-group .ums_map_opts {
