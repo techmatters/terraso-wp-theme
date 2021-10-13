@@ -402,3 +402,11 @@ header.tg-page-header.tg-page-header--left-right {
 		padding-left: 70px !important;
 	}
 }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.wp-block-columns {
+		.intro {
+			flex-grow: 1;
+		}
+	}
+}
