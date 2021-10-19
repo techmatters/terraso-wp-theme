@@ -385,7 +385,7 @@ header.tg-page-header.tg-page-header--left-right {
   margin-bottom: 0;
 }
 
-#primary .hentry {
+#primary .page.hentry {
   margin-bottom: 0;
 }
 
@@ -400,7 +400,7 @@ header.tg-page-header.tg-page-header--left-right {
   .wp-block-columns.our-values .wp-block-column + .wp-block-column {
     margin-top: 20px;
   }
-  #content .tg-container {
+  .page #content .tg-container {
     padding-left: 0;
     padding-right: 0;
   }
