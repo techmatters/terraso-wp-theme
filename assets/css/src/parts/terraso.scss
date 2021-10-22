@@ -346,6 +346,14 @@ header.tg-page-header.tg-page-header--left-right {
 	display: none;
 }
 
+.hidden-mobile {
+	visibility: hidden;
+
+	@media screen and (max-width: 1024px) {
+		display: none;
+	}
+}
+
 /* workaround Zakra bug where you can't hide header on home page */
 .home h1.entry-title {
 	display: none;
