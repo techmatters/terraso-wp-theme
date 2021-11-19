@@ -391,6 +391,15 @@ header.tg-page-header.tg-page-header--left-right {
 	}
 }
 
+/* recipe: ensure headline stays flush left */
+header .uag-toc__heading-anchor {
+	display: none;
+
+	+ .tg-page-header__title {
+		margin-bottom: 1em;
+	}
+}
+
 @media screen and (max-width: 767px) {
 	.wp-block-group {
 		padding-left: 30px;
