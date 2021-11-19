@@ -15,6 +15,9 @@ $light-brown: #f2f2f0;
 // footer
 $dark-brown: #5e5547;
 
+$title-bottom-space: 1em;
+
+/* add margins around page content */
 .wp-block-group__inner-container {
 	max-width: 1140px;
 	margin: auto;
@@ -38,6 +41,7 @@ $dark-brown: #5e5547;
 	}
 }
 
+/* terraso logo */
 .site-branding .custom-logo-link img {
 	width: 145px;
 }
@@ -105,7 +109,7 @@ $dark-brown: #5e5547;
 }
 
 .single-post .site-main h1 {
-	margin-bottom: 1em;
+	margin-bottom: $title-bottom-space;
 }
 
 .entry-content a {
@@ -344,7 +348,7 @@ header.tg-page-header.tg-page-header--left-right {
 .author {
 	.archive-description,
 	.tg-page-header__title {
-		margin-bottom: 1em;
+		margin-bottom: $title-bottom-space;
 	}
 }
 
@@ -353,7 +357,7 @@ header .uag-toc__heading-anchor {
 	display: none;
 
 	+ .tg-page-header__title {
-		margin-bottom: 1em;
+		margin-bottom: $title-bottom-space;
 	}
 }
 
