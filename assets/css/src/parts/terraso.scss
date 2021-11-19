@@ -19,6 +19,11 @@ $dark-brown: #5e5547;
 	max-width: 1140px;
 	margin: auto;
 	padding: 50px 0;
+
+	/* provide for margins on screens smaller than 1240px */
+	@media screen and (min-width: 768px) {
+		width: 80%;
+	}
 }
 
 .wp-block-group.mobile-header {
@@ -68,7 +73,7 @@ $dark-brown: #5e5547;
 		font-size: 2.2rem;
 	}
 
-	.intro {
+	.platform-title {
 		padding: 0 30px;
 	}
 
@@ -413,9 +418,14 @@ header.tg-page-header.tg-page-header--left-right {
 }
 
 @media screen and (max-width: 1024px) {
-	.wp-block-columns .intro {
+	.wp-block-columns .platform-title {
 		padding-top: 30px;
 		padding-bottom: 30px;
+
+		/* override the wp core style which already has an ! important in it */
+		.entry-content & {
+			flex-basis: 100% !important;
+		}
 
 		hr {
 			display: none;
@@ -425,7 +435,7 @@ header.tg-page-header.tg-page-header--left-right {
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.wp-block-columns {
-		.intro {
+		.platform-title {
 			flex-grow: 1;
 		}
 	}
