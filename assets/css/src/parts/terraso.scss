@@ -146,7 +146,6 @@ $dark-brown: #5e5547;
 }
 
 /* remove big gap on left of menu causing it to break into 2 on tablet */
-
 .tg-site-header--left .tg-block--two {
 	margin-left: 0 !important;
 }
@@ -397,6 +396,14 @@ header .uag-toc__heading-anchor {
 
 	+ .tg-page-header__title {
 		margin-bottom: 1em;
+	}
+}
+
+/* blog index page */
+.content-area {
+	.tg-meta-style-two .entry-meta .posted-on::before,
+	.tg-meta-style-two .entry-meta .byline::before {
+		content: none;
 	}
 }
 
