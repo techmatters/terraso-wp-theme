@@ -390,6 +390,14 @@ header.tg-page-header.tg-page-header--left-right {
 	}
 }
 
+/* author archive: space below title */
+.author {
+	.archive-description,
+	.tg-page-header__title {
+		margin-bottom: 1em;
+	}
+}
+
 /* recipe: ensure headline stays flush left */
 header .uag-toc__heading-anchor {
 	display: none;
