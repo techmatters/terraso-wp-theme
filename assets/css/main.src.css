@@ -406,6 +406,20 @@ header.tg-page-header.tg-page-header--left-right {
   margin-bottom: 0;
 }
 
+.error-404 {
+  margin: 2em 0;
+  font-size: 2em;
+}
+
+.error-404 .search-field {
+  border-radius: 1em;
+  width: 50%;
+}
+
+.error-404 .search-form label::before {
+  content: none;
+}
+
 @media screen and (max-width: 767px) {
   .wp-block-group {
     padding-left: 30px;
