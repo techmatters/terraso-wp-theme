@@ -117,16 +117,6 @@ $dark-brown: #5e5547;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1) !important;
 }
 
-.alignThisCentre {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.alignThisMiddle {
-	margin-top: auto;
-	margin-bottom: auto;
-}
-
 .tg-icon-arrow-up::after {
 	content: "\f106";
 	font-weight: bold;
@@ -134,49 +124,9 @@ $dark-brown: #5e5547;
 	font-family: fontAwesome, sans-serif !important;
 }
 
-.footerListStyle a {
-	line-height: 2em;
-	color: $dark-brown;
-	text-decoration: underline;
-}
-
-.elementor a {
-	text-decoration: underline;
-	color: $dark-brown;
-}
-
 /* remove big gap on left of menu causing it to break into 2 on tablet */
 .tg-site-header--left .tg-block--two {
 	margin-left: 0 !important;
-}
-
-/* top bar links to buttons */
-
-.SupportUsBtn {
-	background-color: $green;
-	padding: 5px;
-	margin-right: 10px;
-	margin-top: 2px;
-	margin-bottom: 2px;
-}
-
-.subscribeBtn {
-	background-color: #358eae !important;
-	margin-right: 10px;
-	padding: 5px;
-	margin-top: 2px;
-	margin-bottom: 2px;
-}
-
-.requestDemoBtn {
-	background-color: #fff !important;
-	padding: 5px;
-	margin-top: 2px;
-	margin-bottom: 2px;
-
-	a {
-		color: #5e5547 !important;
-	}
 }
 
 .archive-description a,
