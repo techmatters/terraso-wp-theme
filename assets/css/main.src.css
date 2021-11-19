@@ -429,6 +429,12 @@ header .uag-toc__heading-anchor + .tg-page-header__title {
   margin-bottom: 1em;
 }
 
+/* blog index page */
+.content-area .tg-meta-style-two .entry-meta .posted-on::before,
+.content-area .tg-meta-style-two .entry-meta .byline::before {
+  content: none;
+}
+
 @media screen and (max-width: 767px) {
   .wp-block-group {
     padding-left: 30px;
