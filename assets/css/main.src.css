@@ -61,6 +61,7 @@ html body .tg-icon {
 /*
  * Colors
  */
+/* add margins around page content */
 .wp-block-group__inner-container {
   max-width: 1140px;
   margin: auto;
@@ -86,6 +87,7 @@ html body .tg-icon {
   padding: 0;
 }
 
+/* terraso logo */
 .site-branding .custom-logo-link img {
   width: 145px;
 }
@@ -163,16 +165,6 @@ html body .tg-icon {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1) !important;
 }
 
-.alignThisCentre {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.alignThisMiddle {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
 .tg-icon-arrow-up::after {
   content: "\f106";
   font-weight: bold;
@@ -180,48 +172,9 @@ html body .tg-icon {
   font-family: fontAwesome, sans-serif !important;
 }
 
-.footerListStyle a {
-  line-height: 2em;
-  color: #5e5547;
-  text-decoration: underline;
-}
-
-.elementor a {
-  text-decoration: underline;
-  color: #5e5547;
-}
-
 /* remove big gap on left of menu causing it to break into 2 on tablet */
 .tg-site-header--left .tg-block--two {
   margin-left: 0 !important;
-}
-
-/* top bar links to buttons */
-.SupportUsBtn {
-  background-color: #78a659;
-  padding: 5px;
-  margin-right: 10px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-}
-
-.subscribeBtn {
-  background-color: #358eae !important;
-  margin-right: 10px;
-  padding: 5px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-}
-
-.requestDemoBtn {
-  background-color: #fff !important;
-  padding: 5px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-}
-
-.requestDemoBtn a {
-  color: #5e5547 !important;
 }
 
 .archive-description a,
@@ -418,6 +371,12 @@ header.tg-page-header.tg-page-header--left-right {
 
 .error-404 .search-form label::before {
   content: none;
+}
+
+/* author archive: space below title */
+.author .archive-description,
+.author .tg-page-header__title {
+  margin-bottom: 1em;
 }
 
 /* recipe: ensure headline stays flush left */
