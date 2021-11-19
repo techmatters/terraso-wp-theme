@@ -355,8 +355,10 @@ header.tg-page-header.tg-page-header--left-right {
 }
 
 /* workaround Zakra bug where you can't hide header on home page */
-.home h1.entry-title {
-	display: none;
+.home {
+	h1.entry-title {
+		display: none;
+	}
 }
 
 /* remove whitespce below main content area */
@@ -387,6 +389,14 @@ header.tg-page-header.tg-page-header--left-right {
 	.page #content .tg-container {
 		padding-left: 0;
 		padding-right: 0;
+	}
+
+	.home {
+		.intro {
+			.wp-block-group__inner-container {
+				padding-top: 0;
+			}
+		}
 	}
 }
 
