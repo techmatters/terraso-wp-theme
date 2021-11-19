@@ -65,6 +65,13 @@ html body .tg-icon {
   max-width: 1140px;
   margin: auto;
   padding: 50px 0;
+  /* provide for margins on screens smaller than 1240px */
+}
+
+@media screen and (min-width: 768px) {
+  .wp-block-group__inner-container {
+    width: 80%;
+  }
 }
 
 .wp-block-group.mobile-header {
@@ -113,7 +120,7 @@ html body .tg-icon {
   font-size: 2.2rem;
 }
 
-.wp-block-columns .intro {
+.wp-block-columns .platform-title {
   padding: 0 30px;
 }
 
@@ -414,6 +421,9 @@ header.tg-page-header.tg-page-header--left-right {
     padding-left: 0;
     padding-right: 0;
   }
+  .home .intro .wp-block-group__inner-container {
+    padding-top: 0;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -429,17 +439,21 @@ header.tg-page-header.tg-page-header--left-right {
 }
 
 @media screen and (max-width: 1024px) {
-  .wp-block-columns .intro {
+  .wp-block-columns .platform-title {
     padding-top: 30px;
     padding-bottom: 30px;
+    /* override the wp core style which already has an ! important in it */
   }
-  .wp-block-columns .intro hr {
+  .entry-content .wp-block-columns .platform-title {
+    flex-basis: 100% !important;
+  }
+  .wp-block-columns .platform-title hr {
     display: none;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wp-block-columns .intro {
+  .wp-block-columns .platform-title {
     flex-grow: 1;
   }
 }
