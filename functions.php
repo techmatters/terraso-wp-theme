@@ -94,7 +94,7 @@ function terraso_zakra_header_search_icon_data_attrs() {
 function terraso_meta_tags() {
 	if ( is_single() ) {
 		$description = get_the_excerpt();
-		if ( $description && count( $description ) > 160 ) {
+		if ( strlen( $description ) > 160 ) {
 			$description = substr( $description, 0, 159 ) . '…';
 		}
 
