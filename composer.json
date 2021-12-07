@@ -1,0 +1,15 @@
+{
+  "name": "techmatters/terraso-wp-theme",
+  "description": "Terraso WordPress theme",
+  "type": "wordpress-theme",
+  "require": {
+    "pablo-sg-pacheco/wp-namespace-autoloader": "dev-master"
+  },
+  "require-dev": {
+    "automattic/vipwpcs": "^2.2",
+    "wp-coding-standards/wpcs": "^2.3",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+    "phpcompatibility/phpcompatibility-wp": "^2.1.1"
+  },
+  "license": "GPL-2.0-or-later"
+}
