@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
-		<?php echo apply_filters( 'zakra_after_primary_start_filter', false ); // WPCS: XSS OK. ?>
+		<?php echo apply_filters( 'zakra_after_primary_start_filter', false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 
 		<section class="error-404 not-found">
 			<?php if ( 'page-header' !== zakra_is_page_title_enabled() ) : ?>
@@ -31,7 +31,7 @@ get_header();
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->
 
-		<?php echo apply_filters( 'zakra_after_primary_end_filter', false ); // WPCS: XSS OK. ?>
+		<?php echo apply_filters( 'zakra_after_primary_end_filter', false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	</div><!-- #primary -->
 
 <?php
