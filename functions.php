@@ -48,9 +48,24 @@ function terraso_zakra_header_search_icon_data_attrs() {
 	return 'aria-label="' . esc_attr( 'Search' ) . '"';
 }
 
+function terraso_meta_tags() {
+	if ( is_single() ) {
+		$description = get_the_excerpt();
+		if ( sizeof( $description ) > 160 ) {
+			$description = substr( $description, 0, 159 ) . '…';
+		}
+		
+		if ( $description ) {
+			echo '<meta name="description" content="' . esc_attr( $description ) . '" />';
+		}
+	}
+}
+
+
 add_action( 'wp_enqueue_scripts', 'zakra_child_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'remove_fontawesome', 20 );
 add_filter( 'ums_adminMenuAccessCap', 'terraso_ultimate_maps_cap' );
 add_filter( 'get_custom_logo_image_attributes', 'terraso_get_custom_logo_image_attributes', 10, 3 );
 add_filter( 'wp_get_attachment_image', 'terraso_wp_get_attachment_image', 10, 5 );
 add_filter( 'zakra_header_search_icon_data_attrs', 'terraso_zakra_header_search_icon_data_attrs' );
+add_action( 'wp_head', 'terraso_meta_tags' );
