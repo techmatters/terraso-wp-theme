@@ -99,7 +99,7 @@ function terraso_meta_tags() {
 		}
 
 		if ( $description ) {
-			echo '<meta name="description" content="' . esc_attr( $description ) . '" />';
+			echo "<meta name='description' content='" . esc_attr( $description ) . "' />\n";
 		}
 	}
 }
