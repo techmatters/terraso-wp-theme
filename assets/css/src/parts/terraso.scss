@@ -108,8 +108,11 @@ $title-bottom-space: 1em;
 	}
 }
 
-.single-post .site-main h1 {
-	margin-bottom: $title-bottom-space;
+.search,
+.single-post {
+	.site-main h1 {
+		margin-bottom: $title-bottom-space;
+	}
 }
 
 .entry-content a {
