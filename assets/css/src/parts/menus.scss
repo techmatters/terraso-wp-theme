@@ -3,6 +3,20 @@ html body .tg-icon {
 	font-family: sans-serif !important;
 }
 
+// using a mixin here to avoid stylelint warnings about specificity when
+// .search .search-form label::before is combined with the block below.
+@mixin search-icon {
+	width: 18px;
+	height: 24px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	content: '';
+}
+
+.search .search-form label::before {
+	@include search-icon;
+}
+
 .search .search-form label::before,
 #mobile-primary-menu .search-form label::before,
 #primary-menu .search-form label::before {
@@ -52,9 +66,5 @@ html body .tg-icon {
 #mobile-primary-menu .search-form label::before,
 #primary-menu .search-form label::before,
 #header-action .tg-icon-bars::after {
-	width: 18px;
-	height: 24px;
-	display: inline-block;
-	background-repeat: no-repeat;
-	content: '';
+	@include search-icon;
 }
