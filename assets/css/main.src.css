@@ -3,6 +3,14 @@ html body .tg-icon {
   font-family: sans-serif !important;
 }
 
+.search .search-form label::before {
+  width: 18px;
+  height: 24px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  content: '';
+}
+
 .search .search-form label::before,
 #mobile-primary-menu .search-form label::before,
 #primary-menu .search-form label::before {
