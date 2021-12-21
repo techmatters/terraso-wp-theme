@@ -104,6 +104,13 @@ function terraso_meta_tags() {
 	}
 }
 
+/**
+ * Setup tasks.
+ * - load translations.
+ */
+function terraso_setup() {
+	load_theme_textdomain( 'terraso', get_stylesheet_directory() . '/languages' );
+}
 
 add_action( 'wp_enqueue_scripts', 'zakra_child_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'remove_fontawesome', 20 );
@@ -112,3 +119,4 @@ add_filter( 'get_custom_logo_image_attributes', 'terraso_get_custom_logo_image_a
 add_filter( 'wp_get_attachment_image', 'terraso_wp_get_attachment_image', 10, 5 );
 add_filter( 'zakra_header_search_icon_data_attrs', 'terraso_zakra_header_search_icon_data_attrs' );
 add_action( 'wp_head', 'terraso_meta_tags' );
+add_action( 'after_setup_theme', 'terraso_setup' );
