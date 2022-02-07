@@ -375,6 +375,18 @@ header .uag-toc__heading-anchor {
 	}
 }
 
+/* page layout; stick footer to bottom of viewport */
+div#page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1;
+	overflow: auto;
+}
+
 @media screen and (max-width: 767px) {
 	.wp-block-group {
 		padding-left: 30px;
