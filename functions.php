@@ -82,6 +82,8 @@ function terraso_wp_get_attachment_image( $html, $attachment_id, $size, $icon, $
 
 /**
  * Add Aria label to Zakra search field.
+ *
+ * @return string
  */
 function terraso_zakra_header_search_icon_data_attrs() {
 	return 'aria-label="' . esc_attr( 'Search' ) . '"';
@@ -112,6 +114,16 @@ function terraso_setup() {
 	load_theme_textdomain( 'terraso', get_stylesheet_directory() . '/languages' );
 }
 
+/**
+ * Use vertical bar for separator.
+ *
+ * @return string
+ */
+function terraso_document_title_separator() {
+	return '|';
+}
+
+
 add_action( 'wp_enqueue_scripts', 'zakra_child_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'remove_fontawesome', 20 );
 add_filter( 'ums_adminMenuAccessCap', 'terraso_ultimate_maps_cap' );
@@ -120,3 +132,4 @@ add_filter( 'wp_get_attachment_image', 'terraso_wp_get_attachment_image', 10, 5 
 add_filter( 'zakra_header_search_icon_data_attrs', 'terraso_zakra_header_search_icon_data_attrs' );
 add_action( 'wp_head', 'terraso_meta_tags' );
 add_action( 'after_setup_theme', 'terraso_setup' );
+add_filter( 'document_title_separator', 'terraso_document_title_separator' );
