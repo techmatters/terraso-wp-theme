@@ -140,6 +140,9 @@ html body .tg-icon {
   margin: 5px;
   padding: 25px 20px 25px 20px;
   border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wp-block-columns.our-values .wp-block-column {
