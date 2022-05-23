@@ -86,7 +86,7 @@ $title-bottom-space: 1em;
 	&.key-funding .wp-block-column {
 		box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
 		margin: 5px;
-		padding: 25px 20px 25px 20px;
+		padding: 25px 20px;
 		border-radius: 20px;
 		display: flex;
 		align-items: center;
@@ -96,7 +96,7 @@ $title-bottom-space: 1em;
 	&.our-values .wp-block-column {
 		box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
 		margin: 5px;
-		padding: 25px 20px 25px 20px;
+		padding: 25px 20px;
 		border-radius: 20px;
 
 		img {
@@ -272,7 +272,7 @@ header.tg-page-header.tg-page-header--left-right {
 }
 
 .ilm-list li {
-	margin: 0 0 5px 0;
+	margin: 0 0 5px;
 	padding: 5px 0 5px 15px;
 	border-style: solid;
 	border-width: 0 0 0 3px;
