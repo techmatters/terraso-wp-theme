@@ -1,6 +1,7 @@
 {
 	"extends": "stylelint-config-standard",
 	"rules": {
+		"color-function-notation": "legacy",
 		"indentation": "tab",
 		"at-rule-no-unknown": null
 	}

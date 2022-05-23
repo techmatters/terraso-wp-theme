@@ -10,9 +10,13 @@ module.exports = function( grunt ) {
 	grunt.initConfig( {
 		pkg: grunt.file.readJSON( 'package.json' ),
 
+		// use legacy color notation until sass gets updated.
+		// https://stackoverflow.com/questions/66825515/getting-error-in-css-with-rgb0-0-0-15
+		// https://stylelint.io/user-guide/rules/list/color-function-notation/
 		stylelint: {
 			src: [ 'assets/css/src/**/*.scss' ],
 			options: {
+				customSyntax: 'postcss-scss',
 				fix: true,
 				configFile: '.stylelintrc.json'
 			}
