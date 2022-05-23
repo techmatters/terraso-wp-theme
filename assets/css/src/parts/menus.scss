@@ -10,7 +10,7 @@ html body .tg-icon {
 	height: 24px;
 	display: inline-block;
 	background-repeat: no-repeat;
-	content: '';
+	content: "";
 }
 
 .search .search-form label::before {
@@ -44,6 +44,7 @@ html body .tg-icon {
 	background-position: 0 10px;
 }
 
+// stylelint-disable selector-class-pattern
 .tg-primary-menu > div ul#primary-menu li.menu-item-has-children > a::after,
 .tg-primary-menu > div ul#primary-menu li.page_item_has_children > a::after {
 	vertical-align: middle;
@@ -53,6 +54,7 @@ html body .tg-icon {
 	background-repeat: no-repeat;
 	background-position: center;
 }
+// stylelint-enable selector-class-pattern
 
 #tg-scroll-to-top .tg-icon-arrow-up::after {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' d='M0 0h20v20H0z'/%3E%3Cpath fill='%23ffffff' d='M11 18H9V6l-4 4-2-1 7-7 7 7-2 1-4-4v12z'/%3E%3C/svg%3E");
