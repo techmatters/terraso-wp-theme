@@ -135,21 +135,18 @@ html body .tg-icon {
   padding: 0 30px;
 }
 
-.wp-block-columns.key-funding .wp-block-column {
-  box-shadow: 3px 3px 10px 0 black;
-  margin: 5px;
-  padding: 25px 20px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+.wp-block-columns.key-funding .wp-block-column,
 .wp-block-columns.our-values .wp-block-column {
   box-shadow: 3px 3px 10px 0 black;
   margin: 5px;
   padding: 25px 20px;
   border-radius: 20px;
+}
+
+.wp-block-columns.key-funding .wp-block-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wp-block-columns.our-values .wp-block-column img {
