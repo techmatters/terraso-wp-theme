@@ -11,7 +11,7 @@
 		"> .1% and last 2 versions"
 	],
 	"dependencies": {
-		"postcss-scss": "^4.0.4",
+		"postcss-scss": "^4.0.5",
 		"set-value": ">=4.1.0"
 	},
 	"peerDependencies": {
@@ -19,7 +19,7 @@
 	},
 	"devDependencies": {
 		"@lodder/grunt-postcss": "^3.1.1",
-		"autoprefixer": "^10.4.7",
+		"autoprefixer": "^10.4.13",
 		"grunt": "^1.5.3",
 		"grunt-contrib-cssmin": "^4.0.0",
 		"grunt-contrib-watch": "^1.1.0",
@@ -27,7 +27,7 @@
 		"grunt-stylelint": "^0.18.0",
 		"matchdep": "^2.0.0",
 		"node-sass": "^7.0.1",
-		"stylelint": "^14.8.3",
-		"stylelint-config-standard": "^25.0.0"
+		"stylelint": "^14.14.1",
+		"stylelint-config-standard": "^29.0.0"
 	}
 }
