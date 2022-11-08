@@ -101,6 +101,95 @@ class Terraso_CLI extends WP_CLI_Command {
 	}
 
 	/**
+	 * Create tags.
+	 *
+	 * ## EXAMPLES
+	 *
+	 *   wp terraso create-ilm-tags
+	 *   wp terraso create-ilm-tags --dry-run
+	 *
+	 * @synposis create-ilm-tags --dry-run
+	 *
+	 * @subcommand create-ilm-tags
+	 * @param array $args           CLI arguments.
+	 * @param array $assoc_args     CLI arguments, associative array.
+	 */
+	public function create_ilm_tags( $args, $assoc_args ) {
+		$tags = [
+			'Analytical',
+			'App',
+			'Article',
+			'Co-design',
+			'Communication',
+			'Guide',
+			'Mapping',
+			'Matchmaking',
+			'Project Management',
+			'Report',
+			'Template',
+			'Website',
+			'Worksheet',
+		];
+
+		self::create_tags_with_tax( $args, $assoc_args, $tags, self::TAG_TAXONOMY );
+	}
+
+	/**
+	 * Create tags.
+	 *
+	 * ## EXAMPLES
+	 *
+	 *   wp terraso create-ilm-types
+	 *   wp terraso create-ilm-types --dry-run
+	 *
+	 * @synposis create-ilm-types --dry-run
+	 *
+	 * @subcommand create-ilm-types
+	 * @param array $args           CLI arguments.
+	 * @param array $assoc_args     CLI arguments, associative array.
+	 */
+	public function create_ilm_types( $args, $assoc_args ) {
+		$tags = [
+			'Element',
+			'Output',
+			'Tool',
+		];
+
+		self::create_tags_with_tax( $args, $assoc_args, $tags, self::TYPE_TAXONOMY );
+	}
+
+	/**
+	 * Create tags.
+	 *
+	 * @param array  $args           CLI arguments.
+	 * @param array  $assoc_args     CLI arguments, associative array.
+	 * @param array  $tags           List of tags.
+	 * @param string $taxonomy       Name of taxonomy.
+	 */
+	public static function create_tags_with_tax( $args, $assoc_args, $tags, $taxonomy ) {
+		if ( isset( $assoc_args['dry-run'] ) && 'false' === $assoc_args['dry-run'] ) {
+			$dry_run = false;
+		} else {
+			$dry_run = true;
+			WP_CLI::line( '!!! Doing a dry-run, no posts will be created.' );
+		}
+
+		foreach ( $tags as $tag ) {
+			if ( $dry_run ) {
+				WP_CLI::line( "Tag: {$tag}" );
+			} else {
+				$result = wp_create_term( $tag, $taxonomy );
+				if ( is_wp_error( $result ) ) {
+					WP_CLI::warn( "Failed to create tag {$tag}. Error: {$result->get_error_message()}" );
+				} else {
+					WP_CLI::line( "Created tag: {$tag}" );
+				}
+			}
+		}
+	}
+
+
+	/**
 	 * Import ILM Guide data from CSV
 	 *
 	 * ## EXAMPLES
