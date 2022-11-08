@@ -11,25 +11,28 @@
  */
 class Terraso_CLI extends WP_CLI_Command {
 
-	const POST_TYPE = 'guide';
+	const POST_TYPE     = 'guide';
+	const TAG_TAXONOMY  = 'ilm_tag';
+	const TYPE_TAXONOMY = 'ilm_type';
 
 	/**
 	 * Insert the outputs in to the database.
 	 *
-	 * @param string $element           THe ILM element these outputs belong to.
-	 * @param string $output_data       Array of element titles and contents.
-	 * @param string $dry_run           If performing a try run.
+	 * @param string $parent            The ILM element (output) these outputs (tools) belong to.
+	 * @param array  $data              Array of element titles and contents.
+	 * @param string $type              Item type (output or tool).
+	 * @param bool   $dry_run           If performing a try run.
 	 */
-	public static function import_outputs( $element, $output_data, $dry_run ) {
+	public static function import_data( $parent, $data, $type, $dry_run ) {
 
-		$post_parent = get_page_by_title( $element, OBJECT, self::POST_TYPE );
+		$post_parent = get_page_by_title( $parent, OBJECT, self::POST_TYPE );
 
 		if ( ! $post_parent ) {
-			WP_CLI::error( "Could not find post for element {$element}" );
+			WP_CLI::error( "Could not find post for parent item {$parent}" );
 		}
 
-		foreach ( $output_data as $item ) {
-			WP_CLI::line( "Creating output {$item['title']}" );
+		foreach ( $data as $item ) {
+			WP_CLI::line( "Creating item {$item['title']}" );
 
 			$post_data = [
 				'post_title'   => $item['title'],
@@ -37,17 +40,28 @@ class Terraso_CLI extends WP_CLI_Command {
 				'post_status'  => 'publish',
 				'post_type'    => self::POST_TYPE,
 				'post_parent'  => $post_parent->ID,
-				'tax_input'    => [
-					'ilm_type' => [ 'ilm-output' ],
-				],
 			];
+
+			if ( 'tool' === $type ) {
+				$post_data['meta_input'] = [
+					'ilm_url' => $item['url'],
+				];
+			}
 
 			if ( $dry_run ) {
 				WP_CLI::line( wp_json_encode( $post_data ) );
 			} else {
 				$result = wp_insert_post( $post_data );
 				if ( is_wp_error( $result ) ) {
-					WP_CLI::error( "Failed to create output. Error: {$result->messae}" );
+					WP_CLI::error( "Failed to create output. Error: {$result->get_error_message()}" );
+				} else {
+					// In CLI, terms can only be added after post is created.
+					// See https://wordpress.stackexchange.com/a/210233/8591.
+					wp_set_post_terms( $result, 'ilm-' . $type, self::TYPE_TAXONOMY );
+
+					if ( 'tool' === $type ) {
+						wp_set_post_terms( $result, explode( ',', $item['tags'] ), self::TAG_TAXONOMY );
+					}
 				}
 			}
 		}
@@ -75,8 +89,9 @@ class Terraso_CLI extends WP_CLI_Command {
 	 * Read in CSV data and return an array.
 	 *
 	 * @param string $csv_file           Path to a CSV file.
+	 * @param string $type               Type of item to parts (output or tool).
 	 */
-	public static function get_csv_data( $csv_file ) {
+	public static function get_csv_data( $csv_file, $type ) {
 		if ( ! $csv_file ) {
 			return;
 		}
@@ -96,19 +111,31 @@ class Terraso_CLI extends WP_CLI_Command {
 				continue;
 			}
 
-			list( $title, $contents, $element ) = $data;
-			if ( ! $element ) {
+			if ( 'output' === $type ) {
+				list( $title, $contents, $parent ) = $data;
+			} elseif ( 'tool' === $type ) {
+				list( $title, $parent, $contents, $url, $tags ) = $data;
+			}
+
+			if ( ! $parent ) {
 				continue;
 			}
 
-			if ( ! isset( $result[ $element ] ) ) {
-				$result[ $element ] = [];
+			if ( ! isset( $result[ $parent ] ) ) {
+				$result[ $parent ] = [];
 			}
 			if ( $title && $contents ) {
-				$result[ $element ][] = [
+				$item = [
 					'title'    => trim( $title ),
-					'contents' => trim( $contents ),
+					'contents' => trim( self::make_p_blocks( $contents ) ),
 				];
+				if ( ! empty( $url ) ) {
+					$item['url'] = $url;
+				}
+				if ( ! empty( $tags ) ) {
+					$item['tags'] = $tags;
+				}
+				$result[ $parent ][] = $item;
 			}
 		} while ( false !== $data );
 
@@ -211,16 +238,24 @@ class Terraso_CLI extends WP_CLI_Command {
 	 *
 	 * ## EXAMPLES
 	 *
-	 *   wp terraso import-ilm-outputs --file=<file>
-	 *   wp terraso import-ilm-outputs --file=<file> --dry-run
+	 *   wp terraso import-ilm-data --type=<output|tool> --file=<file>
+	 *   wp terraso import-ilm-data --type=<output|tool> --file=<file> --dry-run
 	 *
-	 * @synposis --file=<file> --dry-run
+	 * @synposis --type=<output|tool> --file=<file> --dry-run
 	 *
-	 * @subcommand import-ilm-outputs
-	 * @param string $args           CLI arguments.
-	 * @param string $assoc_args     CLI arguments, associative array.
+	 * @subcommand import-ilm-data
+	 * @param array $args           CLI arguments.
+	 * @param array $assoc_args     CLI arguments, associative array.
 	 */
-	public function import_ilm_outputs( $args, $assoc_args ) {
+	public function import_ilm_data( $args, $assoc_args ) {
+		if ( empty( $assoc_args['type'] ) ) {
+			WP_CLI::error( 'Specify a type of data to import.' );
+		}
+
+		if ( ! in_array( $assoc_args['type'], [ 'output', 'tool' ], true ) ) {
+			WP_CLI::error( 'Specify a type of data to import.' );
+		}
+
 		if ( empty( $assoc_args['file'] ) ) {
 			WP_CLI::error( 'Specify a file to import from.' );
 		}
@@ -237,14 +272,15 @@ class Terraso_CLI extends WP_CLI_Command {
 			WP_CLI::error( "File {$import_file} does not exist." );
 		}
 
-		$data = self::get_csv_data( $import_file );
+		$type = $assoc_args['type'];
+		$data = self::get_csv_data( $import_file, $type );
 
 		$item_count = 0;
-		foreach ( $data as $element => $output_data ) {
-			WP_CLI::line( "Found element {$element}." );
+		foreach ( $data as $item => $output_data ) {
+			WP_CLI::line( "Found item {$item}." );
 			$item_count++;
 
-			self::import_outputs( $element, $output_data, $dry_run );
+			self::import_data( trim( $item ), $output_data, $type, $dry_run );
 
 			if ( 0 === $item_count % 100 ) {
 				WP_CLI::line( 'sleeping' );
