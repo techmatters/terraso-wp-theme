@@ -1,6 +1,6 @@
 module.exports = function( grunt ) {
 
-	const sass = require( 'node-sass' );
+	const sass = require( 'sass' );
 
 	// Load all grunt tasks
 	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
