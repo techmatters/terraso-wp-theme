@@ -53,6 +53,23 @@ class Terraso_CLI extends WP_CLI_Command {
 		}
 	}
 
+	/**
+	 * Convert paragraphs to Guenberg <p> blocks.
+	 *
+	 * @param string $contents           Input text.
+	 */
+	public static function make_p_blocks( $contents ) {
+		$paragraphs         = explode( "\n\n", $contents );
+		$wrapped_paragraphs = array_map(
+			function( $text ) {
+				return "<!-- wp:paragraph -->\n<p>{$text}</p>\n<!-- /wp:paragraph -->";
+			},
+			$paragraphs
+		);
+
+		return implode( "\n\n", $wrapped_paragraphs );
+	}
+
 
 	/**
 	 * Read in CSV data and return an array.
