@@ -134,6 +134,8 @@ add_action( 'wp_head', 'terraso_meta_tags' );
 add_action( 'after_setup_theme', 'terraso_setup' );
 add_filter( 'document_title_separator', 'terraso_document_title_separator' );
 
+require __DIR__ . '/includes/class-ilm-guide.php';
+
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	require __DIR__ . '/includes/class-terraso-cli.php';
 }
