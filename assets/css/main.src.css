@@ -439,3 +439,6 @@ main {
     flex-grow: 1;
   }
 }
+.output {
+  border: 1px solid brown;
+}
