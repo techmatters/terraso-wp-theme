@@ -10,10 +10,11 @@
  * Class ILM_Guide
  */
 class ILM_Guide {
-	const POST_TYPE     = 'guide';
-	const TAG_TAXONOMY  = 'ilm_tag';
-	const TYPE_TAXONOMY = 'ilm_type';
-	const POST_LIMIT    = 90;
+	const POST_TYPE         = 'guide';
+	const TAG_TAXONOMY      = 'ilm_tag';
+	const TYPE_TAXONOMY     = 'ilm_type';
+	const TOOL_URL_META_KEY = 'ilm_url';
+	const POST_LIMIT        = 90;
 
 	/**
 	 * Add actions and filters.
@@ -55,23 +56,28 @@ class ILM_Guide {
 			$post_type = $post_terms[0];
 		}
 
+		ob_start();
 		if ( 'ilm-element' === $post_type ) {
-			ob_start();
 			get_template_part(
 				'template-parts/output',
 				'list',
 				[
-					'id'            => get_the_ID(),
-					'element_title' => get_the_title(),
+					'id'    => get_the_ID(),
+					'title' => get_the_title(),
 				]
 			);
-			$output_html = ob_get_clean();
-
-			$content .= $output_html;
 		} elseif ( 'ilm-output' === $post_type ) {
-			$content .= ' OUTPUT ';
-
+			get_template_part(
+				'template-parts/element',
+				'list',
+				[
+					'id'    => get_the_ID(),
+					'title' => get_the_title(),
+				]
+			);
 		}
+
+		$content .= ob_get_clean();
 
 		return $content;
 	}
