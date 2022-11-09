@@ -13,7 +13,7 @@ $outputs = get_children( // phpcs:ignore WordPressVIPMinimum.Functions.Restricte
 	]
 );
 ?>
-<h2><?php echo esc_html( $args['element_title'] . ' Outputs' ); ?></h2>
+<h2><?php echo esc_html( $args['title'] . ' Outputs' ); ?></h2>
 
 <?php
 foreach ( $outputs as $output ) {
