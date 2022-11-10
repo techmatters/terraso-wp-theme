@@ -1,13 +1,52 @@
-.output {
-	border: 1px solid brown;
-}
+.guide-template-default.tg-site-layout--stretched {
+	margin: 0 auto;
+	max-width: 1160px;
 
-.tool {
-	border: 1px solid orange;
-}
+	.output-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 4em;
+	}
 
-.tag {
-	border: 1px solid green;
-	border-radius: 1em;
-	padding: 0.5em 1em;
+	.output {
+		border: 1px solid brown;
+		border-radius: 1em;
+		padding: 1em;
+
+		summary {
+			display: flex;
+			justify-content: space-between;
+
+			&::after {
+				vertical-align: middle;
+				content: "";
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M5 6l5 5 5-5 2 1-7 7-7-7z'/%3E%3C/g%3E%3C/svg%3E");
+				width: 15px;
+				height: 15px;
+				background-repeat: no-repeat;
+				background-position: center;
+				display: inline-block;
+			}
+		}
+
+		details[open] summary::after {
+			transform: rotate(180deg);
+		}
+
+		h4 {
+			font-family: Montserrat, sans-serif;
+			font-weight: 600;
+			font-size: 14px;
+		}
+	}
+
+	.tool {
+		border: 1px solid orange;
+	}
+
+	.tag {
+		border: 1px solid green;
+		border-radius: 1em;
+		padding: 0.5em 1em;
+	}
 }
