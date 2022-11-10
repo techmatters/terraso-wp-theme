@@ -1,6 +1,16 @@
+@use "variables" as v;
+
 .guide-template-default.tg-site-layout--stretched {
-	margin: 0 auto;
-	max-width: 1160px;
+	.type-guide {
+		background-color: v.$light-brown;
+	}
+
+	.entry-content,
+	.guide-outputs {
+		margin: 0 auto;
+		max-width: 1160px;
+		padding: 4em 0;
+	}
 
 	.output-wrapper {
 		display: grid;
@@ -9,13 +19,16 @@
 	}
 
 	.output {
-		border: 1px solid brown;
+		border-width: 2px;
+		border-style: solid;
 		border-radius: 1em;
 		padding: 1em;
+		height: fit-content;
 
 		summary {
 			display: flex;
 			justify-content: space-between;
+			cursor: pointer;
 
 			&::after {
 				vertical-align: middle;
@@ -38,6 +51,140 @@
 			font-weight: 600;
 			font-size: 14px;
 		}
+	}
+
+	.breadcrumbs {
+		a {
+			text-decoration: none;
+		}
+
+		ul {
+			margin: 0;
+			list-style: none;
+		}
+
+		li {
+			display: inline-block;
+		}
+	}
+
+	&.guide-shared-understanding {
+		.output {
+			border-color: v.$brown;
+		}
+
+		h1,
+		h2,
+		h3,
+		h3 a,
+		h4 {
+			color: v.$brown;
+		}
+
+		h1::before {
+			background-image: url("/wp-content/uploads/2021/03/shared-understanding.svg");
+		}
+	}
+
+	&.guide-impact-and-learning {
+		.output {
+			border-color: v.$blue;
+		}
+
+		h1,
+		h2,
+		h3,
+		h3 a,
+		h4 {
+			color: v.$blue;
+		}
+
+		h1::before {
+			background-image: url("/wp-content/uploads/2021/03/learning-and-impact.svg");
+			background-color: v.$blue;
+			border-radius: 1em;
+		}
+	}
+
+	&.guide-vision-and-planning {
+		.output {
+			border-color: v.$yellow;
+		}
+
+		h1,
+		h2,
+		h3,
+		h3 a,
+		h4 {
+			color: v.$yellow;
+		}
+
+		h1::before {
+			background-image: url("/wp-content/uploads/2021/03/vision-and-planning.svg");
+		}
+	}
+
+	&.guide-taking-action {
+		.output {
+			border-color: v.$green;
+		}
+
+		h1,
+		h2,
+		h3,
+		h3 a,
+		h4 {
+			color: v.$green;
+		}
+
+		h1::before {
+			background-image: url("/wp-content/uploads/2021/03/taking-action.svg");
+		}
+	}
+
+	&.guide-landscape-partnership {
+		.output {
+			border-color: v.$dark-brown;
+		}
+
+		h1,
+		h2,
+		h3,
+		h3 a,
+		h4 {
+			color: v.$dark-brown;
+		}
+
+		h1::before {
+			background-image: url("/wp-content/uploads/2021/03/landscape-partnership.svg");
+		}
+	}
+
+	#main {
+		h1 {
+			font-weight: 700;
+			border-bottom: none;
+
+			&::before {
+				vertical-align: middle;
+				background-repeat: no-repeat;
+				background-position: center;
+				display: inline-block;
+				content: "";
+				height: 58px;
+				width: 58px;
+			}
+		}
+
+		a:hover,
+		h3 a:hover {
+			color: v.$blue;
+			text-decoration: underline;
+		}
+	}
+
+	.read-more {
+		font-weight: 700;
 	}
 
 	.tool {
