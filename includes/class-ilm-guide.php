@@ -22,15 +22,24 @@ class ILM_Guide {
 	public static function hooks() {
 		add_action( 'add_meta_boxes', [ __CLASS__, 'add_meta_boxes' ] );
 		add_filter( 'the_content', [ __CLASS__, 'the_content' ] );
+		add_action( 'zakra_after_single_post_content', [ __CLASS__, 'zakra_after_single_post_content' ] );
 	}
 
 	/**
 	 * Add actions and filters.
 	 */
 	public static function late_hooks() {
-		add_filter( 'zakra_current_layout', [ 'ILM_Guide', 'zakra_current_layout' ] );
+		if ( 'guide' === get_post_type() ) {
 			add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
 			add_filter( 'get_post_metadata', [ __CLASS__, 'disable_zakra_header' ], 10, 5 );
+			add_filter( 'zakra_current_layout', [ __CLASS__, 'zakra_current_layout' ] );
+			remove_action( 'zakra_after_single_post_content', 'zakra_post_navigation', 10 );
+		}
+	}
+
+	/**
+	 * Print breadcrumbs.
+	 */
 	public static function get_breadcrumbs() {
 		ob_start();
 
@@ -81,7 +90,7 @@ class ILM_Guide {
 	}
 
 	/**
-	 * Adds the meta box container.
+	 * Adds the meta box container to Guide CPT posts.
 	 */
 	public static function add_meta_boxes() {
 		add_meta_box( 'zakra-page-setting', esc_html__( 'Page Settings', 'zakra' ), 'Zakra_Meta_Box_Page_Settings::render', [ 'guide' ] );
@@ -102,7 +111,7 @@ class ILM_Guide {
 	}
 
 	/**
-	 * For ILM Guide, set layout to stretched to hide sidebar and allow for customization
+	 * For ILM Guide, set layout to stretched to hide sidebar and allow for customization.
 	 *
 	 * @param string $layout           Zakra layout name.
 	 */
@@ -115,11 +124,9 @@ class ILM_Guide {
 	}
 
 	/**
-	 * Filter to append ILM Guide output and tool content.
-	 *
-	 * @param string $content           Post content HTML.
+	 * Append ILM Guide output and tool content.
 	 */
-	public static function the_content( $content ) {
+	public static function zakra_after_single_post_content() {
 		$post_terms = wp_get_post_terms( get_the_ID(), self::TYPE_TAXONOMY, [ 'fields' => 'slugs' ] );
 		if ( $post_terms && is_array( $post_terms ) ) {
 			$post_type = $post_terms[0];
@@ -146,9 +153,10 @@ class ILM_Guide {
 			);
 		}
 
-		$content .= ob_get_clean();
+		echo wp_kses_post( ob_get_clean() );
+	}
 
-		return $content;
+	/**
 	 * Prepend title to ILM content.
 	 *
 	 * @param string $content           Post content HTML.
