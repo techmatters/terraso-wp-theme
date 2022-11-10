@@ -439,15 +439,46 @@ main {
     flex-grow: 1;
   }
 }
-.output {
-  border: 1px solid brown;
+.guide-template-default.tg-site-layout--stretched {
+  margin: 0 auto;
+  max-width: 1160px;
 }
-
-.tool {
+.guide-template-default.tg-site-layout--stretched .output-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 4em;
+}
+.guide-template-default.tg-site-layout--stretched .output {
+  border: 1px solid brown;
+  border-radius: 1em;
+  padding: 1em;
+}
+.guide-template-default.tg-site-layout--stretched .output summary {
+  display: flex;
+  justify-content: space-between;
+}
+.guide-template-default.tg-site-layout--stretched .output summary::after {
+  vertical-align: middle;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M5 6l5 5 5-5 2 1-7 7-7-7z'/%3E%3C/g%3E%3C/svg%3E");
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+.guide-template-default.tg-site-layout--stretched .output details[open] summary::after {
+  transform: rotate(180deg);
+}
+.guide-template-default.tg-site-layout--stretched .output h4 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+.guide-template-default.tg-site-layout--stretched .tool {
   border: 1px solid orange;
 }
-
-.tag {
+.guide-template-default.tg-site-layout--stretched .tag {
   border: 1px solid green;
   border-radius: 1em;
   padding: 0.5em 1em;
