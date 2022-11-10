@@ -3,6 +3,7 @@
 	"rules": {
 		"color-function-notation": "legacy",
 		"indentation": "tab",
+        "selector-class-pattern": null,
 		"at-rule-no-unknown": null
 	}
 }
