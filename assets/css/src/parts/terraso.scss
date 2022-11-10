@@ -1,23 +1,4 @@
-// stylelint-disable selector-class-pattern
-
-/*
- * Colors
- */
-
-// ILM
-$green: #78a659;
-$grey: #716c65;
-$brown: #99542b;
-$orange: #deb763;
-$blue: #358eae;
-
-// section background
-$light-brown: #f2f2f0;
-
-// footer
-$dark-brown: #5e5547;
-
-$title-bottom-space: 1em;
+@use "variables" as v;
 
 /* add margins around page content */
 .wp-block-group__inner-container {
@@ -50,7 +31,7 @@ $title-bottom-space: 1em;
 
 .wp-block-columns.has-bg,
 .wp-block-group.has-bg {
-	background-color: $light-brown;
+	background-color: v.$light-brown;
 }
 
 .wp-block-group h2.section,
@@ -61,7 +42,7 @@ $title-bottom-space: 1em;
 }
 
 .wp-block-button .wp-block-button__link {
-	background-color: $green;
+	background-color: v.$green;
 	padding: 25px 50px;
 	color: white;
 	text-decoration: none;
@@ -116,7 +97,7 @@ $title-bottom-space: 1em;
 .search,
 .single-post {
 	.site-main h1 {
-		margin-bottom: $title-bottom-space;
+		margin-bottom: v.$title-bottom-space;
 	}
 }
 
@@ -213,13 +194,13 @@ header.tg-page-header.tg-page-header--left-right {
 			height: auto;
 
 			path {
-				fill: $green;
+				fill: v.$green;
 			}
 		}
 	}
 
 	&.green-group .wp-block-column:first-child {
-		border-right: 3px solid $green;
+		border-right: 3px solid v.$green;
 		padding-right: 1.5em;
 	}
 }
@@ -250,23 +231,23 @@ header.tg-page-header.tg-page-header--left-right {
 		}
 
 		&:nth-child(1) h3 {
-			color: $grey;
+			color: v.$grey;
 		}
 
 		&:nth-child(2) h3 {
-			color: $brown;
+			color: v.$brown;
 		}
 
 		&:nth-child(3) h3 {
-			color: $orange;
+			color: v.$yellow;
 		}
 
 		&:nth-child(4) h3 {
-			color: $green;
+			color: v.$green;
 		}
 
 		&:nth-child(5) h3 {
-			color: $blue;
+			color: v.$blue;
 		}
 	}
 }
@@ -281,27 +262,27 @@ header.tg-page-header.tg-page-header--left-right {
 
 .ilm-group .wp-block-group:nth-child(1),
 .ilm-list li:nth-child(1) {
-	border-color: $grey;
+	border-color: v.$grey;
 }
 
 .ilm-group .wp-block-group:nth-child(2),
 .ilm-list li:nth-child(2) {
-	border-color: $brown;
+	border-color: v.$brown;
 }
 
 .ilm-group .wp-block-group:nth-child(3),
 .ilm-list li:nth-child(3) {
-	border-color: $orange;
+	border-color: v.$yellow;
 }
 
 .ilm-group .wp-block-group:nth-child(4),
 .ilm-list li:nth-child(4) {
-	border-color: $green;
+	border-color: v.$green;
 }
 
 .ilm-group .wp-block-group:nth-child(5),
 .ilm-list li:nth-child(5) {
-	border-color: $blue;
+	border-color: v.$blue;
 }
 
 .invisible {
@@ -355,7 +336,7 @@ header.tg-page-header.tg-page-header--left-right {
 .author {
 	.archive-description,
 	.tg-page-header__title {
-		margin-bottom: $title-bottom-space;
+		margin-bottom: v.$title-bottom-space;
 	}
 }
 
@@ -368,7 +349,7 @@ header .uag-toc__heading-anchor {
 	display: none;
 
 	+ .tg-page-header__title {
-		margin-bottom: $title-bottom-space;
+		margin-bottom: v.$title-bottom-space;
 	}
 }
 
