@@ -29,6 +29,7 @@ class ILM_Guide {
 	 */
 	public static function late_hooks() {
 		add_filter( 'zakra_current_layout', [ 'ILM_Guide', 'zakra_current_layout' ] );
+			add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
 	public static function get_breadcrumbs() {
 		ob_start();
 
@@ -42,6 +43,21 @@ class ILM_Guide {
 		);
 
 		echo wp_kses_post( ob_get_clean() );
+	}
+
+	/**
+	 * Adds the post name slug to the body class list.
+	 *
+	 * @param array $classes   List of CSS classes.
+	 */
+	public static function filter_body_class( $classes ) {
+		$queried_obj = get_queried_object();
+
+		if ( isset( $queried_obj->post_name ) && is_string( $queried_obj->post_name ) ) {
+			$classes[] = 'guide-' . $queried_obj->post_name;
+		}
+
+		return $classes;
 	}
 	}
 
