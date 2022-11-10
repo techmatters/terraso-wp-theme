@@ -20,8 +20,8 @@ class ILM_Guide {
 	 * Add actions and filters.
 	 */
 	public static function hooks() {
-		add_action( 'add_meta_boxes', [ 'ILM_Guide', 'add_meta_boxes' ] );
-		add_filter( 'the_content', [ 'ILM_Guide', 'the_content' ] );
+		add_action( 'add_meta_boxes', [ __CLASS__, 'add_meta_boxes' ] );
+		add_filter( 'the_content', [ __CLASS__, 'the_content' ] );
 	}
 
 	/**
