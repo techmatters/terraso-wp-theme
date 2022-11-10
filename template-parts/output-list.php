@@ -25,7 +25,7 @@ $outputs = get_children( // phpcs:ignore WordPressVIPMinimum.Functions.Restricte
 				'numberposts' => ILM_Guide::POST_LIMIT, // phpcs:ignore WordPress.WP.PostsPerPage.posts_per_page_numberposts
 			]
 		);
-		$output_link = get_permalink( $output->ID );
+		$output_link     = get_permalink( $output->ID );
 		$first_paragraph = str_replace( '</p>', ' <a class="read-more" href="' . esc_url( $output_link ) . '">Read More</a></p>', ILM_Guide::get_first_paragraph( $output->post_content ) );
 		?>
 
