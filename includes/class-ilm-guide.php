@@ -29,6 +29,20 @@ class ILM_Guide {
 	 */
 	public static function late_hooks() {
 		add_filter( 'zakra_current_layout', [ 'ILM_Guide', 'zakra_current_layout' ] );
+	public static function get_breadcrumbs() {
+		ob_start();
+
+		get_template_part(
+			'template-parts/breadcrumbs',
+			'top',
+			[
+				'id'    => get_the_ID(),
+				'title' => get_the_title(),
+			]
+		);
+
+		echo wp_kses_post( ob_get_clean() );
+	}
 	}
 
 	/**
@@ -100,6 +114,12 @@ class ILM_Guide {
 		$content .= ob_get_clean();
 
 		return $content;
+	 * Prepend title to ILM content.
+	 *
+	 * @param string $content           Post content HTML.
+	 */
+	public static function the_content( $content ) {
+		return self::get_breadcrumbs() . '<h1>' . esc_html( get_the_title() ) . '</h1>' . $content;
 	}
 
 }
