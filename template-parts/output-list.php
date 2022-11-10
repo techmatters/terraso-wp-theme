@@ -15,6 +15,7 @@ $outputs = get_children( // phpcs:ignore WordPressVIPMinimum.Functions.Restricte
 ?>
 <h2><?php echo esc_html( $args['title'] . ' Outputs' ); ?></h2>
 
+<div class='output-wrapper'>
 <?php
 foreach ( $outputs as $output ) {
 	$tools           = get_children( // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_posts_get_children
@@ -47,3 +48,4 @@ foreach ( $outputs as $output ) {
 	</details>
 </section>
 <?php } // section ?>
+</div>
