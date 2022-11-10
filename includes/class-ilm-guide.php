@@ -30,6 +30,7 @@ class ILM_Guide {
 	public static function late_hooks() {
 		add_filter( 'zakra_current_layout', [ 'ILM_Guide', 'zakra_current_layout' ] );
 			add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
+			add_filter( 'get_post_metadata', [ __CLASS__, 'disable_zakra_header' ], 10, 5 );
 	public static function get_breadcrumbs() {
 		ob_start();
 
@@ -59,6 +60,24 @@ class ILM_Guide {
 
 		return $classes;
 	}
+
+	/**
+	 * Disable the header (which is outside of .entry-content) so we can add our own header.
+	 *
+	 * @param mixed  $value     The value to return, either a single metadata value or an array
+	 *                          of values depending on the value of `$single`. Default null.
+	 * @param int    $object_id ID of the object metadata is for.
+	 * @param string $meta_key  Metadata key.
+	 * @param bool   $single    Whether to return only the first value of the specified `$meta_key`.
+	 * @param string $meta_type Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user',
+	 *                          or any other object type with an associated meta table.
+	 */
+	public static function disable_zakra_header( $value, $object_id, $meta_key, $single, $meta_type ) {
+		if ( 'zakra_page_header' === $meta_key ) {
+			return '0';
+		}
+
+		return $value;
 	}
 
 	/**
