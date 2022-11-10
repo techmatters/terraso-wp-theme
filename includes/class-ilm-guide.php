@@ -25,9 +25,16 @@ class ILM_Guide {
 	}
 
 	/**
+	 * Add actions and filters.
+	 */
+	public static function late_hooks() {
+		add_filter( 'zakra_current_layout', [ 'ILM_Guide', 'zakra_current_layout' ] );
+	}
+
+	/**
 	 * Adds the meta box container.
 	 */
-	public function add_meta_boxes() {
+	public static function add_meta_boxes() {
 		add_meta_box( 'zakra-page-setting', esc_html__( 'Page Settings', 'zakra' ), 'Zakra_Meta_Box_Page_Settings::render', [ 'guide' ] );
 	}
 
@@ -43,6 +50,19 @@ class ILM_Guide {
 
 		$blocks = parse_blocks( $content );
 		return $blocks[0]['innerHTML'];
+	}
+
+	/**
+	 * For ILM Guide, set layout to stretched to hide sidebar and allow for customization
+	 *
+	 * @param string $layout           Zakra layout name.
+	 */
+	public static function zakra_current_layout( $layout ) {
+		if ( 'guide' === get_post_type() ) {
+			return 'tg-site-layout--stretched';
+		}
+
+		return $layout;
 	}
 
 	/**
@@ -85,3 +105,4 @@ class ILM_Guide {
 }
 
 add_action( 'after_setup_theme', [ 'ILM_Guide', 'hooks' ] );
+add_action( 'wp', [ 'ILM_Guide', 'late_hooks' ] );
