@@ -156,7 +156,7 @@ class ILM_Guide {
 			);
 		} elseif ( 'ilm-output' === $post_type ) {
 			get_template_part(
-				'template-parts/element',
+				'template-parts/tool',
 				'list',
 				[
 					'id'    => get_the_ID(),
