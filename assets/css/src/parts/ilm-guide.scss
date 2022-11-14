@@ -251,3 +251,77 @@
 		padding: 0.5em 1em;
 	}
 }
+
+.tg-container {
+	flex-wrap: wrap;
+}
+
+#content.site-content {
+	margin: auto 15%;
+}
+
+// Fonts
+h1,
+h2,
+h3 {
+	font-family: "Montserrat Alternates", sans-serif;
+	color: #5e5547;
+}
+
+h2 {
+	margin-top: 3em;
+	margin-bottom: 1em;
+}
+
+p {
+	font-family: Montserrat, sans-serif;
+}
+
+// Tool cards
+.tool {
+	margin: 5em auto;
+	padding: 1.5em;
+	padding-left: 98px;
+	border: 1px solid #dddd;
+	border-radius: 1em;
+}
+
+.tool a {
+	color: #5e5547;
+	text-decoration: none;
+}
+
+.tool a:hover {
+	color: #358eae;
+	text-decoration: underline;
+}
+
+.tool a:active {
+	color: #055975;
+}
+
+.link {
+	position: absolute;
+	margin-left: -69px;
+}
+
+.pdf {
+	position: absolute;
+	margin-left: -69px;
+}
+
+.tag {
+	display: inline-block;
+	background-color: #78a659;
+	color: white;
+	border-radius: 1em;
+	padding: 0.5em 1em;
+	margin-bottom: 4px;
+}
+
+.tool p {
+	margin-top: 1.5em;
+	margin-left: auto;
+	line-height: 21px;
+	color: #5e5547;
+}
