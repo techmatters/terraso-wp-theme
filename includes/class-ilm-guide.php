@@ -53,6 +53,13 @@ class ILM_Guide {
 		);
 
 		echo wp_kses_post( ob_get_clean() );
+	public static function get_post_type() {
+		$post_terms = wp_get_post_terms( get_the_ID(), self::TYPE_TAXONOMY, [ 'fields' => 'slugs' ] );
+		if ( $post_terms && is_array( $post_terms ) ) {
+			return $post_terms[0];
+		}
+	}
+
 	}
 
 	/**
