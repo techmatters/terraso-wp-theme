@@ -165,7 +165,7 @@ class ILM_Guide {
 			);
 		}
 
-		echo wp_kses_post( ob_get_clean() );
+		echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
