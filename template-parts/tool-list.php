@@ -22,11 +22,13 @@
 	<?php
 	foreach ( $tools as $tool ) {
 		$tool_link  = get_post_meta( $tool->ID, ILM_Guide::TOOL_URL_META_KEY, true );
-		$link_class = pathinfo( $tool_link, PATHINFO_EXTENSION ) === 'pdf' ? 'pdf' : 'link';
+		$tool_type = pathinfo( $tool_link, PATHINFO_EXTENSION ) === 'pdf' ? 'pdf' : 'link';
 		$tags       = wp_get_post_terms( $tool->ID, ILM_Guide::TAG_TAXONOMY );
 		?>
 			<section class='tool'>
-				<span class="<?php echo esc_attr( $link_class ); ?>"><?php echo esc_html( $link_class ); ?></span>
+				<span class="<?php echo esc_attr( $tool_type ); ?>">
+					<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/icons/' . $tool_type . '.svg' ); ?>" alt="<?php echo esc_attr( $tool_type ); ?>" width="50" height="50" />
+				</span>
 				<h3><a href="<?php echo esc_url( $tool_link ); ?>"><?php echo esc_html( $tool->post_title ); ?></a></h3>
 				<?php	foreach ( $tags as $ilm_tag ) : ?>
 					<span class="tag"><?php echo esc_html( $ilm_tag->name ); ?></span>
