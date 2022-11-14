@@ -173,7 +173,11 @@ class ILM_Guide {
 	 * @param string $content           Post content HTML.
 	 */
 	public static function the_content( $content ) {
-		return self::get_breadcrumbs() . '<h1>' . esc_html( get_the_title() ) . '</h1>' . $content;
+		$result = '';
+		if ( in_array( self::get_post_type(), [ 'ilm-element', 'ilm-output' ], true ) ) {
+			$result = self::get_breadcrumbs() . '<h1>' . self::get_section_image() . esc_html( get_the_title() ) . '</h1>';
+		}
+		return $result . $content;
 	}
 
 }
