@@ -142,10 +142,7 @@ class ILM_Guide {
 	 * Append ILM Guide output and tool content.
 	 */
 	public static function zakra_after_single_post_content() {
-		$post_terms = wp_get_post_terms( get_the_ID(), self::TYPE_TAXONOMY, [ 'fields' => 'slugs' ] );
-		if ( $post_terms && is_array( $post_terms ) ) {
-			$post_type = $post_terms[0];
-		}
+		$post_type = self::get_post_type();
 
 		ob_start();
 		if ( 'ilm-element' === $post_type ) {
