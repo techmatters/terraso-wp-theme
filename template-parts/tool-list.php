@@ -21,9 +21,9 @@
 
 	<?php
 	foreach ( $tools as $tool ) {
-		$tool_link  = get_post_meta( $tool->ID, ILM_Guide::TOOL_URL_META_KEY, true );
+		$tool_link = get_post_meta( $tool->ID, ILM_Guide::TOOL_URL_META_KEY, true );
 		$tool_type = pathinfo( $tool_link, PATHINFO_EXTENSION ) === 'pdf' ? 'pdf' : 'link';
-		$tags       = wp_get_post_terms( $tool->ID, ILM_Guide::TAG_TAXONOMY );
+		$tags      = wp_get_post_terms( $tool->ID, ILM_Guide::TAG_TAXONOMY );
 		?>
 			<section class='tool'>
 				<span class="<?php echo esc_attr( $tool_type ); ?>">
