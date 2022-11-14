@@ -55,6 +55,9 @@ class ILM_Guide {
 		return ob_get_clean();
 	}
 
+	/**
+	 * Gets ILM post type (output, element)
+	 */
 	public static function get_post_type() {
 		$post_terms = wp_get_post_terms( get_the_ID(), self::TYPE_TAXONOMY, [ 'fields' => 'slugs' ] );
 		if ( $post_terms && is_array( $post_terms ) ) {
@@ -62,6 +65,9 @@ class ILM_Guide {
 		}
 	}
 
+	/**
+	 * Gets HTML for ILM Guide section image (one of 5 elements).
+	 */
 	public static function get_section_image() {
 		$post_type = self::get_post_type();
 
@@ -93,7 +99,7 @@ class ILM_Guide {
 		$classes[] = 'guide-' . ( $post_type ?? 'intro' );
 		if ( 'ilm-output' === $post_type ) {
 			$parent_name = get_post_field( 'post_name', wp_get_post_parent_id() );
-			$classes[] = 'parent-' . $parent_name;
+			$classes[]   = 'parent-' . $parent_name;
 		}
 
 		return $classes;
