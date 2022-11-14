@@ -80,6 +80,8 @@ class ILM_Guide {
 			$classes[] = 'guide-' . $queried_obj->post_name;
 		}
 
+		$classes[] = 'guide-' . ( self::get_post_type() ?? 'intro' );
+
 		return $classes;
 	}
 
