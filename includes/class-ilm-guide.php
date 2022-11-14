@@ -63,8 +63,17 @@ class ILM_Guide {
 	}
 
 	public static function get_section_image() {
-		$slug = get_post_field( 'post_name' );
-		$svg  = file_get_contents( get_stylesheet_directory() . '/assets/images/ilm/' . $slug . '.svg' );
+		$post_type = self::get_post_type();
+
+		if ( 'ilm-output' === $post_type ) {
+			$slug = get_post_field( 'post_name', wp_get_post_parent_id() );
+		} elseif ( 'ilm-element' === $post_type ) {
+			$slug = get_post_field( 'post_name' );
+		} else {
+			return;
+		}
+
+		$svg = file_get_contents( get_stylesheet_directory() . '/assets/images/ilm/' . $slug . '.svg' );
 		return '<span class="' . esc_attr( 'section-image ' . $slug ) . '">' . $svg . '</span>';
 	}
 
@@ -80,7 +89,12 @@ class ILM_Guide {
 			$classes[] = 'guide-' . $queried_obj->post_name;
 		}
 
-		$classes[] = 'guide-' . ( self::get_post_type() ?? 'intro' );
+		$post_type = self::get_post_type();
+		$classes[] = 'guide-' . ( $post_type ?? 'intro' );
+		if ( 'ilm-output' === $post_type ) {
+			$parent_name = get_post_field( 'post_name', wp_get_post_parent_id() );
+			$classes[] = 'parent-' . $parent_name;
+		}
 
 		return $classes;
 	}
