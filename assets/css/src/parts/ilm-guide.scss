@@ -29,16 +29,30 @@
 		padding: 2em 0;
 	}
 
+	.guide-tools {
+		padding-top: 4em;
+	}
+
 	.guide-outputs {
 		h2 {
 			display: flex;
 			align-items: center;
 		}
+	}
+
 	&:not(.guide-intro) {
+		.entry-content {
+			padding: 2em 0;
+		}
+
+		.guide-tools,
+		.guide-outputs {
+			padding: 6em 0;
+		}
+
 		.entry-content,
 		.guide-tools,
 		.guide-outputs {
-			padding: 2em 0;
 			max-width: v.$content-width;
 			margin: 0 auto;
 		}
