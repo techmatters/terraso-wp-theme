@@ -21,7 +21,6 @@ class ILM_Guide {
 	 */
 	public static function hooks() {
 		add_action( 'add_meta_boxes', [ __CLASS__, 'add_meta_boxes' ] );
-		add_filter( 'the_content', [ __CLASS__, 'the_content' ] );
 		add_action( 'zakra_after_single_post_content', [ __CLASS__, 'zakra_after_single_post_content' ] );
 	}
 
@@ -33,6 +32,7 @@ class ILM_Guide {
 			add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
 			add_filter( 'get_post_metadata', [ __CLASS__, 'disable_zakra_header' ], 10, 5 );
 			add_filter( 'zakra_current_layout', [ __CLASS__, 'zakra_current_layout' ] );
+			add_filter( 'the_content', [ __CLASS__, 'the_content' ] );
 			remove_action( 'zakra_after_single_post_content', 'zakra_post_navigation', 10 );
 		}
 	}
