@@ -14,7 +14,12 @@ $outputs = get_children( // phpcs:ignore WordPressVIPMinimum.Functions.Restricte
 );
 ?>
 <article class='guide-outputs'>
-	<h2><?php echo esc_html( $args['title'] . ' Outputs' ); ?></h2>
+	<h2>
+	<?php
+			echo ILM_Guide::get_section_image(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo esc_html( $args['title'] . ' Outputs' );
+	?>
+			</h2>
 	<div class='output-wrapper'>
 	<?php
 	foreach ( $outputs as $output ) {
