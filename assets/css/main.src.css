@@ -442,12 +442,27 @@ main {
   background-color: #f2f2f0;
 }
 .guide-template-default.tg-site-layout--stretched .entry-content,
-.guide-template-default.tg-site-layout--stretched .guide-outputs {
+.guide-template-default.tg-site-layout--stretched .guide-outputs,
+.guide-template-default.tg-site-layout--stretched .guide-tools {
   padding: 2em 0;
 }
-.guide-template-default.tg-site-layout--stretched:not(.guide-intro) .entry-content,
-.guide-template-default.tg-site-layout--stretched:not(.guide-intro) .guide-outputs {
+.guide-template-default.tg-site-layout--stretched .guide-tools {
+  padding-top: 4em;
+}
+.guide-template-default.tg-site-layout--stretched .guide-outputs h2 {
+  display: flex;
+  align-items: center;
+}
+.guide-template-default.tg-site-layout--stretched:not(.guide-intro) .entry-content {
   padding: 2em 0;
+}
+.guide-template-default.tg-site-layout--stretched:not(.guide-intro) .guide-tools,
+.guide-template-default.tg-site-layout--stretched:not(.guide-intro) .guide-outputs {
+  padding: 6em 0;
+}
+.guide-template-default.tg-site-layout--stretched:not(.guide-intro) .entry-content,
+.guide-template-default.tg-site-layout--stretched:not(.guide-intro) .guide-tools,
+.guide-template-default.tg-site-layout--stretched:not(.guide-intro) .guide-outputs {
   max-width: 1160px;
   margin: 0 auto;
 }
@@ -460,7 +475,7 @@ main {
   border-width: 1px;
   border-style: solid;
   border-radius: 1em;
-  border-color: #5e5547;
+  border-color: #ddd;
   padding: 1em;
   height: -moz-fit-content;
   height: fit-content;
@@ -488,9 +503,6 @@ main {
   font-weight: 600;
   font-size: 14px;
 }
-.guide-template-default.tg-site-layout--stretched .intro-text {
-  margin-bottom: 2em;
-}
 .guide-template-default.tg-site-layout--stretched .breadcrumbs {
   margin: 1em 0 2em;
 }
@@ -506,6 +518,46 @@ main {
 }
 .guide-template-default.tg-site-layout--stretched .breadcrumbs li + li::before {
   content: " / ";
+}
+.guide-template-default.tg-site-layout--stretched .tool {
+  margin: 5em auto;
+  padding: 1.5em;
+  padding-left: 7em;
+  border: 1px solid #ddd;
+  border-radius: 1em;
+}
+.guide-template-default.tg-site-layout--stretched .tool h3 {
+  font-weight: 700;
+}
+.guide-template-default.tg-site-layout--stretched .tool a {
+  color: #5e5547;
+  text-decoration: none;
+}
+.guide-template-default.tg-site-layout--stretched .tool a a:hover {
+  color: #358eae;
+  text-decoration: underline;
+}
+.guide-template-default.tg-site-layout--stretched .tool .link,
+.guide-template-default.tg-site-layout--stretched .tool .pdf {
+  position: absolute;
+  margin-left: -69px;
+}
+.guide-template-default.tg-site-layout--stretched .tag {
+  display: inline-block;
+  background-color: #78a659;
+  color: white;
+  border-radius: 2em;
+  padding: 0.5em 1em;
+  margin-bottom: 4px;
+}
+.guide-template-default.tg-site-layout--stretched .tag p {
+  margin-top: 1.5em;
+  margin-left: auto;
+  line-height: 21px;
+  color: #5e5547;
+}
+.guide-template-default.tg-site-layout--stretched .intro-text {
+  margin-bottom: 2em;
 }
 .guide-template-default.tg-site-layout--stretched .intro-element h2 {
   font-size: 1.75rem;
@@ -570,78 +622,102 @@ main {
   border-radius: 1em;
   height: 58px;
   width: 58px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-right: 0.5em;
 }
 .guide-template-default.tg-site-layout--stretched .section-image svg {
+  height: 50px;
+  width: 50px;
   vertical-align: middle;
 }
 .guide-template-default.tg-site-layout--stretched .section-image svg path {
   fill: #fff !important;
 }
-.guide-template-default.tg-site-layout--stretched.guide-shared-understanding .output:hover {
+.guide-template-default.tg-site-layout--stretched.guide-shared-understanding .output:hover, .guide-template-default.tg-site-layout--stretched.parent-shared-understanding .output:hover {
   border-color: #99542b;
 }
 .guide-template-default.tg-site-layout--stretched.guide-shared-understanding h1,
 .guide-template-default.tg-site-layout--stretched.guide-shared-understanding h2,
 .guide-template-default.tg-site-layout--stretched.guide-shared-understanding h3,
-.guide-template-default.tg-site-layout--stretched.guide-shared-understanding h3 a {
+.guide-template-default.tg-site-layout--stretched.guide-shared-understanding h3 a, .guide-template-default.tg-site-layout--stretched.parent-shared-understanding h1,
+.guide-template-default.tg-site-layout--stretched.parent-shared-understanding h2,
+.guide-template-default.tg-site-layout--stretched.parent-shared-understanding h3,
+.guide-template-default.tg-site-layout--stretched.parent-shared-understanding h3 a {
   color: #99542b;
 }
 .guide-template-default.tg-site-layout--stretched.guide-shared-understanding figcaption,
-.guide-template-default.tg-site-layout--stretched.guide-shared-understanding .section-image {
+.guide-template-default.tg-site-layout--stretched.guide-shared-understanding .section-image, .guide-template-default.tg-site-layout--stretched.parent-shared-understanding figcaption,
+.guide-template-default.tg-site-layout--stretched.parent-shared-understanding .section-image {
   background-color: #99542b;
 }
-.guide-template-default.tg-site-layout--stretched.guide-impact-and-learning .output:hover {
+.guide-template-default.tg-site-layout--stretched.guide-impact-and-learning .output:hover, .guide-template-default.tg-site-layout--stretched.parent-impact-and-learning .output:hover {
   border-color: #358eae;
 }
 .guide-template-default.tg-site-layout--stretched.guide-impact-and-learning h1,
 .guide-template-default.tg-site-layout--stretched.guide-impact-and-learning h2,
 .guide-template-default.tg-site-layout--stretched.guide-impact-and-learning h3,
-.guide-template-default.tg-site-layout--stretched.guide-impact-and-learning h3 a {
+.guide-template-default.tg-site-layout--stretched.guide-impact-and-learning h3 a, .guide-template-default.tg-site-layout--stretched.parent-impact-and-learning h1,
+.guide-template-default.tg-site-layout--stretched.parent-impact-and-learning h2,
+.guide-template-default.tg-site-layout--stretched.parent-impact-and-learning h3,
+.guide-template-default.tg-site-layout--stretched.parent-impact-and-learning h3 a {
   color: #358eae;
 }
 .guide-template-default.tg-site-layout--stretched.guide-impact-and-learning figcaption,
-.guide-template-default.tg-site-layout--stretched.guide-impact-and-learning .section-image {
+.guide-template-default.tg-site-layout--stretched.guide-impact-and-learning .section-image, .guide-template-default.tg-site-layout--stretched.parent-impact-and-learning figcaption,
+.guide-template-default.tg-site-layout--stretched.parent-impact-and-learning .section-image {
   background-color: #358eae;
 }
-.guide-template-default.tg-site-layout--stretched.guide-vision-and-planning .output:hover {
+.guide-template-default.tg-site-layout--stretched.guide-vision-and-planning .output:hover, .guide-template-default.tg-site-layout--stretched.parent-vision-and-planning .output:hover {
   border-color: #deb763;
 }
 .guide-template-default.tg-site-layout--stretched.guide-vision-and-planning h1,
 .guide-template-default.tg-site-layout--stretched.guide-vision-and-planning h2,
 .guide-template-default.tg-site-layout--stretched.guide-vision-and-planning h3,
-.guide-template-default.tg-site-layout--stretched.guide-vision-and-planning h3 a {
+.guide-template-default.tg-site-layout--stretched.guide-vision-and-planning h3 a, .guide-template-default.tg-site-layout--stretched.parent-vision-and-planning h1,
+.guide-template-default.tg-site-layout--stretched.parent-vision-and-planning h2,
+.guide-template-default.tg-site-layout--stretched.parent-vision-and-planning h3,
+.guide-template-default.tg-site-layout--stretched.parent-vision-and-planning h3 a {
   color: #deb763;
 }
 .guide-template-default.tg-site-layout--stretched.guide-vision-and-planning figcaption,
-.guide-template-default.tg-site-layout--stretched.guide-vision-and-planning .section-image {
+.guide-template-default.tg-site-layout--stretched.guide-vision-and-planning .section-image, .guide-template-default.tg-site-layout--stretched.parent-vision-and-planning figcaption,
+.guide-template-default.tg-site-layout--stretched.parent-vision-and-planning .section-image {
   background-color: #deb763;
 }
-.guide-template-default.tg-site-layout--stretched.guide-taking-action .output:hover {
+.guide-template-default.tg-site-layout--stretched.guide-taking-action .output:hover, .guide-template-default.tg-site-layout--stretched.parent-taking-action .output:hover {
   border-color: #78a659;
 }
 .guide-template-default.tg-site-layout--stretched.guide-taking-action h1,
 .guide-template-default.tg-site-layout--stretched.guide-taking-action h2,
 .guide-template-default.tg-site-layout--stretched.guide-taking-action h3,
-.guide-template-default.tg-site-layout--stretched.guide-taking-action h3 a {
+.guide-template-default.tg-site-layout--stretched.guide-taking-action h3 a, .guide-template-default.tg-site-layout--stretched.parent-taking-action h1,
+.guide-template-default.tg-site-layout--stretched.parent-taking-action h2,
+.guide-template-default.tg-site-layout--stretched.parent-taking-action h3,
+.guide-template-default.tg-site-layout--stretched.parent-taking-action h3 a {
   color: #78a659;
 }
 .guide-template-default.tg-site-layout--stretched.guide-taking-action figcaption,
-.guide-template-default.tg-site-layout--stretched.guide-taking-action .section-image {
+.guide-template-default.tg-site-layout--stretched.guide-taking-action .section-image, .guide-template-default.tg-site-layout--stretched.parent-taking-action figcaption,
+.guide-template-default.tg-site-layout--stretched.parent-taking-action .section-image {
   background-color: #78a659;
 }
-.guide-template-default.tg-site-layout--stretched.guide-landscape-partnership .output:hover {
+.guide-template-default.tg-site-layout--stretched.guide-landscape-partnership .output:hover, .guide-template-default.tg-site-layout--stretched.parent-landscape-partnership .output:hover {
   border-color: #5e5547;
 }
 .guide-template-default.tg-site-layout--stretched.guide-landscape-partnership h1,
 .guide-template-default.tg-site-layout--stretched.guide-landscape-partnership h2,
 .guide-template-default.tg-site-layout--stretched.guide-landscape-partnership h3,
-.guide-template-default.tg-site-layout--stretched.guide-landscape-partnership h3 a {
+.guide-template-default.tg-site-layout--stretched.guide-landscape-partnership h3 a, .guide-template-default.tg-site-layout--stretched.parent-landscape-partnership h1,
+.guide-template-default.tg-site-layout--stretched.parent-landscape-partnership h2,
+.guide-template-default.tg-site-layout--stretched.parent-landscape-partnership h3,
+.guide-template-default.tg-site-layout--stretched.parent-landscape-partnership h3 a {
   color: #5e5547;
 }
 .guide-template-default.tg-site-layout--stretched.guide-landscape-partnership figcaption,
-.guide-template-default.tg-site-layout--stretched.guide-landscape-partnership .section-image {
+.guide-template-default.tg-site-layout--stretched.guide-landscape-partnership .section-image, .guide-template-default.tg-site-layout--stretched.parent-landscape-partnership figcaption,
+.guide-template-default.tg-site-layout--stretched.parent-landscape-partnership .section-image {
   background-color: #5e5547;
 }
 .guide-template-default.tg-site-layout--stretched .wp-block-columns {
@@ -651,6 +727,8 @@ main {
   font-size: 30px;
   font-weight: 700;
   border-bottom: none;
+  display: flex;
+  align-items: center;
 }
 .guide-template-default.tg-site-layout--stretched #main a:hover,
 .guide-template-default.tg-site-layout--stretched #main h3 a:hover {
@@ -659,12 +737,4 @@ main {
 }
 .guide-template-default.tg-site-layout--stretched .read-more {
   font-weight: 700;
-}
-.guide-template-default.tg-site-layout--stretched .tool {
-  border: 1px solid orange;
-}
-.guide-template-default.tg-site-layout--stretched .tag {
-  border: 1px solid green;
-  border-radius: 1em;
-  padding: 0.5em 1em;
 }
