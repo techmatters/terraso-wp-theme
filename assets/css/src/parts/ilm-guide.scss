@@ -1,5 +1,23 @@
 @use "variables" as v;
 
+@mixin ilm-color($color) {
+	.output:hover {
+		border-color: $color;
+	}
+
+	h1,
+	h2,
+	h3,
+	h3 a {
+		color: $color;
+	}
+
+	figcaption,
+	.section-image {
+		background-color: $color;
+	}
+}
+
 .guide-template-default.tg-site-layout--stretched {
 	.type-guide {
 		background-color: v.$light-brown;
@@ -7,9 +25,16 @@
 
 	.entry-content,
 	.guide-outputs {
-		margin: 0 auto;
-		max-width: 1160px;
-		padding: 4em 0;
+		padding: 2em 0;
+	}
+
+	&:not(.guide-intro) {
+		.entry-content,
+		.guide-outputs {
+			padding: 2em 0;
+			max-width: v.$content-width;
+			margin: 0 auto;
+		}
 	}
 
 	.output-wrapper {
@@ -19,9 +44,10 @@
 	}
 
 	.output {
-		border-width: 2px;
+		border-width: 1px;
 		border-style: solid;
 		border-radius: 1em;
+		border-color: v.$gray;
 		padding: 1em;
 		height: fit-content;
 
@@ -53,7 +79,13 @@
 		}
 	}
 
+	.intro-text {
+		margin-bottom: 2em;
+	}
+
 	.breadcrumbs {
+		margin: 1em 0 2em;
+
 		a {
 			text-decoration: none;
 		}
@@ -65,115 +97,137 @@
 
 		li {
 			display: inline-block;
+
+			+ li::before {
+				content: " / ";
+			}
+		}
+	}
+
+	.intro-element {
+		h2 {
+			font-size: 1.75rem;
+		}
+
+		p {
+			font-size: 1.25rem;
+		}
+
+		> div {
+			min-height: 13em;
+		}
+
+		ol {
+			font-size: 1.25rem;
+			list-style: none;
+			margin: 2em;
+			text-indent: -7.2rem;
+			margin-left: 9rem;
+			line-height: 2rem;
+
+			li {
+				margin-bottom: 1em;
+			}
+		}
+	}
+
+	.element-toc {
+		// need to constrain the inner container; outer container must be 100% so the background stays white
+		> div {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 2em;
+			max-width: v.$content-width;
+			margin: 0 auto;
+
+			> div:first-child {
+				grid-column: span 2;
+
+				ol {
+					max-width: 600px;
+					margin: 2em auto;
+				}
+			}
+
+			> div:nth-child(n+2) {
+				grid-column: span 1;
+				margin-top: 0;
+			}
+
+			> div:nth-child(1) {
+				border-color: v.$dark-brown;
+			}
+
+			> div:nth-child(2) {
+				border-color: v.$brown;
+			}
+
+			> div:nth-child(3) {
+				border-color: v.$yellow;
+			}
+
+			> div:nth-child(4) {
+				border-color: v.$green;
+			}
+
+			> div:nth-child(5) {
+				border-color: v.$blue;
+			}
+		}
+	}
+
+	figcaption {
+		color: white;
+		font-size: 14px;
+		line-height: 21px;
+		padding: 1em;
+	}
+
+	.section-image {
+		border-radius: 1em;
+		height: 58px;
+		width: 58px;
+		display: inline-block;
+		margin-right: 0.5em;
+
+		svg {
+			path {
+				fill: #fff !important;
+			}
+
+			vertical-align: middle;
 		}
 	}
 
 	&.guide-shared-understanding {
-		.output {
-			border-color: v.$brown;
-		}
-
-		h1,
-		h2,
-		h3,
-		h3 a,
-		h4 {
-			color: v.$brown;
-		}
-
-		h1::before {
-			background-image: url("/wp-content/uploads/2021/03/shared-understanding.svg");
-		}
+		@include ilm-color(v.$brown);
 	}
 
 	&.guide-impact-and-learning {
-		.output {
-			border-color: v.$blue;
-		}
-
-		h1,
-		h2,
-		h3,
-		h3 a,
-		h4 {
-			color: v.$blue;
-		}
-
-		h1::before {
-			background-image: url("/wp-content/uploads/2021/03/learning-and-impact.svg");
-			background-color: v.$blue;
-			border-radius: 1em;
-		}
+		@include ilm-color(v.$blue);
 	}
 
 	&.guide-vision-and-planning {
-		.output {
-			border-color: v.$yellow;
-		}
-
-		h1,
-		h2,
-		h3,
-		h3 a,
-		h4 {
-			color: v.$yellow;
-		}
-
-		h1::before {
-			background-image: url("/wp-content/uploads/2021/03/vision-and-planning.svg");
-		}
+		@include ilm-color(v.$yellow);
 	}
 
 	&.guide-taking-action {
-		.output {
-			border-color: v.$green;
-		}
-
-		h1,
-		h2,
-		h3,
-		h3 a,
-		h4 {
-			color: v.$green;
-		}
-
-		h1::before {
-			background-image: url("/wp-content/uploads/2021/03/taking-action.svg");
-		}
+		@include ilm-color(v.$green);
 	}
 
 	&.guide-landscape-partnership {
-		.output {
-			border-color: v.$dark-brown;
-		}
+		@include ilm-color(v.$dark-brown);
+	}
 
-		h1,
-		h2,
-		h3,
-		h3 a,
-		h4 {
-			color: v.$dark-brown;
-		}
-
-		h1::before {
-			background-image: url("/wp-content/uploads/2021/03/landscape-partnership.svg");
-		}
+	.wp-block-columns {
+		padding: 0;
 	}
 
 	#main {
 		h1 {
+			font-size: 30px;
 			font-weight: 700;
 			border-bottom: none;
-
-			&::before {
-				vertical-align: middle;
-				background-repeat: no-repeat;
-				background-position: center;
-				display: inline-block;
-				content: "";
-				height: 58px;
-				width: 58px;
-			}
 		}
 
 		a:hover,
