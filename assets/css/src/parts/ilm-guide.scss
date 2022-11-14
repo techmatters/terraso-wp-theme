@@ -24,12 +24,14 @@
 	}
 
 	.entry-content,
-	.guide-outputs {
+	.guide-outputs,
+	.guide-tools, {
 		padding: 2em 0;
 	}
 
 	&:not(.guide-intro) {
 		.entry-content,
+		.guide-tools,
 		.guide-outputs {
 			padding: 2em 0;
 			max-width: v.$content-width;
@@ -79,10 +81,6 @@
 		}
 	}
 
-	.intro-text {
-		margin-bottom: 2em;
-	}
-
 	.breadcrumbs {
 		margin: 1em 0 2em;
 
@@ -102,6 +100,54 @@
 				content: " / ";
 			}
 		}
+	}
+
+	.tool {
+		margin: 5em auto;
+		padding: 1.5em;
+		padding-left: 7em;
+		border: 1px solid v.$gray;
+		border-radius: 1em;
+
+		h3 {
+			font-weight: 700;
+		}
+
+		a {
+			color: v.$dark-brown;
+			text-decoration: none;
+
+			& a:hover {
+				color: v.$blue;
+				text-decoration: underline;
+			}
+		}
+
+		.link,
+		.pdf {
+			position: absolute;
+			margin-left: -69px;
+		}
+	}
+
+	.tag {
+		display: inline-block;
+		background-color: v.$green;
+		color: white;
+		border-radius: 2em;
+		padding: 0.5em 1em;
+		margin-bottom: 4px;
+
+		p {
+			margin-top: 1.5em;
+			margin-left: auto;
+			line-height: 21px;
+			color: v.$dark-brown;
+		}
+	}
+
+	.intro-text {
+		margin-bottom: 2em;
 	}
 
 	.intro-element {
@@ -240,88 +286,4 @@
 	.read-more {
 		font-weight: 700;
 	}
-
-	.tool {
-		border: 1px solid orange;
-	}
-
-	.tag {
-		border: 1px solid green;
-		border-radius: 1em;
-		padding: 0.5em 1em;
-	}
-}
-
-.tg-container {
-	flex-wrap: wrap;
-}
-
-#content.site-content {
-	margin: auto 15%;
-}
-
-// Fonts
-h1,
-h2,
-h3 {
-	font-family: "Montserrat Alternates", sans-serif;
-	color: #5e5547;
-}
-
-h2 {
-	margin-top: 3em;
-	margin-bottom: 1em;
-}
-
-p {
-	font-family: Montserrat, sans-serif;
-}
-
-// Tool cards
-.tool {
-	margin: 5em auto;
-	padding: 1.5em;
-	padding-left: 98px;
-	border: 1px solid #dddd;
-	border-radius: 1em;
-}
-
-.tool a {
-	color: #5e5547;
-	text-decoration: none;
-}
-
-.tool a:hover {
-	color: #358eae;
-	text-decoration: underline;
-}
-
-.tool a:active {
-	color: #055975;
-}
-
-.link {
-	position: absolute;
-	margin-left: -69px;
-}
-
-.pdf {
-	position: absolute;
-	margin-left: -69px;
-}
-
-.tag {
-	display: inline-block;
-	background-color: #78a659;
-	color: white;
-	border-radius: 1em;
-	padding: 0.5em 1em;
-	margin-bottom: 4px;
-}
-
-.tool p {
-	margin-top: 1.5em;
-	margin-left: auto;
-	line-height: 21px;
-	color: #5e5547;
 }
