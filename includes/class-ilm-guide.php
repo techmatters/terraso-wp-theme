@@ -60,6 +60,10 @@ class ILM_Guide {
 		}
 	}
 
+	public static function get_section_image() {
+		$slug = get_post_field( 'post_name' );
+		$svg  = file_get_contents( get_stylesheet_directory() . '/assets/images/' . $slug . '.svg' );
+		return '<span class="' . esc_attr( 'section-image ' . $slug ) . '">' . $svg . '</span>';
 	}
 
 	/**
