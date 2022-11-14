@@ -29,6 +29,11 @@
 		padding: 2em 0;
 	}
 
+	.guide-outputs {
+		h2 {
+			display: flex;
+			align-items: center;
+		}
 	&:not(.guide-intro) {
 		.entry-content,
 		.guide-tools,
@@ -233,10 +238,15 @@
 		border-radius: 1em;
 		height: 58px;
 		width: 58px;
-		display: inline-block;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		margin-right: 0.5em;
 
 		svg {
+			height: 50px;
+			width: 50px;
+
 			path {
 				fill: #fff !important;
 			}
@@ -245,23 +255,28 @@
 		}
 	}
 
-	&.guide-shared-understanding {
+	&.guide-shared-understanding,
+	&.parent-shared-understanding {
 		@include ilm-color(v.$brown);
 	}
 
-	&.guide-impact-and-learning {
+	&.guide-impact-and-learning,
+	&.parent-impact-and-learning {
 		@include ilm-color(v.$blue);
 	}
 
-	&.guide-vision-and-planning {
+	&.guide-vision-and-planning,
+	&.parent-vision-and-planning {
 		@include ilm-color(v.$yellow);
 	}
 
-	&.guide-taking-action {
+	&.guide-taking-action,
+	&.parent-taking-action {
 		@include ilm-color(v.$green);
 	}
 
-	&.guide-landscape-partnership {
+	&.guide-landscape-partnership,
+	&.parent-landscape-partnership {
 		@include ilm-color(v.$dark-brown);
 	}
 
@@ -274,6 +289,8 @@
 			font-size: 30px;
 			font-weight: 700;
 			border-bottom: none;
+			display: flex;
+			align-items: center;
 		}
 
 		a:hover,
