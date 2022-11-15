@@ -22,6 +22,7 @@ class ILM_Guide {
 	public static function hooks() {
 		add_action( 'add_meta_boxes', [ __CLASS__, 'add_meta_boxes' ] );
 		add_action( 'zakra_after_single_post_content', [ __CLASS__, 'zakra_after_single_post_content' ] );
+		add_action( 'init', [ __CLASS__, 'guide_rewrite' ] );
 	}
 
 	/**
@@ -37,6 +38,12 @@ class ILM_Guide {
 		}
 	}
 
+	/**
+	 * Treat /guide/ as an index page.
+	 */
+	public static function guide_rewrite() {
+		add_rewrite_rule( '^guide$', 'index.php?guide=intro', 'top' );
+	}
 	/**
 	 * Print breadcrumbs.
 	 */
