@@ -508,6 +508,7 @@ main {
 }
 .guide-template-default.tg-site-layout--stretched .breadcrumbs a {
   text-decoration: none;
+  color: #358eae;
 }
 .guide-template-default.tg-site-layout--stretched .breadcrumbs ul {
   margin: 0;
