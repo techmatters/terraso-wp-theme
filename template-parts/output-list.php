@@ -45,7 +45,7 @@ $outputs = get_children( // phpcs:ignore WordPressVIPMinimum.Functions.Restricte
 		<?php
 		foreach ( $tools as $tool ) {
 			?>
-					<li><a href="<?php echo esc_url( get_the_permalink( $tool->ID ) ); ?>"><?php echo esc_html( $tool->post_title ); ?></a></li>
+					<li><a href="<?php echo esc_url( get_post_meta( $tool->ID, ILM_Guide::TOOL_URL_META_KEY, true ) ); ?>"><?php echo esc_html( $tool->post_title ); ?></a></li>
 				<?php
 		}
 		?>
