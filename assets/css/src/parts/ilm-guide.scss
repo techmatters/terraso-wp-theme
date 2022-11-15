@@ -58,46 +58,20 @@
 		}
 	}
 
+	&.guide-intro {
+		.intro-text {
+			margin-bottom: 2em;
+
+			a {
+				color: v.$blue;
+			}
+		}
+	}
+
 	.output-wrapper {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: 4em;
-	}
-
-	.output {
-		border-width: 1px;
-		border-style: solid;
-		border-radius: 1em;
-		border-color: v.$gray;
-		padding: 1em;
-		height: fit-content;
-
-		summary {
-			display: flex;
-			justify-content: space-between;
-			cursor: pointer;
-
-			&::after {
-				vertical-align: middle;
-				content: "";
-				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M5 6l5 5 5-5 2 1-7 7-7-7z'/%3E%3C/g%3E%3C/svg%3E");
-				width: 15px;
-				height: 15px;
-				background-repeat: no-repeat;
-				background-position: center;
-				display: inline-block;
-			}
-		}
-
-		details[open] summary::after {
-			transform: rotate(180deg);
-		}
-
-		h4 {
-			font-family: Montserrat, sans-serif;
-			font-weight: 600;
-			font-size: 14px;
-		}
 	}
 
 	.breadcrumbs {
@@ -106,6 +80,10 @@
 		a {
 			text-decoration: none;
 			color: v.$blue;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 
 		ul {
@@ -137,7 +115,7 @@
 			color: v.$dark-brown;
 			text-decoration: none;
 
-			& a:hover {
+			&:hover {
 				color: v.$blue;
 				text-decoration: underline;
 			}
@@ -150,29 +128,19 @@
 		}
 	}
 
-	.tag {
-		display: inline-block;
-		background-color: v.$green;
-		color: white;
-		border-radius: 2em;
-		padding: 0.5em 1em;
-		margin-bottom: 4px;
-
-		p {
-			margin-top: 1.5em;
-			margin-left: auto;
-			line-height: 21px;
-			color: v.$dark-brown;
-		}
-	}
-
-	.intro-text {
-		margin-bottom: 2em;
-	}
-
 	.intro-element {
 		h2 {
 			font-size: 1.75rem;
+
+			a {
+				color: white;
+				text-decoration: none;
+
+				&:hover {
+					color: white;
+					text-decoration: underline;
+				}
+			}
 		}
 
 		p {
@@ -197,6 +165,68 @@
 		}
 	}
 
+	.output {
+		border-width: 1px;
+		border-style: solid;
+		border-radius: 1em;
+		border-color: v.$gray;
+		padding: 1em;
+		height: fit-content;
+
+		a:hover,
+		h3 a:hover {
+			color: v.$blue;
+			text-decoration: underline;
+		}
+
+		summary {
+			display: flex;
+			justify-content: space-between;
+			cursor: pointer;
+
+			&::after {
+				vertical-align: middle;
+				content: "";
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M5 6l5 5 5-5 2 1-7 7-7-7z'/%3E%3C/g%3E%3C/svg%3E");
+				width: 15px;
+				height: 15px;
+				background-repeat: no-repeat;
+				background-position: center;
+				display: inline-block;
+			}
+		}
+
+		details[open] summary::after {
+			transform: rotate(180deg);
+		}
+
+		h4 {
+			font-family: Montserrat, sans-serif;
+			font-weight: 600;
+			font-size: 14px;
+		}
+	}
+
+	.tag {
+		display: inline-block;
+		background-color: v.$green;
+		color: white;
+		border-radius: 2em;
+		padding: 0.5em 1em;
+		margin-bottom: 4px;
+
+		p {
+			margin-top: 1.5em;
+			margin-left: auto;
+			line-height: 21px;
+			color: v.$dark-brown;
+		}
+
+		+ .tag {
+			margin-left: 1em;
+		}
+	}
+
 	.element-toc {
 		// need to constrain the inner container; outer container must be 100% so the background stays white
 		> div {
@@ -205,6 +235,18 @@
 			grid-gap: 2em;
 			max-width: v.$content-width;
 			margin: 0 auto;
+
+			// list links
+			ol {
+				a {
+					text-decoration: none;
+					color: v.$blue;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
 
 			> div:first-child {
 				grid-column: span 2;
@@ -306,12 +348,6 @@
 			border-bottom: none;
 			display: flex;
 			align-items: center;
-		}
-
-		a:hover,
-		h3 a:hover {
-			color: v.$blue;
-			text-decoration: underline;
 		}
 	}
 
