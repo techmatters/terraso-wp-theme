@@ -466,42 +466,16 @@ main {
   max-width: 1160px;
   margin: 0 auto;
 }
+.guide-template-default.tg-site-layout--stretched.guide-intro .intro-text {
+  margin-bottom: 2em;
+}
+.guide-template-default.tg-site-layout--stretched.guide-intro .intro-text a {
+  color: #358eae;
+}
 .guide-template-default.tg-site-layout--stretched .output-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 4em;
-}
-.guide-template-default.tg-site-layout--stretched .output {
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 1em;
-  border-color: #ddd;
-  padding: 1em;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.guide-template-default.tg-site-layout--stretched .output summary {
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-}
-.guide-template-default.tg-site-layout--stretched .output summary::after {
-  vertical-align: middle;
-  content: "";
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M5 6l5 5 5-5 2 1-7 7-7-7z'/%3E%3C/g%3E%3C/svg%3E");
-  width: 15px;
-  height: 15px;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: inline-block;
-}
-.guide-template-default.tg-site-layout--stretched .output details[open] summary::after {
-  transform: rotate(180deg);
-}
-.guide-template-default.tg-site-layout--stretched .output h4 {
-  font-family: Montserrat, sans-serif;
-  font-weight: 600;
-  font-size: 14px;
 }
 .guide-template-default.tg-site-layout--stretched .breadcrumbs {
   margin: 1em 0 2em;
@@ -509,6 +483,9 @@ main {
 .guide-template-default.tg-site-layout--stretched .breadcrumbs a {
   text-decoration: none;
   color: #358eae;
+}
+.guide-template-default.tg-site-layout--stretched .breadcrumbs a:hover {
+  text-decoration: underline;
 }
 .guide-template-default.tg-site-layout--stretched .breadcrumbs ul {
   margin: 0;
@@ -534,7 +511,7 @@ main {
   color: #5e5547;
   text-decoration: none;
 }
-.guide-template-default.tg-site-layout--stretched .tool a a:hover {
+.guide-template-default.tg-site-layout--stretched .tool a:hover {
   color: #358eae;
   text-decoration: underline;
 }
@@ -543,25 +520,16 @@ main {
   position: absolute;
   margin-left: -69px;
 }
-.guide-template-default.tg-site-layout--stretched .tag {
-  display: inline-block;
-  background-color: #78a659;
-  color: white;
-  border-radius: 2em;
-  padding: 0.5em 1em;
-  margin-bottom: 4px;
-}
-.guide-template-default.tg-site-layout--stretched .tag p {
-  margin-top: 1.5em;
-  margin-left: auto;
-  line-height: 21px;
-  color: #5e5547;
-}
-.guide-template-default.tg-site-layout--stretched .intro-text {
-  margin-bottom: 2em;
-}
 .guide-template-default.tg-site-layout--stretched .intro-element h2 {
   font-size: 1.75rem;
+}
+.guide-template-default.tg-site-layout--stretched .intro-element h2 a {
+  color: white;
+  text-decoration: none;
+}
+.guide-template-default.tg-site-layout--stretched .intro-element h2 a:hover {
+  color: white;
+  text-decoration: underline;
 }
 .guide-template-default.tg-site-layout--stretched .intro-element p {
   font-size: 1.25rem;
@@ -580,12 +548,73 @@ main {
 .guide-template-default.tg-site-layout--stretched .intro-element ol li {
   margin-bottom: 1em;
 }
+.guide-template-default.tg-site-layout--stretched .output {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 1em;
+  border-color: #ddd;
+  padding: 1em;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.guide-template-default.tg-site-layout--stretched .output a:hover,
+.guide-template-default.tg-site-layout--stretched .output h3 a:hover {
+  color: #358eae;
+  text-decoration: underline;
+}
+.guide-template-default.tg-site-layout--stretched .output summary {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.guide-template-default.tg-site-layout--stretched .output summary::after {
+  vertical-align: middle;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M5 6l5 5 5-5 2 1-7 7-7-7z'/%3E%3C/g%3E%3C/svg%3E");
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+.guide-template-default.tg-site-layout--stretched .output details[open] summary::after {
+  transform: rotate(180deg);
+}
+.guide-template-default.tg-site-layout--stretched .output h4 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+.guide-template-default.tg-site-layout--stretched .tag {
+  display: inline-block;
+  background-color: #78a659;
+  color: white;
+  border-radius: 2em;
+  padding: 0.5em 1em;
+  margin-bottom: 4px;
+}
+.guide-template-default.tg-site-layout--stretched .tag p {
+  margin-top: 1.5em;
+  margin-left: auto;
+  line-height: 21px;
+  color: #5e5547;
+}
+.guide-template-default.tg-site-layout--stretched .tag + .tag {
+  margin-left: 1em;
+}
 .guide-template-default.tg-site-layout--stretched .element-toc > div {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2em;
   max-width: 1160px;
   margin: 0 auto;
+}
+.guide-template-default.tg-site-layout--stretched .element-toc > div ol a {
+  text-decoration: none;
+  color: #358eae;
+}
+.guide-template-default.tg-site-layout--stretched .element-toc > div ol a:hover {
+  text-decoration: underline;
 }
 .guide-template-default.tg-site-layout--stretched .element-toc > div > div:first-child {
   grid-column: span 2;
@@ -730,11 +759,6 @@ main {
   border-bottom: none;
   display: flex;
   align-items: center;
-}
-.guide-template-default.tg-site-layout--stretched #main a:hover,
-.guide-template-default.tg-site-layout--stretched #main h3 a:hover {
-  color: #358eae;
-  text-decoration: underline;
 }
 .guide-template-default.tg-site-layout--stretched .read-more {
   font-weight: 700;
