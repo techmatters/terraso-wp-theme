@@ -5,13 +5,6 @@
 		border-color: $color;
 	}
 
-	h1,
-	h2,
-	h3,
-	h3 a {
-		color: $color;
-	}
-
 	figcaption,
 	.section-image {
 		background-color: $color;
@@ -188,6 +181,10 @@
 		padding: 1em;
 		height: fit-content;
 
+		a {
+			color: v.$dark-brown;
+		}
+
 		a:hover,
 		h3 a:hover {
 			color: v.$blue;
@@ -304,6 +301,7 @@
 		font-size: 14px;
 		line-height: 21px;
 		padding: 1em;
+		background-color: v.$dark-brown;
 	}
 
 	.section-image {
