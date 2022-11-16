@@ -17,12 +17,25 @@ class ILM_Guide {
 	const POST_LIMIT        = 90;
 
 	/**
+	 * Subset of SVG tags/attributes we use.
+	 *
+	 * @var $svg_tags
+	 */
+	public static $svg_tags = [
+		'svg'  => [ 'class', 'id', 'style', 'width', 'height', 'fill', 'xmlns', 'xmlns:xlink', 'xmlns:serif', 'xml:space', 'viewBox' ],
+		'rect' => [ 'class', 'id', 'style', 'width', 'height', 'fill', 'rx', 'x', 'y' ],
+		'path' => [ 'class', 'id', 'style', 'fill', 'd', 'stroke', 'stroke-linecap', 'stroke-linejoin', 'stroke-width' ],
+		'g'    => [ 'class', 'id', 'style', 'transform' ],
+	];
+
+	/**
 	 * Add actions and filters.
 	 */
 	public static function hooks() {
 		add_action( 'add_meta_boxes', [ __CLASS__, 'add_meta_boxes' ] );
 		add_action( 'zakra_after_single_post_content', [ __CLASS__, 'zakra_after_single_post_content' ] );
 		add_action( 'init', [ __CLASS__, 'guide_rewrite' ] );
+		add_action( 'init', [ __CLASS__, 'allow_svg_tags' ] );
 		add_action( 'pre_get_posts', [ __CLASS__, 'guide_rewrite' ] );
 	}
 
@@ -51,6 +64,21 @@ class ILM_Guide {
 	 */
 	public static function guide_rewrite() {
 		add_rewrite_rule( '^guide$', 'index.php?guide=intro', 'top' );
+	}
+
+	/**
+	 * Allow SVG tags within WordPress
+	 */
+	public static function allow_svg_tags() {
+		global $allowedposttags;
+
+		foreach ( self::$svg_tags as $tag => $attributes ) {
+			$allowedposttags[ $tag ] = []; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+
+			foreach ( $attributes as $a ) {
+				$allowedposttags[ $tag ][ $a ] = true; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+			}
+		}
 	}
 
 	/**
@@ -201,7 +229,7 @@ class ILM_Guide {
 			);
 		}
 
-		echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo wp_kses_post( ob_get_clean() );
 	}
 
 	/**
