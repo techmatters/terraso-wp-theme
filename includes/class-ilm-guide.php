@@ -22,7 +22,7 @@ class ILM_Guide {
 	 * @var $svg_tags
 	 */
 	public static $svg_tags = [
-		'svg'  => [ 'class', 'id', 'style', 'width', 'height', 'fill', 'xmlns', 'xmlns:xlink', 'xmlns:serif', 'xml:space', 'viewBox' ],
+		'svg'  => [ 'class', 'id', 'style', 'width', 'height', 'fill', 'xmlns', 'xmlns:xlink', 'xmlns:serif', 'xml:space', 'viewbox' ], // viewbox must be lowercase.
 		'rect' => [ 'class', 'id', 'style', 'width', 'height', 'fill', 'rx', 'x', 'y' ],
 		'path' => [ 'class', 'id', 'style', 'fill', 'd', 'stroke', 'stroke-linecap', 'stroke-linejoin', 'stroke-width' ],
 		'g'    => [ 'class', 'id', 'style', 'transform' ],
@@ -36,6 +36,7 @@ class ILM_Guide {
 		add_action( 'zakra_after_single_post_content', [ __CLASS__, 'zakra_after_single_post_content' ] );
 		add_action( 'init', [ __CLASS__, 'guide_rewrite' ] );
 		add_action( 'init', [ __CLASS__, 'allow_svg_tags' ] );
+		add_filter( 'safe_style_css', [ __CLASS__, 'allow_svg_css' ] );
 		add_action( 'pre_get_posts', [ __CLASS__, 'guide_rewrite' ] );
 		add_filter( 'manage_guide_posts_columns', [ __CLASS__, 'guide_admin_columns' ] );
 		add_action( 'manage_guide_posts_custom_column', [ __CLASS__, 'guide_type_column_content' ], 10, 2 );
@@ -107,6 +108,22 @@ class ILM_Guide {
 				$allowedposttags[ $tag ][ $a ] = true; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			}
 		}
+	}
+
+	/**
+	 * Allow inline styles needed for SVGs.
+	 *
+	 * @param array $styles   List of allowed style rules.
+	 * @return array
+	 */
+	public static function allow_svg_css( $styles ) {
+		$styles[] = 'fill';
+		$styles[] = 'fill-rule';
+		$styles[] = 'clip-rule';
+		$styles[] = 'stroke-linejoin';
+		$styles[] = 'stroke-miterlimit';
+
+		return $styles;
 	}
 
 	/**
