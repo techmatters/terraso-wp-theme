@@ -79,7 +79,7 @@
 	.output-wrapper {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-column-gap: 4em;
+		grid-gap: 4em;
 	}
 
 	.breadcrumbs {
@@ -178,8 +178,9 @@
 		border-style: solid;
 		border-radius: 1em;
 		border-color: v.$gray;
-		padding: 1em;
-		height: fit-content;
+		padding: 2em 1.5em;
+		display: grid;
+		grid-template-rows: 5em 1fr 1em;
 
 		a {
 			color: v.$dark-brown;
