@@ -36,6 +36,10 @@
 
 		.guide-tools {
 			padding: 8em 0 6em;
+
+			@media screen and (max-width: 768px) {
+				padding: 4em 0 6em;
+			}
 		}
 
 		.guide-outputs {
@@ -47,12 +51,20 @@
 		.guide-outputs {
 			max-width: v.$content-width;
 			margin: 0 auto;
+
+			@media screen and (max-width: 768px) {
+				margin: 0 3em;
+			}
 		}
 	}
 
 	&.guide-ilm-output {
 		.entry-content {
 			padding-bottom: 6em;
+
+			@media screen and (max-width: 768px) {
+				padding-bottom: 3em;
+			}
 		}
 	}
 
@@ -97,12 +109,6 @@
 				margin: 0 0 3em;
 			}
 		}
-	}
-
-	.output-wrapper {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-gap: 4em;
 	}
 
 	.breadcrumbs {
@@ -171,6 +177,10 @@
 		&:first-of-type {
 			margin-top: 3em;
 		}
+
+		@media screen and (max-width: 768px) {
+			margin: 3em auto;
+		}
 	}
 
 	.intro-element {
@@ -219,54 +229,78 @@
 		}
 	}
 
-	.output {
-		border-width: 1px;
-		border-style: solid;
-		border-radius: 1em;
-		border-color: v.$gray;
-		padding: 2em 1.5em;
+	.output-wrapper {
 		display: grid;
-		grid-template-rows: 5em 1fr 1em;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 4em;
 
-		a {
-			color: v.$dark-brown;
+		@media screen and (max-width: 768px) {
+			display: block;
 		}
 
-		p {
-			font-weight: 400;
-		}
+		.output {
+			border-width: 1px;
+			border-style: solid;
+			border-radius: 1em;
+			border-color: v.$gray;
+			padding: 2em 1.5em;
+			display: grid;
+			grid-template-rows: 5em 1fr 1em;
 
-		a:hover,
-		h3 a:hover {
-			color: v.$blue;
-			text-decoration: underline;
-		}
+			a {
+				color: v.$dark-brown;
+			}
 
-		summary {
-			display: flex;
-			justify-content: space-between;
-			cursor: pointer;
+			p {
+				font-weight: 400;
+			}
 
-			&::after {
-				vertical-align: middle;
-				content: "";
-				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M5 6l5 5 5-5 2 1-7 7-7-7z'/%3E%3C/g%3E%3C/svg%3E");
-				width: 15px;
-				height: 15px;
-				background-repeat: no-repeat;
-				background-position: center;
-				display: inline-block;
+			a:hover,
+			h3 a:hover {
+				color: v.$blue;
+				text-decoration: underline;
+			}
+
+			summary {
+				display: flex;
+				justify-content: space-between;
+				cursor: pointer;
+
+				&::after {
+					vertical-align: middle;
+					content: "";
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M5 6l5 5 5-5 2 1-7 7-7-7z'/%3E%3C/g%3E%3C/svg%3E");
+					width: 15px;
+					height: 15px;
+					background-repeat: no-repeat;
+					background-position: center;
+					display: inline-block;
+				}
+			}
+
+			details[open] summary::after {
+				transform: rotate(180deg);
+			}
+
+			h4 {
+				font-family: Montserrat, sans-serif;
+				font-weight: 600;
+				font-size: 14px;
 			}
 		}
 
-		details[open] summary::after {
-			transform: rotate(180deg);
-		}
+		@media screen and (max-width: 768px) {
+			.output {
+				display: block;
 
-		h4 {
-			font-family: Montserrat, sans-serif;
-			font-weight: 600;
-			font-size: 14px;
+				ol {
+					margin-bottom: 0;
+				}
+			}
+
+			.output:nth-child(n+2) {
+				margin-top: 2em;
+			}
 		}
 	}
 
@@ -286,6 +320,11 @@
 
 		+ .tag {
 			margin-left: 0.5em;
+
+			@media screen and (max-width: 768px) {
+				margin-left: 0;
+				margin-top: 1em;
+			}
 		}
 	}
 
