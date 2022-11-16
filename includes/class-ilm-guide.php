@@ -37,6 +37,34 @@ class ILM_Guide {
 		add_action( 'init', [ __CLASS__, 'guide_rewrite' ] );
 		add_action( 'init', [ __CLASS__, 'allow_svg_tags' ] );
 		add_action( 'pre_get_posts', [ __CLASS__, 'guide_rewrite' ] );
+		add_filter( 'manage_guide_posts_columns', [ __CLASS__, 'guide_admin_columns' ] );
+		add_action( 'manage_guide_posts_custom_column', [ __CLASS__, 'guide_type_column_content' ], 10, 2 );
+	}
+
+	/**
+	 * Add the date ILM Type column.
+	 *
+	 * @param array $defaults default settings for the columns.
+	 */
+	public static function guide_admin_columns( $defaults ) {
+		unset( $defaults['date'] );
+		$defaults['ilm_type'] = __( 'Type' );
+		$defaults['date']     = __( 'Date' );
+
+		return $defaults;
+	}
+
+	/**
+	 * Add column content for ILM Type column.
+	 *
+	 * @param string  $column_name  Column name.
+	 * @param integer $post_id     Post ID.
+	 */
+	public static function guide_type_column_content( $column_name, $post_id ) {
+		if ( 'ilm_type' === $column_name ) {
+			$post_type = substr( self::get_post_type( $post_id ), 4 );
+			echo esc_html( ucwords( $post_type ) );
+		}
 	}
 
 	/**
@@ -100,13 +128,20 @@ class ILM_Guide {
 	}
 
 	/**
-	 * Gets ILM post type (output, element)
+	 * Gets ILM post type (output, element, tool, guide)
+	 *
+	 * @param integer $id      Post ID.
 	 */
-	public static function get_post_type() {
-		$post_terms = wp_get_post_terms( get_the_ID(), self::TYPE_TAXONOMY, [ 'fields' => 'slugs' ] );
+	public static function get_post_type( $id = null ) {
+		if ( ! $id ) {
+			$id = get_the_ID();
+		}
+		$post_terms = wp_get_post_terms( $id, self::TYPE_TAXONOMY, [ 'fields' => 'slugs' ] );
 		if ( $post_terms && is_array( $post_terms ) ) {
 			return $post_terms[0];
 		}
+
+		return 'ilm-' . self::POST_TYPE;
 	}
 
 	/**
