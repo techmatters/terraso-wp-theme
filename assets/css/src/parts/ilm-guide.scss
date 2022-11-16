@@ -22,10 +22,6 @@
 		padding: 2em 0;
 	}
 
-	.guide-tools {
-		padding-top: 4em;
-	}
-
 	.guide-outputs {
 		h2 {
 			display: flex;
@@ -38,7 +34,10 @@
 			padding: 2em 0;
 		}
 
-		.guide-tools,
+		.guide-tools {
+			padding: 8em 0 6em;
+		}
+
 		.guide-outputs {
 			padding: 6em 0;
 		}
@@ -150,6 +149,10 @@
 			position: absolute;
 			margin-left: -5em;
 		}
+
+		&:first-of-type {
+			margin-top: 3em;
+		}
 	}
 
 	.intro-element {
@@ -255,7 +258,7 @@
 		}
 
 		+ .tag {
-			margin-left: 1em;
+			margin-left: 0.5em;
 		}
 	}
 
