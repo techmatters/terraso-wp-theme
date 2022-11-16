@@ -51,6 +51,12 @@
 		}
 	}
 
+	&.guide-ilm-output {
+		.entry-content {
+			padding-bottom: 6em;
+		}
+	}
+
 	&.guide-intro {
 
 		// remove grey blob at bottom of page (above footer)
@@ -102,7 +108,12 @@
 		li {
 			display: inline-block;
 
+			+li {
+				padding-left: 0.3em;
+			}
+
 			+ li::before {
+				padding-right: 0.3em;
 				content: " / ";
 			}
 		}
@@ -110,13 +121,18 @@
 
 	.tool {
 		margin: 5em auto;
-		padding: 1.5em;
-		padding-left: 7em;
+		padding: 2em 2em 0 7em;
 		border: 1px solid v.$gray;
 		border-radius: 1em;
 
 		h3 {
 			font-weight: 700;
+			margin-bottom: 0;
+		}
+
+		ul {
+			list-style: none;
+			margin: 1em 0;
 		}
 
 		a {
@@ -132,7 +148,7 @@
 		.link,
 		.pdf {
 			position: absolute;
-			margin-left: -69px;
+			margin-left: -5em;
 		}
 	}
 
@@ -186,6 +202,10 @@
 			color: v.$dark-brown;
 		}
 
+		p {
+			font-weight: 400;
+		}
+
 		a:hover,
 		h3 a:hover {
 			color: v.$blue;
@@ -226,7 +246,6 @@
 		color: white;
 		border-radius: 2em;
 		padding: 0.5em 1em;
-		margin-bottom: 4px;
 
 		p {
 			margin-top: 1.5em;
