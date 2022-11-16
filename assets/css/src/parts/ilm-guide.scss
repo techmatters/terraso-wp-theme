@@ -59,11 +59,26 @@
 	}
 
 	&.guide-intro {
+
+		// remove grey blob at bottom of page (above footer)
+		.entry-content {
+			padding-bottom: 0;
+
+			// add white space before footer
+			div:last-child {
+				padding-bottom: 8em;
+			}
+		}
+
 		.intro-text {
-			margin-bottom: 2em;
+			margin: 6em 0;
 
 			a {
 				color: v.$blue;
+			}
+
+			+ div {
+				padding-top: 6em;
 			}
 		}
 	}
