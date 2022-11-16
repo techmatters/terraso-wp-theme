@@ -30,9 +30,11 @@
 					<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/icons/' . $tool_type . '.svg' ); ?>" alt="<?php echo esc_attr( $tool_type ); ?>" width="50" height="50" />
 				</span>
 				<h3><a href="<?php echo esc_url( $tool_link ); ?>"><?php echo esc_html( $tool->post_title ); ?></a></h3>
+				<ul>
 				<?php	foreach ( $tags as $ilm_tag ) : ?>
-					<span class="tag"><?php echo esc_html( $ilm_tag->name ); ?></span>
+					<li class="tag"><?php echo esc_html( $ilm_tag->name ); ?></li>
 				<?php endforeach; ?>
+				</ul>
 			<?php echo wp_kses_post( $tool->post_content ); ?>
 			</section>
 			<?php
