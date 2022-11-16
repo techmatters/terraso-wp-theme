@@ -23,6 +23,7 @@ class ILM_Guide {
 		add_action( 'add_meta_boxes', [ __CLASS__, 'add_meta_boxes' ] );
 		add_action( 'zakra_after_single_post_content', [ __CLASS__, 'zakra_after_single_post_content' ] );
 		add_action( 'init', [ __CLASS__, 'guide_rewrite' ] );
+		add_action( 'pre_get_posts', [ __CLASS__, 'guide_rewrite' ] );
 	}
 
 	/**
@@ -30,6 +31,13 @@ class ILM_Guide {
 	 */
 	public static function late_hooks() {
 		if ( 'guide' === get_post_type() ) {
+
+			// redirect tools pages to corresponding outputs.
+			if ( 'ilm-tool' === self::get_post_type() ) {
+				wp_safe_redirect( get_the_permalink( wp_get_post_parent_id() ) );
+				exit();
+			}
+
 			add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
 			add_filter( 'get_post_metadata', [ __CLASS__, 'disable_zakra_header' ], 10, 5 );
 			add_filter( 'zakra_current_layout', [ __CLASS__, 'zakra_current_layout' ] );
@@ -44,6 +52,7 @@ class ILM_Guide {
 	public static function guide_rewrite() {
 		add_rewrite_rule( '^guide$', 'index.php?guide=intro', 'top' );
 	}
+
 	/**
 	 * Print breadcrumbs.
 	 */
