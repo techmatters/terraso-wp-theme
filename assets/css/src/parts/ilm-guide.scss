@@ -56,6 +56,16 @@
 		}
 	}
 
+	&.guide-ilm-element {
+		figcaption {
+			color: white;
+			font-size: 14px;
+			line-height: 21px;
+			padding: 1em;
+			background-color: v.$dark-brown;
+		}
+	}
+
 	&.guide-intro {
 
 		// remove grey blob at bottom of page (above footer)
@@ -65,6 +75,10 @@
 			// add white space before footer
 			div:last-child {
 				padding-bottom: 8em;
+
+				@media screen and (max-width: 768px) {
+					padding-bottom: 2em;
+				}
 			}
 		}
 
@@ -77,6 +91,10 @@
 
 			+ div {
 				padding-top: 6em;
+			}
+
+			@media screen and (max-width: 768px) {
+				margin: 0 0 3em;
 			}
 		}
 	}
@@ -188,6 +206,15 @@
 
 			li {
 				margin-bottom: 1em;
+			}
+		}
+
+		@media screen and (max-width: 768px) {
+			padding: 0;
+
+			ol {
+				text-indent: 0;
+				margin: 1.5em;
 			}
 		}
 	}
@@ -317,14 +344,26 @@
 				border-color: v.$blue;
 			}
 		}
-	}
 
-	figcaption {
-		color: white;
-		font-size: 14px;
-		line-height: 21px;
-		padding: 1em;
-		background-color: v.$dark-brown;
+		@media screen and (max-width: 768px) {
+			padding-left: 0;
+			padding-right: 0;
+
+			> div {
+				display: block;
+
+				> div:first-child {
+					ol {
+						max-width: 100%;
+						margin: 1.5em;
+					}
+				}
+
+				> div:nth-child(n+2) {
+					margin-top: 2em;
+				}
+			}
+		}
 	}
 
 	.section-image {
@@ -389,5 +428,15 @@
 
 	.read-more {
 		font-weight: 700;
+	}
+
+	@media screen and (max-width: 768px) {
+		#primary {
+			margin-bottom: 0;
+		}
+
+		.tg-container {
+			padding: 0;
+		}
 	}
 }
