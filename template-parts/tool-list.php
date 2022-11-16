@@ -7,7 +7,7 @@
 
 ?>
 <article class='guide-tools'>
-	<h2><?php echo esc_html( $args['title'] . ' Tools' ); ?></h2>
+	<h2><?php echo esc_html( $args['title'] . ' ' . __( 'Tools' ) ); ?></h2>
 
 	<?php
 		$tools = get_children( // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_posts_get_children

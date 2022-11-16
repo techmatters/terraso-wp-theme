@@ -11,7 +11,7 @@ $parent_id     = wp_get_post_parent_id();
 <nav class="breadcrumbs">
 	<ul>
 		<li><a href="/">Home</a></li>
-		<li><a href="/guide/">ILM Practical Guide</a></li>
+		<li><a href="/guide/"><?php echo esc_html__( 'ILM Practical Guide' ); ?></a></li>
 		<?php if ( 'ilm-element' === $ilm_post_type ) : ?>
 			<li><?php echo esc_html( get_the_title( $parent_id ) ); ?></li>
 		<?php elseif ( 'ilm-output' === $ilm_post_type ) : ?>

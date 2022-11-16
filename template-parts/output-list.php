@@ -17,7 +17,7 @@ $outputs = get_children( // phpcs:ignore WordPressVIPMinimum.Functions.Restricte
 	<h2>
 	<?php
 			echo wp_kses_post( ILM_Guide::get_section_image() );
-			echo esc_html( $args['title'] . ' Outputs' );
+			echo esc_html( $args['title'] . ' ' . __( 'Outputs' ) );
 	?>
 			</h2>
 	<div class='output-wrapper'>
