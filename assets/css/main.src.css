@@ -630,7 +630,7 @@ main {
   border-color: #ddd;
   padding: 2em 1.5em;
   display: grid;
-  grid-template-rows: 5em 1fr 1em;
+  grid-template-rows: 5em 1fr auto;
 }
 .guide-template-default.tg-site-layout--stretched .output-wrapper .output a {
   color: #5e5547;
