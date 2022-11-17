@@ -245,7 +245,7 @@
 			border-color: v.$gray;
 			padding: 2em 1.5em;
 			display: grid;
-			grid-template-rows: 5em 1fr 1em;
+			grid-template-rows: 5em 1fr auto;
 
 			a {
 				color: v.$dark-brown;
