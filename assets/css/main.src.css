@@ -628,7 +628,7 @@ main {
   border-style: solid;
   border-radius: 1em;
   border-color: #ddd;
-  padding: 2em 1.5em;
+  padding: 2em 1.5em 0;
   display: grid;
   grid-template-rows: 5em 1fr auto;
 }
