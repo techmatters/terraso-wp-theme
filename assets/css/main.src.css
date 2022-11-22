@@ -635,6 +635,9 @@ main {
 .guide-template-default.tg-site-layout--stretched .output-wrapper .output a {
   color: #5e5547;
 }
+.guide-template-default.tg-site-layout--stretched .output-wrapper .output ol a {
+  color: #358eae;
+}
 .guide-template-default.tg-site-layout--stretched .output-wrapper .output p {
   font-weight: 400;
 }
