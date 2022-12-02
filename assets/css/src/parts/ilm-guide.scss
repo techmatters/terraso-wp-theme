@@ -16,6 +16,13 @@
 		background-color: v.$light-brown;
 	}
 
+	.entry-content {
+		@media screen and (min-width: 768px) {
+			max-width: calc(100vw - 6em);
+			margin: 0 auto;
+		}
+	}
+
 	.entry-content,
 	.guide-outputs,
 	.guide-tools, {
