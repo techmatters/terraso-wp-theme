@@ -441,6 +441,12 @@ main {
 .guide-template-default.tg-site-layout--stretched .type-guide {
   background-color: #f2f2f0;
 }
+@media screen and (min-width: 768px) {
+  .guide-template-default.tg-site-layout--stretched .entry-content {
+    max-width: calc(100vw - 6em);
+    margin: 0 auto;
+  }
+}
 .guide-template-default.tg-site-layout--stretched .entry-content,
 .guide-template-default.tg-site-layout--stretched .guide-outputs,
 .guide-template-default.tg-site-layout--stretched .guide-tools {
