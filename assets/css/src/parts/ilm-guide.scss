@@ -16,13 +16,6 @@
 		background-color: v.$light-brown;
 	}
 
-	.entry-content {
-		@media screen and (min-width: 768px) {
-			max-width: calc(100vw - 6em);
-			margin: 0 auto;
-		}
-	}
-
 	.entry-content,
 	.guide-outputs,
 	.guide-tools, {
@@ -59,7 +52,8 @@
 			max-width: v.$content-width;
 			margin: 0 auto;
 
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 1250px) {
+				max-width: calc(100vw - 6em);
 				margin: 0 3em;
 			}
 		}
@@ -103,6 +97,11 @@
 
 		.intro-text {
 			margin: 6em 0;
+
+			@media screen and (min-width: 768px) {
+				max-width: calc(100vw - 6em);
+				margin: 6em auto;
+			}
 
 			a {
 				color: v.$blue;
