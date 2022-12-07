@@ -210,6 +210,7 @@ header.tg-page-header.tg-page-header--left-right {
 /* override zakra */
 #content.site-content {
   margin: 0;
+  padding: 0;
 }
 
 .ilm-list {
@@ -441,12 +442,6 @@ main {
 .guide-template-default.tg-site-layout--stretched .type-guide {
   background-color: #f2f2f0;
 }
-@media screen and (min-width: 768px) {
-  .guide-template-default.tg-site-layout--stretched .entry-content {
-    max-width: calc(100vw - 6em);
-    margin: 0 auto;
-  }
-}
 .guide-template-default.tg-site-layout--stretched .entry-content,
 .guide-template-default.tg-site-layout--stretched .guide-outputs,
 .guide-template-default.tg-site-layout--stretched .guide-tools {
@@ -476,10 +471,11 @@ main {
   max-width: 1160px;
   margin: 0 auto;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1250px) {
   .guide-template-default.tg-site-layout--stretched:not(.guide-intro) .entry-content,
   .guide-template-default.tg-site-layout--stretched:not(.guide-intro) .guide-tools,
   .guide-template-default.tg-site-layout--stretched:not(.guide-intro) .guide-outputs {
+    max-width: calc(100vw - 6em);
     margin: 0 3em;
   }
 }
@@ -511,6 +507,12 @@ main {
 }
 .guide-template-default.tg-site-layout--stretched.guide-intro .intro-text {
   margin: 6em 0;
+}
+@media screen and (min-width: 768px) {
+  .guide-template-default.tg-site-layout--stretched.guide-intro .intro-text {
+    max-width: calc(100vw - 6em);
+    margin: 6em auto;
+  }
 }
 .guide-template-default.tg-site-layout--stretched.guide-intro .intro-text a {
   color: #358eae;
