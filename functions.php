@@ -21,9 +21,12 @@ function zakra_child_enqueue_styles() {
 		[],
 		THEME_VERSION
 	);
+
+	$ext = defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ? 'src' : 'min';
+
 	wp_enqueue_style(
 		'zakra_child_style',
-		get_stylesheet_directory_uri() . '/assets/css/main.min.css',
+		get_stylesheet_directory_uri() . "/assets/css/main.${ext}.css",
 		[ $parent_style ],
 		THEME_VERSION
 	);
