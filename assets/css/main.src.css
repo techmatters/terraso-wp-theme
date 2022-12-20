@@ -133,14 +133,6 @@ html body .tg-icon {
   color: white;
 }
 
-.member-login-link a {
-  text-decoration: none;
-  color: #358eae;
-}
-.member-login-link a:hover {
-  text-decoration: underline;
-}
-
 .wp-block-columns h1 {
   font-weight: bold;
   font-size: 2.2rem;
@@ -174,6 +166,13 @@ html body .tg-icon {
   margin-bottom: 1em;
 }
 
+.entry-content .member-login-link a {
+  text-decoration: none;
+  color: #358eae;
+}
+.entry-content .member-login-link a:hover {
+  text-decoration: underline;
+}
 .entry-content a {
   text-decoration: underline;
 }
