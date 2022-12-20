@@ -133,11 +133,11 @@ html body .tg-icon {
   color: white;
 }
 
-.member-login-link {
+.member-login-link a {
   text-decoration: none;
   color: #358eae;
 }
-.member-login-link:hover {
+.member-login-link a:hover {
   text-decoration: underline;
 }
 
