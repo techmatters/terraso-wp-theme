@@ -122,7 +122,7 @@ html body .tg-icon {
 }
 
 .wp-block-button .wp-block-button__link {
-  background-color: #78a659;
+  background-color: #358eae;
   padding: 25px 50px;
   color: white;
   text-decoration: none;
@@ -131,6 +131,14 @@ html body .tg-icon {
 .wp-block-button .wp-block-button__link:hover {
   text-decoration: none;
   color: white;
+}
+
+.member-login-link {
+  text-decoration: none;
+  color: #358eae;
+}
+.member-login-link:hover {
+  text-decoration: underline;
 }
 
 .wp-block-columns h1 {
