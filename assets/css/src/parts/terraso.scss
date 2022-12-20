@@ -54,15 +54,6 @@
 	}
 }
 
-.member-login-link a {
-	text-decoration: none;
-	color: v.$blue;
-
-	&:hover {
-		text-decoration: underline;
-	}
-}
-
 .wp-block-columns {
 	h1 {
 		font-weight: bold;
@@ -110,8 +101,19 @@
 	}
 }
 
-.entry-content a {
-	text-decoration: underline;
+.entry-content {
+	.member-login-link a {
+		text-decoration: none;
+		color: v.$blue;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	a {
+		text-decoration: underline;
+	}
 }
 
 .sticky-header,
