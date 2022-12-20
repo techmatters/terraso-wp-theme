@@ -15,8 +15,8 @@ $parent_id     = wp_get_post_parent_id();
 		<?php if ( 'ilm-element' === $ilm_post_type ) : ?>
 			<li><?php echo esc_html( get_the_title( $parent_id ) ); ?></li>
 		<?php elseif ( 'ilm-output' === $ilm_post_type ) : ?>
-			<li><a href="<?php echo esc_url( get_the_permalink( $parent_id ) ); ?>"><?php echo esc_html( get_the_title( $parent_id ) ); ?></a></li>
-			<li><?php echo esc_html( get_the_title() ); ?></li>
+			<li class='ilm-element-name'><a href="<?php echo esc_url( get_the_permalink( $parent_id ) ); ?>"><?php echo esc_html( get_the_title( $parent_id ) ); ?></a></li>
+			<li class='ilm-output-name'><?php echo esc_html( get_the_title() ); ?></li>
 		<?php endif; ?>
 	</ul>
 </nav>
