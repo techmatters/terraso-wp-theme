@@ -42,7 +42,7 @@
 }
 
 .wp-block-button .wp-block-button__link {
-	background-color: v.$green;
+	background-color: v.$blue;
 	padding: 25px 50px;
 	color: white;
 	text-decoration: none;
@@ -51,6 +51,15 @@
 	&:hover {
 		text-decoration: none;
 		color: white;
+	}
+}
+
+.member-login-link {
+	text-decoration: none;
+	color: v.$blue;
+
+	&:hover {
+		text-decoration: underline;
 	}
 }
 
