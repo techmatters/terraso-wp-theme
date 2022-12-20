@@ -75,7 +75,9 @@ class ILM_Guide {
 		if ( 'guide' === get_post_type() ) {
 
 			if ( 'ilm-output' === self::get_post_type() ) {
-				wp_enqueue_script( 'plausible-analytics-terraso', get_stylesheet_directory_uri() . '/assets/js/src/plausible.js', [], THEME_VERSION, false );
+				$ext = defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ? 'src' : 'min';
+
+				wp_enqueue_script( 'plausible-analytics-terraso', get_stylesheet_directory_uri() . "/assets/js/plausible.${ext}.js", [], THEME_VERSION, false );
 			}
 
 			// redirect tools pages to corresponding outputs.
