@@ -30,7 +30,7 @@
 		"grunt-sass": "^3.1.0",
 		"grunt-stylelint": "^0.18.0",
 		"matchdep": "^2.0.0",
-		"sass": "^1.56.0",
+		"sass": "^1.59.2",
 		"stylelint": "^14.14.1",
 		"stylelint-config-standard": "^29.0.0"
 	}
