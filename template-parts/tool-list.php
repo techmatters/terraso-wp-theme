@@ -31,7 +31,7 @@
 				</span>
 				<h3><a target="_blank" href="<?php echo esc_url( $tool_link ); ?>"><?php echo esc_html( $tool->post_title ); ?></a></h3>
 				<ul>
-				<?php	foreach ( $tags as $ilm_tag ) : ?>
+				<?php foreach ( $tags as $ilm_tag ) : ?>
 					<li class="tag"><?php echo esc_html( $ilm_tag->name ); ?></li>
 				<?php endforeach; ?>
 				</ul>
