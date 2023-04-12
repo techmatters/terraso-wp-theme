@@ -135,13 +135,13 @@
 
 .archive-description a,
 .author-description a {
-	color: #5e5547;
+	color: v.$dark-brown;
 	text-decoration: underline;
 }
 
 .nav-previous a,
 .nav-next a {
-	color: #5e5547;
+	color: v.$dark-brown;
 }
 
 .tg-mobile-navigation li.menu-item-has-children.submenu--show > ul {
@@ -157,7 +157,7 @@ header.tg-page-header.tg-page-header--left-right {
 }
 
 .tg-container.tg-container--flex.tg-container--flex-center.tg-container--flex-space-between h1 {
-	border-bottom: 3px solid #5e5547;
+	border-bottom: 3px solid v.$dark-brown;
 	padding-bottom: 8px;
 }
 
