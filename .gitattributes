@@ -1,0 +1,22 @@
+.editorconfig       export-ignore
+.eslintrc.json      export-ignore
+.gitattributes      export-ignore
+.github             export-ignore
+.gitignore          export-ignore
+.stylelintrc.json   export-ignore
+Gruntfile.js        export-ignore
+LICENSE.            export-ignore
+composer.json       export-ignore
+composer.lock       export-ignore
+package.json        export-ignore
+package-lock.json   export-ignore
+README.md           export-ignore
+phpcs.xml           export-ignore
+/assets/js/src      export-ignore
+/assets/css/src     export-ignore
+
+*.css           text diff=css
+*.js            text
+*.php           text
+*.svg           text
+*.png           binary
