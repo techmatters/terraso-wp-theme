@@ -18,7 +18,6 @@ class Terraso {
 	public static function hooks() {
 		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'zakra_child_enqueue_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'remove_fontawesome' ], 20 );
-		add_filter( 'ums_adminMenuAccessCap', [ __CLASS__, 'ultimate_maps_cap' ] );
 		add_filter( 'get_custom_logo_image_attributes', [ __CLASS__, 'get_custom_logo_image_attributes' ], 10, 3 );
 		add_filter( 'wp_get_attachment_image', [ __CLASS__, 'wp_get_attachment_image' ], 10, 5 );
 		add_filter( 'zakra_header_search_icon_data_attrs', [ __CLASS__, 'zakra_header_search_icon_data_attrs' ] );
@@ -58,14 +57,6 @@ class Terraso {
 		wp_dequeue_style( 'font-awesome' );
 		wp_dequeue_style( 'font-awesome-5-all' );
 		wp_dequeue_style( 'font-awesome-4-shim' );
-	}
-
-	/**
-	 * Capability needed to view Ultimate Maps.
-	 * Granted to editors and administrators.
-	 */
-	public static function ultimate_maps_cap() {
-		return 'terraso_ultimate_maps_cap';
 	}
 
 	/**
