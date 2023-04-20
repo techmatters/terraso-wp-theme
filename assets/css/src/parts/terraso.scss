@@ -31,7 +31,7 @@
 
 .wp-block-columns.has-bg,
 .wp-block-group.has-bg {
-	background-color: v.$light-brown;
+	background-color: v.$section-bg;
 }
 
 .wp-block-group h2.section,
@@ -42,7 +42,7 @@
 }
 
 .wp-block-button .wp-block-button__link {
-	background-color: v.$blue;
+	background-color: v.$link;
 	padding: 25px 50px;
 	color: white;
 	text-decoration: none;
@@ -104,7 +104,7 @@
 .entry-content {
 	.member-login-link a {
 		text-decoration: none;
-		color: v.$blue;
+		color: v.$link;
 
 		&:hover {
 			text-decoration: underline;
@@ -243,11 +243,11 @@ header.tg-page-header.tg-page-header--left-right {
 		}
 
 		&:nth-child(1) h3 {
-			color: v.$grey;
+			color: v.$compost;
 		}
 
 		&:nth-child(2) h3 {
-			color: v.$brown;
+			color: v.$orange;
 		}
 
 		&:nth-child(3) h3 {
@@ -274,12 +274,12 @@ header.tg-page-header.tg-page-header--left-right {
 
 .ilm-group .wp-block-group:nth-child(1),
 .ilm-list li:nth-child(1) {
-	border-color: v.$grey;
+	border-color: v.$compost;
 }
 
 .ilm-group .wp-block-group:nth-child(2),
 .ilm-list li:nth-child(2) {
-	border-color: v.$brown;
+	border-color: v.$orange;
 }
 
 .ilm-group .wp-block-group:nth-child(3),
