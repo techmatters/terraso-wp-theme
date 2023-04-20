@@ -2,10 +2,10 @@
 	"extends": "stylelint-config-standard",
 	"rules": {
 		"color-function-notation": "legacy",
-		"indentation": "tab",
 		"max-line-length": null,
 		"selector-class-pattern": null,
 		"at-rule-no-unknown": null,
-		"no-descending-specificity": null
+		"no-descending-specificity": null,
+		"media-feature-range-notation": null
 	}
 }

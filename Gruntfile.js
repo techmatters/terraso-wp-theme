@@ -75,39 +75,9 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		concat: {
-			options: {
-				stripBanners: true,
-				sourceMap: true
-			},
-			plausible: {
-				src: [ 'assets/js/src/plausible.js' ],
-				dest: 'assets/js/plausible.src.js'
-			},
-
-		},
-
-		uglify: {
-			all: {
-				files: {
-					'assets/js/plausible.min.js': [ 'assets/js/plausible.src.js' ],
-				},
-				options: {
-					sourceMap: false
-				}
-			}
-		},
-
-		eslint: {
-			src: [ 'assets/js/src/**/*.js' ],
-			options: {
-				fix: true,
-			}
-		},
-
 		watch: {
 			css: {
-				files: [ 'assets/css/src/**/*.scss', 'assets/js/src/**/*.js' ],
+				files: [ 'assets/css/src/**/*.scss' ],
 				tasks: [ 'css', 'js' ],
 				options: {
 					debounceDelay: 500
@@ -117,12 +87,9 @@ module.exports = function( grunt ) {
 
 	} );
 
-	// JS Only
-	grunt.registerTask( 'js', [ 'eslint', 'concat', 'uglify' ] );
-
 	// CSS Only
 	grunt.registerTask( 'css', [ 'stylelint', 'sass', 'postcss', 'cssmin' ] );
 
 	// Default task.
-	grunt.registerTask( 'default', [ 'css', 'js' ] );
+	grunt.registerTask( 'default', [ 'css' ] );
 };
