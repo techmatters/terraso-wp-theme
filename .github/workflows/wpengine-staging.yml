@@ -1,0 +1,19 @@
+name: Deploy to WP Engine
+on:
+  push:
+    branches:
+      - staging
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: GitHub Action Deploy to WP Engine
+      uses: wpengine/github-action-wpe-site-deploy@v3
+      with:
+        WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+        WPE_ENV: terrasostg
+        REMOTE_PATH: "wp-content/themes/terraso/"
+        PHP_LINT: TRUE
+        FLAGS: -azvr --inplace --delete --exclude=".*"  --exclude=assets/css/src --exclude=Gruntfile.js --exclude=LICENSE --exclude=README.md --exclude="*.json" --exclude=phpcs.xml --exclude=composer.lock
+        CACHE_CLEAR: TRUE
