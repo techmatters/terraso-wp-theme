@@ -163,7 +163,7 @@ class Terraso {
 			'exclude_from_search'   => false,
 			'capability_type'       => 'post',
 			'map_meta_cap'          => true,
-			'hierarchical'          => false,
+			'hierarchical'          => true,
 			'can_export'            => false,
 			'rewrite'               => [
 				'slug'       => 'help',
