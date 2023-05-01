@@ -25,6 +25,7 @@ class Terraso {
 		add_action( 'after_setup_theme', [ __CLASS__, 'setup' ] );
 		add_filter( 'document_title_separator', [ __CLASS__, 'document_title_separator' ] );
 		add_action( 'init', [ __CLASS__, 'register_post_type' ] );
+		add_action( 'init', [ __CLASS__, 'help_rewrite' ] );
 	}
 
 	/**
@@ -175,6 +176,13 @@ class Terraso {
 		];
 
 		register_post_type( 'help', $args );
+	}
+
+	/**
+	 * Treat /help/ as an index page.
+	 */
+	public static function help_rewrite() {
+		add_rewrite_rule( '^help$', 'index.php?help=help', 'top' );
 	}
 }
 
