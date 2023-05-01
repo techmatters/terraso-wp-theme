@@ -78,7 +78,7 @@ module.exports = function( grunt ) {
 		watch: {
 			css: {
 				files: [ 'assets/css/src/**/*.scss' ],
-				tasks: [ 'css', 'js' ],
+				tasks: [ 'css' ],
 				options: {
 					debounceDelay: 500
 				}
