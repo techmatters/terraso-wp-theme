@@ -175,6 +175,7 @@ class Terraso {
 			'query_var'             => true,
 			'supports'              => [ 'title', 'editor', 'thumbnail', 'revisions' ],
 			'show_in_graphql'       => false,
+			'menu_position'         => 20,
 		];
 
 		register_post_type( 'help', $args );
