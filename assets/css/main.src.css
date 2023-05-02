@@ -161,6 +161,10 @@ html body .tg-icon {
   color: #009147;
   border-bottom: 4px solid #009147;
 }
+#primary-menu .menu-item.current_page_ancestor .current_page_item a {
+  border-bottom: none;
+  color: inherit;
+}
 #primary-menu .menu-item.tg-header-button-one a:hover {
   background: #00344d;
   color: white;
