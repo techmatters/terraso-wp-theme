@@ -7,6 +7,8 @@ $compost: #5e5547;
 $orange: #f99d1c;
 $yellow: #ffcd03;
 $green: #009147;
+$green-hover: #006531;
+$green-background: #f9fcf8;
 $blue: #00344d;
 
 // link
@@ -16,10 +18,13 @@ $link: #076b8e;
 $dark-brown: #3f3933;
 
 // section background
-$section-bg: #f9fcf8;
+$section-bg: $green-background;
 
 // border
 $border: #ddd;
+
+// country below headshots
+$gray: #333;
 
 $title-bottom-space: 1em;
 
