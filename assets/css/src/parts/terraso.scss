@@ -22,23 +22,12 @@
 	}
 }
 
-.wp-block-group.mobile-header {
-	padding: 0;
-
-	.wp-block-image {
-		margin: 0;
-	}
-
-	.wp-block-group__inner-container {
-		padding: 0;
-	}
-}
-
 /* terraso logo */
 .site-branding .custom-logo-link img {
 	width: 145px;
 }
 
+/* light green background */
 .wp-block-columns.has-bg,
 .wp-block-group.has-bg {
 	background-color: v.$section-bg;
@@ -51,27 +40,77 @@
 	padding-bottom: 10px;
 }
 
+/**
+  * Buttons
+  */
 .wp-block-button .wp-block-button__link {
-	background-color: v.$link;
+	background-color: v.$green;
 	padding: 25px 50px;
 	color: white;
 	text-decoration: none;
 	font-size: 1.4em;
 
 	&:hover {
+		background-color: v.$green-hover;
 		text-decoration: none;
 		color: white;
 	}
 }
 
+.login-join {
+	.wp-element-button {
+		border-radius: 4px;
+	}
+
+	p {
+		margin-top: 0;
+
+		a {
+			@include blue-link();
+		}
+	}
+}
+
+/**
+  * Home page
+  */
+.wp-block-image.intro-footer-image {
+	margin-bottom: 0;
+}
+
+/**
+  * Header
+  */
+#primary-menu .menu-item {
+	a {
+		text-decoration: none;
+	}
+
+	&.current_page_item a {
+		color: v.$green;
+		border-bottom: 4px solid v.$green;
+	}
+
+	&.tg-header-button-one a {
+		&:hover {
+			background: v.$blue;
+			color: white;
+		}
+	}
+}
+
+/**
+  * General
+  */
 .wp-block-columns {
 	h1 {
 		font-weight: bold;
 		font-size: 2.2rem;
 	}
 
-	.platform-title {
-		padding: 0 30px;
+	p.what-terraso-is,
+	h2.intro-subhead {
+		font-size: 1.4rem;
 	}
 
 	// roundeed boxes with shadows
@@ -158,8 +197,29 @@
 	overflow-y: hidden;
 }
 
-.tg-site-footer .tg-site-footer-bar a {
-	text-decoration: underline;
+.tg-site-footer {
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	section.widget_media_image + section.widget_media_image figure {
+		margin-left: 0.5rem;
+	}
+
+	section {
+		margin-bottom: 0;
+	}
+
+	h3 {
+		color: white;
+		text-transform: uppercase;
+		font-size: 1rem;
+		font-weight: bold;
+	}
 }
 
 header.tg-page-header.tg-page-header--left-right {
@@ -187,14 +247,63 @@ header.tg-page-header.tg-page-header--left-right {
 }
 
 .wp-block-group {
+	&.who-terraso-is-for {
+		img {
+			border-radius: 50%;
+		}
+
+		.who-terraso-is-for-header {
+			padding-bottom: 0;
+		}
+
+		.terraso-users {
+			p {
+				margin-bottom: 0;
+			}
+
+			.country {
+				text-transform: uppercase;
+				color: v.$gray;
+			}
+		}
+	}
+
+	&.how-it-works {
+		ul {
+			list-style: none;
+			margin-left: 0;
+
+			a {
+				@include blue-link();
+			}
+		}
+	}
+
+	&.toolkit-concepts {
+		.wp-block-column {
+			background-color: v.$section-bg;
+			border: 1px solid v.$border;
+			border-radius: 8px;
+			padding: 2rem;
+		}
+	}
+
+	&.mobile-header {
+		padding: 0;
+
+		.wp-block-image {
+			margin: 0;
+		}
+
+		.wp-block-group__inner-container {
+			padding: 0;
+		}
+	}
+
 	&.faq {
 		.section:nth-child(n+2) {
 			margin-top: 2em;
 		}
-	}
-
-	.ums_map_opts {
-		margin: 3em auto;
 	}
 
 	&.contact-form {
@@ -408,14 +517,6 @@ main {
 	.page #content .tg-container {
 		padding-left: 0;
 		padding-right: 0;
-	}
-
-	.home {
-		.intro {
-			.wp-block-group__inner-container {
-				padding-top: 0;
-			}
-		}
 	}
 }
 
