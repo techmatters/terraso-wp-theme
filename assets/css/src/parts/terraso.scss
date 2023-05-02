@@ -86,7 +86,7 @@
 		text-decoration: none;
 	}
 
-	&.current_page_item a {
+	&.current_page_item > a {
 		color: v.$green;
 		border-bottom: 4px solid v.$green;
 	}
