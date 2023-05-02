@@ -317,6 +317,10 @@ header.tg-page-header.tg-page-header--left-right {
 	}
 
 	&.contact-form {
+		h3 {
+			margin: 0;
+		}
+
 		.wp-block-table {
 			td {
 				border: none;
@@ -343,12 +347,6 @@ header.tg-page-header.tg-page-header--left-right {
 	&.green-group .wp-block-column:first-child {
 		border-right: 3px solid v.$green;
 		padding-right: 1.5em;
-	}
-}
-
-.contact-form {
-	h3 {
-		margin: 0;
 	}
 }
 
