@@ -81,7 +81,8 @@ html body .tg-icon {
 
 /*
  * Colors
- */ /* add margins around page content */
+ */
+/* add margins around page content */
 .wp-block-group__inner-container {
   max-width: 1140px;
   margin: auto;
@@ -94,21 +95,12 @@ html body .tg-icon {
   }
 }
 
-.wp-block-group.mobile-header {
-  padding: 0;
-}
-.wp-block-group.mobile-header .wp-block-image {
-  margin: 0;
-}
-.wp-block-group.mobile-header .wp-block-group__inner-container {
-  padding: 0;
-}
-
 /* terraso logo */
 .site-branding .custom-logo-link img {
   width: 145px;
 }
 
+/* light green background */
 .wp-block-columns.has-bg,
 .wp-block-group.has-bg {
   background-color: #f9fcf8;
@@ -121,24 +113,69 @@ html body .tg-icon {
   padding-bottom: 10px;
 }
 
+/**
+  * Buttons
+  */
 .wp-block-button .wp-block-button__link {
-  background-color: #076b8e;
+  background-color: #009147;
   padding: 25px 50px;
   color: white;
   text-decoration: none;
   font-size: 1.4em;
 }
 .wp-block-button .wp-block-button__link:hover {
+  background-color: #006531;
   text-decoration: none;
   color: white;
 }
 
+.login-join .wp-element-button {
+  border-radius: 4px;
+}
+.login-join p {
+  margin-top: 0;
+}
+.login-join p a {
+  text-decoration: none;
+  color: #076b8e;
+}
+.login-join p a:hover {
+  text-decoration: underline;
+  color: #076b8e;
+}
+
+/**
+  * Home page
+  */
+.wp-block-image.intro-footer-image {
+  margin-bottom: 0;
+}
+
+/**
+  * Header
+  */
+#primary-menu .menu-item a {
+  text-decoration: none;
+}
+#primary-menu .menu-item.current_page_item a {
+  color: #009147;
+  border-bottom: 4px solid #009147;
+}
+#primary-menu .menu-item.tg-header-button-one a:hover {
+  background: #00344d;
+  color: white;
+}
+
+/**
+  * General
+  */
 .wp-block-columns h1 {
   font-weight: bold;
   font-size: 2.2rem;
 }
-.wp-block-columns .platform-title {
-  padding: 0 30px;
+.wp-block-columns p.what-terraso-is,
+.wp-block-columns h2.intro-subhead {
+  font-size: 1.4rem;
 }
 .wp-block-columns.key-funding .wp-block-column, .wp-block-columns.our-values .wp-block-column {
   box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
@@ -209,8 +246,23 @@ html body .tg-icon {
   overflow-y: hidden;
 }
 
-.tg-site-footer .tg-site-footer-bar a {
+.tg-site-footer a {
+  text-decoration: none;
+}
+.tg-site-footer a:hover {
   text-decoration: underline;
+}
+.tg-site-footer section.widget_media_image + section.widget_media_image figure {
+  margin-left: 0.5rem;
+}
+.tg-site-footer section {
+  margin-bottom: 0;
+}
+.tg-site-footer h3 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 header.tg-page-header.tg-page-header--left-right {
@@ -236,11 +288,48 @@ header.tg-page-header.tg-page-header--left-right {
   list-style: none;
 }
 
+.wp-block-group.who-terraso-is-for img {
+  border-radius: 50%;
+}
+.wp-block-group.who-terraso-is-for .who-terraso-is-for-header {
+  padding-bottom: 0;
+}
+.wp-block-group.who-terraso-is-for .terraso-users p {
+  margin-bottom: 0;
+}
+.wp-block-group.who-terraso-is-for .terraso-users .country {
+  text-transform: uppercase;
+  color: #333;
+}
+.wp-block-group.how-it-works ul {
+  list-style: none;
+  margin-left: 0;
+}
+.wp-block-group.how-it-works ul a {
+  text-decoration: none;
+  color: #076b8e;
+}
+.wp-block-group.how-it-works ul a:hover {
+  text-decoration: underline;
+  color: #076b8e;
+}
+.wp-block-group.toolkit-concepts .wp-block-column {
+  background-color: #f9fcf8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+}
+.wp-block-group.mobile-header {
+  padding: 0;
+}
+.wp-block-group.mobile-header .wp-block-image {
+  margin: 0;
+}
+.wp-block-group.mobile-header .wp-block-group__inner-container {
+  padding: 0;
+}
 .wp-block-group.faq .section:nth-child(n+2) {
   margin-top: 2em;
-}
-.wp-block-group .ums_map_opts {
-  margin: 3em auto;
 }
 .wp-block-group.contact-form .wp-block-table td {
   border: none;
@@ -418,9 +507,6 @@ main {
   .page #content .tg-container {
     padding-left: 0;
     padding-right: 0;
-  }
-  .home .intro .wp-block-group__inner-container {
-    padding-top: 0;
   }
 }
 @media screen and (min-width: 768px) {
