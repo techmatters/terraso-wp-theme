@@ -1,5 +1,15 @@
 @use "variables" as v;
 
+@mixin blue-link() {
+	text-decoration: none;
+	color: v.$link;
+
+	&:hover {
+		text-decoration: underline;
+		color: v.$link;
+	}
+}
+
 /* add margins around page content */
 .wp-block-group__inner-container {
 	max-width: 1140px;
