@@ -106,13 +106,6 @@ html body .tg-icon {
   background-color: #f9fcf8;
 }
 
-.wp-block-group h2.section,
-.wp-block-columns h2.section {
-  border-bottom: 3px solid;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-
 /**
   * Buttons
   */
@@ -200,6 +193,18 @@ html body .tg-icon {
 }
 .wp-block-columns .landscape-map {
   margin-bottom: 40px;
+}
+
+.slug-faq .entry-content h2 {
+  margin-top: 6rem;
+  font-weight: bold;
+}
+.slug-faq .entry-content h3 {
+  font-size: 1.5rem;
+}
+.slug-faq .entry-content h3 + p {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
 }
 
 .search .site-main h1,
@@ -331,9 +336,6 @@ header.tg-page-header.tg-page-header--left-right {
 }
 .wp-block-group.mobile-header .wp-block-group__inner-container {
   padding: 0;
-}
-.wp-block-group.faq .section:nth-child(n+2) {
-  margin-top: 2em;
 }
 .wp-block-group.contact-form .wp-block-table td {
   border: none;
