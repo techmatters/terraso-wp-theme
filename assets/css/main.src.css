@@ -206,6 +206,9 @@ html body .tg-icon {
   -webkit-margin-before: 0;
           margin-block-start: 0;
 }
+.slug-faq .entry-content ul {
+  margin-top: -1.4rem;
+}
 
 .search .site-main h1,
 .single-post .site-main h1 {
