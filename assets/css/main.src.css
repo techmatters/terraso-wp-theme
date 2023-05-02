@@ -157,7 +157,7 @@ html body .tg-icon {
 #primary-menu .menu-item a {
   text-decoration: none;
 }
-#primary-menu .menu-item.current_page_item a {
+#primary-menu .menu-item.current_page_item > a {
   color: #009147;
   border-bottom: 4px solid #009147;
 }
