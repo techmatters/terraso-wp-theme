@@ -141,6 +141,21 @@
 	}
 }
 
+.slug-faq .entry-content {
+	h2 {
+		margin-top: 6rem;
+		font-weight: bold;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+
+		+ p {
+			margin-block-start: 0;
+		}
+	}
+}
+
 .search,
 .single-post {
 	.site-main h1 {
@@ -295,12 +310,6 @@ header.tg-page-header.tg-page-header--left-right {
 
 		.wp-block-group__inner-container {
 			padding: 0;
-		}
-	}
-
-	&.faq {
-		.section:nth-child(n+2) {
-			margin-top: 2em;
 		}
 	}
 
