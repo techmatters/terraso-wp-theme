@@ -341,6 +341,9 @@ header.tg-page-header.tg-page-header--left-right {
 .wp-block-group.mobile-header .wp-block-group__inner-container {
   padding: 0;
 }
+.wp-block-group.contact-form h3 {
+  margin: 0;
+}
 .wp-block-group.contact-form .wp-block-table td {
   border: none;
   padding-right: 0;
@@ -360,10 +363,6 @@ header.tg-page-header.tg-page-header--left-right {
 .wp-block-group.green-group .wp-block-column:first-child {
   border-right: 3px solid #009147;
   padding-right: 1.5em;
-}
-
-.contact-form h3 {
-  margin: 0;
 }
 
 .ilm-group h3 {
@@ -452,7 +451,7 @@ header.tg-page-header.tg-page-header--left-right {
   display: none;
 }
 
-/* remove whitespce below main content area */
+/* remove whitespace below main content area */
 #primary .entry-content {
   margin-bottom: 0;
 }
