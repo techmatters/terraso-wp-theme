@@ -26,6 +26,7 @@ class Terraso {
 		add_filter( 'document_title_separator', [ __CLASS__, 'document_title_separator' ] );
 		add_action( 'init', [ __CLASS__, 'register_post_type' ] );
 		add_action( 'init', [ __CLASS__, 'help_rewrite' ] );
+		add_filter( 'auto_update_translation', '__return_true' );
 	}
 
 	/**
