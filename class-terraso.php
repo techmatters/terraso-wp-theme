@@ -171,7 +171,7 @@ class Terraso {
 				'with_front' => true,
 			],
 			'query_var'             => true,
-			'supports'              => [ 'title', 'editor', 'thumbnail' ],
+			'supports'              => [ 'title', 'editor', 'thumbnail', 'page-attributes' ],
 			'show_in_graphql'       => false,
 		];
 
