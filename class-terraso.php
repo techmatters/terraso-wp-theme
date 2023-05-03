@@ -164,14 +164,14 @@ class Terraso {
 			'exclude_from_search'   => false,
 			'capability_type'       => 'post',
 			'map_meta_cap'          => true,
-			'hierarchical'          => true,
+			'hierarchical'          => false,
 			'can_export'            => false,
 			'rewrite'               => [
 				'slug'       => 'help',
 				'with_front' => true,
 			],
 			'query_var'             => true,
-			'supports'              => [ 'title', 'editor', 'thumbnail', 'page-attributes' ],
+			'supports'              => [ 'title', 'editor', 'thumbnail', 'revisions' ],
 			'show_in_graphql'       => false,
 		];
 
