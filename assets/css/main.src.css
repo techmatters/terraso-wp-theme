@@ -471,6 +471,9 @@ header.tg-page-header.tg-page-header--left-right {
 .home h1.entry-title {
   display: none;
 }
+.home .hero-image a {
+  color: white;
+}
 
 /* remove whitespace below main content area */
 #primary .entry-content {
