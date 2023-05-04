@@ -278,11 +278,17 @@ html body .tg-icon {
   overflow-y: hidden;
 }
 
-.tg-site-footer a {
-  text-decoration: none;
-}
 .tg-site-footer a:hover {
   text-decoration: underline;
+}
+.tg-site-footer p {
+  margin-bottom: 0.5em;
+}
+.tg-site-footer .tg-site-footer-bar {
+  font-size: 0.8rem;
+}
+.tg-site-footer section.widget_media_image {
+  display: inline-block;
 }
 .tg-site-footer section.widget_media_image + section.widget_media_image figure {
   margin-left: 0.5rem;
@@ -295,6 +301,9 @@ html body .tg-icon {
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: bold;
+}
+.tg-site-footer .tg-site-footer {
+  margin: 5rem 0;
 }
 
 header.tg-page-header.tg-page-header--left-right {
