@@ -82,6 +82,14 @@ html body .tg-icon {
 /*
  * Colors
  */
+.entry-content a {
+  text-decoration: none;
+  color: #076b8e;
+}
+.entry-content a:hover {
+  text-decoration: underline;
+}
+
 /* add margins around page content */
 .wp-block-group__inner-container {
   max-width: 1140px;
@@ -127,14 +135,6 @@ html body .tg-icon {
 }
 .login-join p {
   margin-top: 0;
-}
-.login-join p a {
-  text-decoration: none;
-  color: #076b8e;
-}
-.login-join p a:hover {
-  text-decoration: underline;
-  color: #076b8e;
 }
 
 /**
@@ -214,17 +214,6 @@ html body .tg-icon {
 .search .site-main h1,
 .single-post .site-main h1 {
   margin-bottom: 1em;
-}
-
-.entry-content .member-login-link a {
-  text-decoration: none;
-  color: #076b8e;
-}
-.entry-content .member-login-link a:hover {
-  text-decoration: underline;
-}
-.entry-content a {
-  text-decoration: underline;
 }
 
 /**
@@ -324,14 +313,6 @@ header.tg-page-header.tg-page-header--left-right {
 .wp-block-group.how-it-works ul {
   list-style: none;
   margin-left: 0;
-}
-.wp-block-group.how-it-works ul a {
-  text-decoration: none;
-  color: #076b8e;
-}
-.wp-block-group.how-it-works ul a:hover {
-  text-decoration: underline;
-  color: #076b8e;
 }
 .wp-block-group.toolkit-concepts .wp-block-column {
   background-color: #f9fcf8;
