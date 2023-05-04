@@ -234,16 +234,27 @@
 
 .tg-site-footer {
 	a {
-		text-decoration: none;
-
 		&:hover {
 			text-decoration: underline;
 		}
 	}
 
+	p {
+		margin-bottom: 0.5em;
+	}
+
+	// copyright line
+	.tg-site-footer-bar {
+		font-size: 0.8rem;
+	}
+
 	// social media icons
-	section.widget_media_image + section.widget_media_image figure {
-		margin-left: 0.5rem;
+	section.widget_media_image {
+		display: inline-block;
+
+		& + section.widget_media_image figure {
+			margin-left: 0.5rem;
+		}
 	}
 
 	section {
@@ -255,6 +266,10 @@
 		text-transform: uppercase;
 		font-size: 1rem;
 		font-weight: bold;
+	}
+
+	.tg-site-footer {
+		margin: 5rem 0;
 	}
 }
 
