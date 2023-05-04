@@ -227,6 +227,13 @@ html body .tg-icon {
   text-decoration: underline;
 }
 
+/**
+  * Toolkit page
+  */
+.data-collection-image img {
+  background-color: #f6f6f6;
+}
+
 .sticky-header,
 .tg-site-header-bottom {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1) !important;
