@@ -6,7 +6,12 @@
 
 	&:hover {
 		text-decoration: underline;
-		color: v.$link;
+	}
+}
+
+.entry-content {
+	a {
+		@include blue-link();
 	}
 }
 
@@ -57,10 +62,6 @@
 
 	p {
 		margin-top: 0;
-
-		a {
-			@include blue-link();
-		}
 	}
 }
 
@@ -75,6 +76,7 @@
   * Header
   */
 #primary-menu .menu-item {
+	// need to override Zakra styles
 	a {
 		text-decoration: none;
 	}
@@ -163,21 +165,6 @@
 .single-post {
 	.site-main h1 {
 		margin-bottom: v.$title-bottom-space;
-	}
-}
-
-.entry-content {
-	.member-login-link a {
-		text-decoration: none;
-		color: v.$link;
-
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-
-	a {
-		text-decoration: underline;
 	}
 }
 
@@ -298,10 +285,6 @@ header.tg-page-header.tg-page-header--left-right {
 		ul {
 			list-style: none;
 			margin-left: 0;
-
-			a {
-				@include blue-link();
-			}
 		}
 	}
 
