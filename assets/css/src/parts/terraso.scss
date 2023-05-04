@@ -177,6 +177,29 @@
 	}
 }
 
+
+/**
+  * Project page
+  */
+.wp-block-group.core-partners-logos {
+	flex-wrap: wrap;
+	margin-bottom: 48px;
+
+	@media screen and (max-width: 1024px) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+		align-items: flex-start;
+
+		figure.wp-block-image.aligncenter {
+			text-align: left;
+		}
+	}
+}
+
 .sticky-header,
 .tg-site-header-bottom {
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 10%) !important;
