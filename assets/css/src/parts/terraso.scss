@@ -1,11 +1,11 @@
 @use "variables" as v;
 
 @mixin blue-link() {
-	text-decoration: none;
 	color: v.$link;
+	text-decoration: underline;
 
 	&:hover {
-		text-decoration: underline;
+		color: v.$link-hover;
 	}
 }
 
