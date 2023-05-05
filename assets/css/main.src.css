@@ -83,11 +83,11 @@ html body .tg-icon {
  * Colors
  */
 .entry-content a {
-  text-decoration: none;
   color: #076b8e;
+  text-decoration: underline;
 }
 .entry-content a:hover {
-  text-decoration: underline;
+  color: #00344d;
 }
 
 /* add margins around page content */
@@ -191,6 +191,13 @@ html body .tg-icon {
 }
 .wp-block-columns.key-funding .wp-block-column + .wp-block-column {
   margin-left: 20px;
+}
+
+.slug-toolkit .entry-content img[src$=".png"],
+.slug-toolkit .entry-content img[src$=".jpg"],
+.slug-project .entry-content img[src$=".png"],
+.slug-project .entry-content img[src$=".jpg"] {
+  border-radius: 4px;
 }
 
 .slug-landscapes .entry-content h2,
@@ -470,6 +477,9 @@ header.tg-page-header.tg-page-header--left-right {
 /* workaround Zakra bug where you can't hide header on home page */
 .home h1.entry-title {
   display: none;
+}
+.home .announcement h2 img {
+  margin-top: -0.3rem;
 }
 .home .hero-image a {
   color: white;
