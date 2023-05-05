@@ -140,6 +140,16 @@
 	}
 }
 
+.slug-toolkit,
+.slug-project {
+	.entry-content {
+		img[src$='.png'],
+		img[src$='.jpg'] {
+			border-radius: 4px;
+		}
+	}
+}
+
 .slug-landscapes,
 .slug-faq {
 	.entry-content {
