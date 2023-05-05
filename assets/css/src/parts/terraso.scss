@@ -220,6 +220,17 @@
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 10%) !important;
 }
 
+.tg-site-header-bottom {
+	padding-left: 0;
+	padding-right: 0;
+
+	@media (min-width: 1300px) {
+		.custom-logo {
+			margin-left: -64px;
+		}
+	}
+}
+
 .tg-icon-arrow-up::after {
 	content: "\f106";
 	font-weight: bold;
