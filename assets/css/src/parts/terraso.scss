@@ -74,9 +74,15 @@
 	}
 }
 
-.announcement.full-bleed > * {
-	margin-top: 0;
-	margin-bottom: 0;
+.announcement {
+	.wp-block-media-text__content {
+		padding-left: 1rem;
+	}
+
+	&.full-bleed > * {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 }
 
 /**
