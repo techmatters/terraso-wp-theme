@@ -136,6 +136,7 @@ html body .tg-icon {
   * Content well
   */
 .entry-content > div:not(.full-bleed),
+.how-it-works.full-bleed > *,
 .announcement.full-bleed > *,
 .tg-header-sticky-wrapper {
   max-width: 1200px;
@@ -143,6 +144,7 @@ html body .tg-icon {
 }
 @media screen and (max-width: 992px) {
   .entry-content > div:not(.full-bleed),
+  .how-it-works.full-bleed > *,
   .announcement.full-bleed > *,
   .tg-header-sticky-wrapper {
     max-width: 100%;
