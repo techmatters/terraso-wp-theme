@@ -135,10 +135,16 @@ html body .tg-icon {
 /**
   * Content well
   */
-#main,
+.entry-content > div:not(.full-bleed),
 .tg-header-sticky-wrapper {
   max-width: 1200px;
   margin: 0 auto;
+}
+@media screen and (max-width: 992px) {
+  .entry-content > div:not(.full-bleed),
+  .tg-header-sticky-wrapper {
+    max-width: 100%;
+  }
 }
 
 /**
