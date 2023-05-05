@@ -136,15 +136,22 @@ html body .tg-icon {
   * Content well
   */
 .entry-content > div:not(.full-bleed),
+.announcement.full-bleed > *,
 .tg-header-sticky-wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
 @media screen and (max-width: 992px) {
   .entry-content > div:not(.full-bleed),
+  .announcement.full-bleed > *,
   .tg-header-sticky-wrapper {
     max-width: 100%;
   }
+}
+
+.announcement.full-bleed > * {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /**
@@ -267,6 +274,11 @@ html body .tg-icon {
 .sticky-header,
 .tg-site-header-bottom {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+.tg-site-header {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.1019607843);
+  margin-bottom: 4px;
 }
 
 .tg-site-header-bottom {
