@@ -27,6 +27,7 @@ class Terraso {
 		add_action( 'init', [ __CLASS__, 'register_post_type' ] );
 		add_action( 'init', [ __CLASS__, 'help_rewrite' ] );
 		add_filter( 'auto_update_translation', '__return_true' );
+		add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
 	}
 
 	/**
@@ -184,6 +185,21 @@ class Terraso {
 	 */
 	public static function help_rewrite() {
 		add_rewrite_rule( '^help$', 'index.php?help=help', 'top' );
+	}
+
+	/**
+	 * Adds the post name slug to the body class list.
+	 *
+	 * @param array $classes   List of CSS classes.
+	 */
+	public static function filter_body_class( $classes ) {
+		$queried_obj = get_queried_object();
+
+		if ( isset( $queried_obj->post_name ) && is_string( $queried_obj->post_name ) ) {
+			$classes[] = 'slug-' . $queried_obj->post_name;
+		}
+
+		return $classes;
 	}
 }
 
