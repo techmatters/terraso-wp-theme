@@ -138,7 +138,7 @@ html body .tg-icon {
 .entry-content > div:not(.full-bleed),
 .how-it-works.full-bleed > *,
 .announcement.full-bleed > *,
-.tg-header-sticky-wrapper {
+.tg-header-sticky-wrapper .tg-header-container {
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -146,7 +146,7 @@ html body .tg-icon {
   .entry-content > div:not(.full-bleed),
   .how-it-works.full-bleed > *,
   .announcement.full-bleed > *,
-  .tg-header-sticky-wrapper {
+  .tg-header-sticky-wrapper .tg-header-container {
     max-width: 100%;
   }
 }
