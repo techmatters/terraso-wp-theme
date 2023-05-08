@@ -163,6 +163,10 @@
 
 .slug-toolkit {
 	.entry-content {
+		h3 {
+			scroll-margin-top: 102px;
+		}
+
 		img[src$='.png'] {
 			border: 1px solid v.$border;
 		}
