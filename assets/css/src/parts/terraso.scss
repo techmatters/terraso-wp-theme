@@ -15,24 +15,6 @@
 	}
 }
 
-/* add margins around page content */
-.wp-block-group__inner-container {
-	max-width: 1140px;
-	margin: auto;
-	padding: 50px 0;
-
-	/* provide for margins on screens smaller than 1240px */
-	@media screen and (min-width: 768px) {
-		width: 80%;
-	}
-}
-
-/* light green background */
-.wp-block-columns.has-bg,
-.wp-block-group.has-bg {
-	background-color: v.$section-bg;
-}
-
 /**
   * Buttons
   */
@@ -63,6 +45,25 @@
 /**
   * Content well
   */
+
+/* add margins around page content */
+.wp-block-group__inner-container {
+	max-width: 1140px;
+	margin: auto;
+	padding: 50px 0;
+
+	/* provide for margins on screens smaller than 1240px */
+	@media screen and (min-width: 768px) {
+		width: 80%;
+	}
+}
+
+/* light green background */
+.wp-block-columns.has-bg,
+.wp-block-group.has-bg {
+	background-color: v.$section-bg;
+}
+
 .entry-content > div:not(.full-bleed),
 .how-it-works.full-bleed > *,
 .announcement.full-bleed > *,
@@ -118,6 +119,40 @@
 			color: white;
 		}
 	}
+}
+
+.tg-site-header {
+	box-shadow: rgba(0, 0, 0, 10%) 0 3px 4px 0;
+	margin-bottom: 4px;
+}
+
+.tg-site-header-bottom {
+	padding-left: 0;
+	padding-right: 0;
+
+	@media (min-width: 1300px) {
+		.custom-logo {
+			margin-left: -64px;
+		}
+	}
+}
+
+/* remove big gap on left of menu causing it to break into 2 on tablet */
+.tg-site-header--left .tg-block--two {
+	margin-left: 0 !important;
+}
+
+header.tg-page-header.tg-page-header--left-right {
+	padding: 120px 0;
+}
+
+.tg-container.tg-container--flex.tg-container--flex-center.tg-container--flex-space-between h1 {
+	border-bottom: 3px solid v.$dark-brown;
+	padding-bottom: 8px;
+}
+
+.tg-mobile-navigation li.menu-item-has-children .tg-submenu-toggle::after {
+	font-size: 15px;
 }
 
 /**
@@ -212,6 +247,21 @@
 	}
 }
 
+.archive-description a,
+.author-description a {
+	color: v.$dark-brown;
+	text-decoration: underline;
+}
+
+.nav-previous a,
+.nav-next a {
+	color: v.$dark-brown;
+}
+
+.tg-mobile-navigation li.menu-item-has-children.submenu--show > ul {
+	overflow-y: hidden;
+}
+
 /**
   * Toolkit page
   */
@@ -244,54 +294,9 @@
 	}
 }
 
-.sticky-header,
-.tg-site-header-bottom {
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 10%) !important;
-}
-
-.tg-site-header {
-	box-shadow: 0 3px 4px 0 #0000001A;
-	margin-bottom: 4px;
-}
-
-.tg-site-header-bottom {
-	padding-left: 0;
-	padding-right: 0;
-
-	@media (min-width: 1300px) {
-		.custom-logo {
-			margin-left: -64px;
-		}
-	}
-}
-
-.tg-icon-arrow-up::after {
-	content: "\f106";
-	font-weight: bold;
-	font-size: 20px;
-	font-family: fontAwesome, sans-serif !important;
-}
-
-/* remove big gap on left of menu causing it to break into 2 on tablet */
-.tg-site-header--left .tg-block--two {
-	margin-left: 0 !important;
-}
-
-.archive-description a,
-.author-description a {
-	color: v.$dark-brown;
-	text-decoration: underline;
-}
-
-.nav-previous a,
-.nav-next a {
-	color: v.$dark-brown;
-}
-
-.tg-mobile-navigation li.menu-item-has-children.submenu--show > ul {
-	overflow-y: hidden;
-}
-
+/**
+  * Footer
+  */
 .tg-site-footer {
 	a {
 		&:hover {
@@ -333,17 +338,11 @@
 	}
 }
 
-header.tg-page-header.tg-page-header--left-right {
-	padding: 120px 0;
-}
-
-.tg-container.tg-container--flex.tg-container--flex-center.tg-container--flex-space-between h1 {
-	border-bottom: 3px solid v.$dark-brown;
-	padding-bottom: 8px;
-}
-
-.tg-mobile-navigation li.menu-item-has-children .tg-submenu-toggle::after {
-	font-size: 15px;
+.tg-icon-arrow-up::after {
+	content: "\f106";
+	font-weight: bold;
+	font-size: 20px;
+	font-family: fontAwesome, sans-serif !important;
 }
 
 /* override zakra */
