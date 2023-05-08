@@ -1,5 +1,51 @@
 @use "variables" as v;
 
+@mixin blue-link() {
+	color: v.$link;
+	text-decoration: underline;
+
+	&:hover {
+		color: v.$link-hover;
+	}
+}
+
+.entry-content {
+	a {
+		@include blue-link();
+	}
+}
+
+/**
+  * Buttons
+  */
+.wp-block-button .wp-block-button__link {
+	background-color: v.$green;
+	padding: 12px 25px;
+	color: white;
+	text-decoration: none;
+	font-size: 1.2em;
+
+	&:hover {
+		background-color: v.$green-hover;
+		text-decoration: none;
+		color: white;
+	}
+}
+
+.login-join {
+	.wp-element-button {
+		border-radius: 4px;
+	}
+
+	p {
+		margin-top: 0;
+	}
+}
+
+/**
+  * Content well
+  */
+
 /* add margins around page content */
 .wp-block-group__inner-container {
 	max-width: 1140px;
@@ -12,65 +58,138 @@
 	}
 }
 
-.wp-block-group.mobile-header {
-	padding: 0;
-
-	.wp-block-image {
-		margin: 0;
-	}
-
-	.wp-block-group__inner-container {
-		padding: 0;
-	}
-}
-
-/* terraso logo */
-.site-branding .custom-logo-link img {
-	width: 145px;
-}
-
+/* light green background */
 .wp-block-columns.has-bg,
 .wp-block-group.has-bg {
-	background-color: v.$light-brown;
+	background-color: v.$section-bg;
 }
 
-.wp-block-group h2.section,
-.wp-block-columns h2.section {
-	border-bottom: 3px solid;
-	display: inline-block;
-	padding-bottom: 10px;
-}
+.entry-content > div:not(.full-bleed),
+.hero-image .wp-block-columns,
+.how-it-works.full-bleed > *,
+.announcement.full-bleed > *,
+.tg-header-sticky-wrapper .tg-header-container {
+	max-width: 1200px;
+	margin: 0 auto;
 
-.wp-block-button .wp-block-button__link {
-	background-color: v.$blue;
-	padding: 25px 50px;
-	color: white;
-	text-decoration: none;
-	font-size: 1.4em;
-
-	&:hover {
-		text-decoration: none;
-		color: white;
+	@media screen and (max-width:992px) {
+		max-width: 100%;
 	}
 }
 
+.announcement {
+	// this is media + text and doesn't have the same padding by default.
+	// match column padding.
+	> * {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+
+	.wp-block-media-text__content {
+		padding-left: 1rem;
+	}
+
+	&.full-bleed > * {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+/**
+  * Home page
+  */
+.wp-block-image.intro-footer-image {
+	margin-bottom: 0;
+}
+
+/**
+  * Header
+  */
+#primary-menu .menu-item {
+	// need to override Zakra styles
+	a {
+		text-decoration: none;
+	}
+
+	&.current_page_item > a {
+		color: v.$green;
+		border-bottom: 4px solid v.$green;
+	}
+
+	&.current_page_ancestor .current_page_item a {
+		border-bottom: none;
+		color: inherit;
+	}
+
+	&.tg-header-button-one a {
+		&:hover {
+			background: v.$blue;
+			color: white;
+		}
+	}
+}
+
+.tg-site-header {
+	box-shadow: rgba(0, 0, 0, 10%) 0 3px 4px 0;
+	margin-bottom: 4px;
+}
+
+.tg-site-header-bottom {
+	padding-left: 0;
+	padding-right: 0;
+
+	@media (min-width: 1300px) {
+		.custom-logo {
+			margin-left: -64px;
+		}
+	}
+
+	// match hamburger menu
+	@media screen and (max-width: 1002px) {
+		margin-left: 10px;
+	}
+}
+
+/* remove big gap on left of menu causing it to break into 2 on tablet */
+.tg-site-header--left .tg-block--two {
+	margin-left: 0 !important;
+}
+
+header.tg-page-header.tg-page-header--left-right {
+	padding: 120px 0;
+}
+
+.tg-container.tg-container--flex.tg-container--flex-center.tg-container--flex-space-between h1 {
+	border-bottom: 3px solid v.$dark-brown;
+	padding-bottom: 8px;
+}
+
+.tg-mobile-navigation li.menu-item-has-children .tg-submenu-toggle::after {
+	font-size: 15px;
+}
+
+/**
+  * General
+  */
 .wp-block-columns {
 	h1 {
 		font-weight: bold;
 		font-size: 2.2rem;
 	}
 
-	.platform-title {
-		padding: 0 30px;
+	p.what-terraso-is,
+	h2.intro-subhead {
+		font-size: 1.4rem;
 	}
 
 	// roundeed boxes with shadows
 	&.key-funding .wp-block-column,
 	&.our-values .wp-block-column {
-		box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 20%);
+		border: 1px solid v.$border;
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 15%);
 		margin: 5px;
 		padding: 25px 20px;
-		border-radius: 20px;
+		border-radius: 8px;
 	}
 
 	&.key-funding .wp-block-column {
@@ -88,9 +207,49 @@
 	&.key-funding .wp-block-column + .wp-block-column {
 		margin-left: 20px;
 	}
+}
 
-	.landscape-map {
-		margin-bottom: 40px;
+.slug-toolkit {
+	.entry-content {
+		h3 {
+			scroll-margin-top: 102px;
+		}
+
+		img[src$='.png'] {
+			border: 1px solid v.$border;
+		}
+	}
+}
+
+.slug-toolkit,
+.slug-project {
+	.entry-content {
+		img[src$='.png'],
+		img[src$='.jpg'] {
+			border-radius: 4px;
+		}
+	}
+}
+
+.slug-landscapes,
+.slug-faq {
+	.entry-content {
+		h2 {
+			margin-top: 6rem;
+			font-weight: bold;
+		}
+
+		h3 {
+			font-size: 1.5rem;
+
+			+ p {
+				margin-block-start: 0;
+			}
+		}
+
+		ul {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -99,38 +258,6 @@
 	.site-main h1 {
 		margin-bottom: v.$title-bottom-space;
 	}
-}
-
-.entry-content {
-	.member-login-link a {
-		text-decoration: none;
-		color: v.$blue;
-
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-
-	a {
-		text-decoration: underline;
-	}
-}
-
-.sticky-header,
-.tg-site-header-bottom {
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 10%) !important;
-}
-
-.tg-icon-arrow-up::after {
-	content: "\f106";
-	font-weight: bold;
-	font-size: 20px;
-	font-family: fontAwesome, sans-serif !important;
-}
-
-/* remove big gap on left of menu causing it to break into 2 on tablet */
-.tg-site-header--left .tg-block--two {
-	margin-left: 0 !important;
 }
 
 .archive-description a,
@@ -148,21 +275,87 @@
 	overflow-y: hidden;
 }
 
-.tg-site-footer .tg-site-footer-bar a {
-	text-decoration: underline;
+/**
+  * Toolkit page
+  */
+.data-collection-image {
+	img {
+		background-color: v.$gray-light;
+	}
 }
 
-header.tg-page-header.tg-page-header--left-right {
-	padding: 120px 0;
+
+/**
+  * Project page
+  */
+.wp-block-group.core-partners-logos {
+	flex-wrap: wrap;
+	margin-bottom: 48px;
+
+	@media screen and (max-width: 1024px) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+		align-items: flex-start;
+
+		figure.wp-block-image.aligncenter {
+			text-align: left;
+		}
+	}
 }
 
-.tg-container.tg-container--flex.tg-container--flex-center.tg-container--flex-space-between h1 {
-	border-bottom: 3px solid v.$dark-brown;
-	padding-bottom: 8px;
+/**
+  * Footer
+  */
+.tg-site-footer {
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	p {
+		margin-bottom: 0.5em;
+	}
+
+	// copyright line
+	.tg-site-footer-bar {
+		font-size: 0.8rem;
+	}
+
+	// social media icons
+	section.widget_media_image {
+		display: inline-block;
+
+		& + section.widget_media_image figure {
+			margin-left: 0.5rem;
+		}
+	}
+
+	section {
+		margin-bottom: 0;
+	}
+
+	h3 {
+		color: white;
+		text-transform: uppercase;
+		font-size: 1rem;
+		font-weight: bold;
+	}
+
+	.tg-site-footer {
+		margin: 5rem 0;
+	}
 }
 
-.tg-mobile-navigation li.menu-item-has-children .tg-submenu-toggle::after {
-	font-size: 15px;
+.tg-icon-arrow-up::after {
+	content: "\f106";
+	font-weight: bold;
+	font-size: 20px;
+	font-family: fontAwesome, sans-serif !important;
 }
 
 /* override zakra */
@@ -177,17 +370,60 @@ header.tg-page-header.tg-page-header--left-right {
 }
 
 .wp-block-group {
-	&.faq {
-		.section:nth-child(n+2) {
-			margin-top: 2em;
+	&.who-terraso-is-for {
+		img {
+			border-radius: 50%;
+		}
+
+		.who-terraso-is-for-header {
+			padding-bottom: 0;
+		}
+
+		.terraso-users {
+			p {
+				margin-bottom: 0;
+			}
+
+			.country {
+				text-transform: uppercase;
+				color: v.$gray;
+			}
 		}
 	}
 
-	.ums_map_opts {
-		margin: 3em auto;
+	&.how-it-works {
+		ul {
+			list-style: none;
+			margin-left: 0;
+		}
+	}
+
+	&.toolkit-concepts {
+		.wp-block-column {
+			background-color: v.$section-bg;
+			border: 1px solid v.$border;
+			border-radius: 8px;
+			padding: 2rem;
+		}
+	}
+
+	&.mobile-header {
+		padding: 0;
+
+		.wp-block-image {
+			margin: 0;
+		}
+
+		.wp-block-group__inner-container {
+			padding: 0;
+		}
 	}
 
 	&.contact-form {
+		h3 {
+			margin: 0;
+		}
+
 		.wp-block-table {
 			td {
 				border: none;
@@ -217,12 +453,6 @@ header.tg-page-header.tg-page-header--left-right {
 	}
 }
 
-.contact-form {
-	h3 {
-		margin: 0;
-	}
-}
-
 .ilm-group {
 	h3 {
 		height: 100px;
@@ -243,11 +473,11 @@ header.tg-page-header.tg-page-header--left-right {
 		}
 
 		&:nth-child(1) h3 {
-			color: v.$grey;
+			color: v.$compost;
 		}
 
 		&:nth-child(2) h3 {
-			color: v.$brown;
+			color: v.$orange;
 		}
 
 		&:nth-child(3) h3 {
@@ -274,12 +504,12 @@ header.tg-page-header.tg-page-header--left-right {
 
 .ilm-group .wp-block-group:nth-child(1),
 .ilm-list li:nth-child(1) {
-	border-color: v.$grey;
+	border-color: v.$compost;
 }
 
 .ilm-group .wp-block-group:nth-child(2),
 .ilm-list li:nth-child(2) {
-	border-color: v.$brown;
+	border-color: v.$orange;
 }
 
 .ilm-group .wp-block-group:nth-child(3),
@@ -318,9 +548,23 @@ header.tg-page-header.tg-page-header--left-right {
 	h1.entry-title {
 		display: none;
 	}
+
+	.announcement {
+		h2 {
+			img {
+				margin-top: -0.3rem;
+			}
+		}
+	}
+
+	.hero-image {
+		a {
+			color: white;
+		}
+	}
 }
 
-/* remove whitespce below main content area */
+/* remove whitespace below main content area */
 #primary {
 	.entry-content {
 		margin-bottom: 0;
@@ -399,27 +643,11 @@ main {
 		padding-left: 0;
 		padding-right: 0;
 	}
-
-	.home {
-		.intro {
-			.wp-block-group__inner-container {
-				padding-top: 0;
-			}
-		}
-	}
 }
 
 @media screen and (min-width: 768px) {
 	.tg-header-action-list .tg-header-action__item.tg-mobile-toggle .tg-icon-bars {
 		padding-left: 5px;
-	}
-
-	.home {
-		.hero {
-			figure {
-				margin: 0;
-			}
-		}
 	}
 }
 
