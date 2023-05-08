@@ -138,12 +138,6 @@
 	padding-left: 0;
 	padding-right: 0;
 
-	@media (min-width: 1300px) {
-		.custom-logo {
-			margin-left: -64px;
-		}
-	}
-
 	// match hamburger menu
 	@media screen and (max-width: 1002px) {
 		margin-left: 10px;

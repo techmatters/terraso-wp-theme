@@ -200,11 +200,6 @@ html body .tg-icon {
   padding-left: 0;
   padding-right: 0;
 }
-@media (min-width: 1300px) {
-  .tg-site-header-bottom .custom-logo {
-    margin-left: -64px;
-  }
-}
 @media screen and (max-width: 1002px) {
   .tg-site-header-bottom {
     margin-left: 10px;
