@@ -136,6 +136,7 @@ html body .tg-icon {
 }
 
 .entry-content > div:not(.full-bleed),
+.hero-image .wp-block-columns,
 .how-it-works.full-bleed > *,
 .announcement.full-bleed > *,
 .tg-header-sticky-wrapper .tg-header-container {
@@ -144,6 +145,7 @@ html body .tg-icon {
 }
 @media screen and (max-width: 992px) {
   .entry-content > div:not(.full-bleed),
+  .hero-image .wp-block-columns,
   .how-it-works.full-bleed > *,
   .announcement.full-bleed > *,
   .tg-header-sticky-wrapper .tg-header-container {
@@ -151,6 +153,10 @@ html body .tg-icon {
   }
 }
 
+.announcement > * {
+  padding-left: 32px;
+  padding-right: 32px;
+}
 .announcement .wp-block-media-text__content {
   padding-left: 1rem;
 }
@@ -197,6 +203,11 @@ html body .tg-icon {
 @media (min-width: 1300px) {
   .tg-site-header-bottom .custom-logo {
     margin-left: -64px;
+  }
+}
+@media screen and (max-width: 1002px) {
+  .tg-site-header-bottom {
+    margin-left: 10px;
   }
 }
 
