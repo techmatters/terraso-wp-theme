@@ -161,6 +161,14 @@
 	}
 }
 
+.slug-toolkit {
+	.entry-content {
+		img[src$='.png'] {
+			border: 1px solid v.$border;
+		}
+	}
+}
+
 .slug-toolkit,
 .slug-project {
 	.entry-content {
