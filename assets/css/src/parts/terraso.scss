@@ -135,6 +135,11 @@
 			margin-left: -64px;
 		}
 	}
+
+	// match hamburger menu
+	@media screen and (max-width: 1002px) {
+		margin-left: 10px;
+	}
 }
 
 /* remove big gap on left of menu causing it to break into 2 on tablet */
