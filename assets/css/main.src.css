@@ -408,8 +408,18 @@ header.tg-page-header.tg-page-header--left-right {
   color: #333;
 }
 @media screen and (max-width: 768px) {
-  .wp-block-group.who-terraso-is-for .terraso-users figure {
+  .wp-block-group.who-terraso-is-for .terraso-users {
+    /* the important ooverrides inline styles from the block editor */
+  }
+  .wp-block-group.who-terraso-is-for .terraso-users > div {
+    grid-template-columns: 1fr 1fr !important;
+    margin-left: 0 !important;
+  }
+  .wp-block-group.who-terraso-is-for .terraso-users > div figure {
     width: 224px;
+  }
+  .wp-block-group.who-terraso-is-for .terraso-users > div div {
+    padding-left: 0;
   }
 }
 .wp-block-group.how-it-works ul {
