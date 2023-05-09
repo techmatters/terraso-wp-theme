@@ -400,7 +400,11 @@ header.tg-page-header.tg-page-header--left-right {
 .wp-block-group.who-terraso-is-for .who-terraso-is-for-header {
   padding-bottom: 0;
 }
+.wp-block-group.who-terraso-is-for .terraso-users div:nth-child(odd) > div {
+  padding-left: 4%;
+}
 .wp-block-group.who-terraso-is-for .terraso-users p {
+  font-size: 14px;
   margin-bottom: 0;
 }
 .wp-block-group.who-terraso-is-for .terraso-users .country {
