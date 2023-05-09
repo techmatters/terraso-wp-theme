@@ -546,6 +546,15 @@ header.tg-page-header.tg-page-header--left-right {
 .home .hero-image a {
   color: white;
 }
+@media screen and (max-width: 768px) {
+  .home .hero-image {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .home .hero-image .login-join {
+    padding-left: 0;
+  }
+}
 
 /* remove whitespace below main content area */
 #primary.content-area {
