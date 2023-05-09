@@ -19,7 +19,6 @@ class Terraso {
 		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'zakra_child_enqueue_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'remove_fontawesome' ], 20 );
 		add_filter( 'get_custom_logo_image_attributes', [ __CLASS__, 'get_custom_logo_image_attributes' ], 10, 3 );
-		add_filter( 'wp_get_attachment_image', [ __CLASS__, 'wp_get_attachment_image' ], 10, 5 );
 		add_filter( 'zakra_header_search_icon_data_attrs', [ __CLASS__, 'zakra_header_search_icon_data_attrs' ] );
 		add_action( 'wp_head', [ __CLASS__, 'meta_tags' ] );
 		add_action( 'after_setup_theme', [ __CLASS__, 'setup' ] );
@@ -76,24 +75,6 @@ class Terraso {
 		$custom_logo_attr['height'] = 41;
 
 		return $custom_logo_attr;
-	}
-
-	/**
-	 * Remove width=1 height=1 from images.
-	 *
-	 * @param string     $html           HTML img element or empty string on failure.
-	 * @param id         $attachment_id  Image attachment ID.
-	 * @param string|int $size           Requested image size.
-	 * @param bool       $icon           Whether the image should be treated as an icon.
-	 * @param string     $attr           Array of attribute values for the image markup, keyed by attribute name.
-	 */
-	public static function wp_get_attachment_image( $html, $attachment_id, $size, $icon, $attr ) {
-		if ( false !== strpos( $html, ' width="1" height="1"' ) && 'custom-logo' === $attr['class'] && ! empty( $attr['height'] ) && ! empty( $attr['width'] ) ) {
-			$html = str_replace( ' width="1" height="1"', '', $html );
-			return $html;
-		}
-
-		return $html;
 	}
 
 	/**
