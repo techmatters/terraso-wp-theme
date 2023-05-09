@@ -66,8 +66,7 @@
 
 .entry-content > div:not(.full-bleed),
 .hero-image .wp-block-columns,
-.how-it-works.full-bleed > *,
-.announcement.full-bleed > *,
+.full-bleed:not(.hero-image) > *,
 .tg-header-sticky-wrapper .tg-header-container {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -335,15 +334,24 @@ header.tg-page-header.tg-page-header--left-right {
 		margin-bottom: 0;
 	}
 
+	.tg-footer-widget-container > div:first-child {
+		h3 {
+			@media screen and (max-width: 768px) {
+				margin-top: 0;
+			}
+		}
+	}
+
 	h3 {
 		color: white;
 		text-transform: uppercase;
 		font-size: 1rem;
 		font-weight: bold;
-	}
 
-	.tg-site-footer {
-		margin: 5rem 0;
+		@media screen and (max-width: 768px) {
+			margin-bottom: 0.5rem;
+			margin-top: 3rem;
+		}
 	}
 }
 
@@ -383,6 +391,12 @@ header.tg-page-header.tg-page-header--left-right {
 			.country {
 				text-transform: uppercase;
 				color: v.$gray;
+			}
+
+			@media screen and (max-width: 768px) {
+				figure {
+					width: 224px;
+				}
 			}
 		}
 	}
@@ -498,27 +512,27 @@ header.tg-page-header.tg-page-header--left-right {
 	box-shadow: 2px 2px 2px 2px rgba(227, 227, 227, 50%);
 }
 
-.ilm-group .wp-block-group:nth-child(1),
+.ilm-group.wp-block-group:nth-child(1),
 .ilm-list li:nth-child(1) {
 	border-color: v.$compost;
 }
 
-.ilm-group .wp-block-group:nth-child(2),
+.ilm-group.wp-block-group:nth-child(2),
 .ilm-list li:nth-child(2) {
 	border-color: v.$orange;
 }
 
-.ilm-group .wp-block-group:nth-child(3),
+.ilm-group.wp-block-group:nth-child(3),
 .ilm-list li:nth-child(3) {
 	border-color: v.$yellow;
 }
 
-.ilm-group .wp-block-group:nth-child(4),
+.ilm-group.wp-block-group:nth-child(4),
 .ilm-list li:nth-child(4) {
 	border-color: v.$green;
 }
 
-.ilm-group .wp-block-group:nth-child(5),
+.ilm-group.wp-block-group:nth-child(5),
 .ilm-list li:nth-child(5) {
 	border-color: v.$blue;
 }
@@ -557,11 +571,24 @@ header.tg-page-header.tg-page-header--left-right {
 		a {
 			color: white;
 		}
+
+		@media screen and (max-width: 768px) {
+			padding-left: 0;
+			padding-right: 0;
+
+			.login-join {
+				padding-left: 0;
+			}
+		}
 	}
 }
 
 /* remove whitespace below main content area */
 #primary {
+	&.content-area {
+		margin-bottom: 0;
+	}
+
 	.entry-content {
 		margin-bottom: 0;
 	}
