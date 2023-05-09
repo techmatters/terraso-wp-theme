@@ -167,6 +167,7 @@ class Terraso {
 	 */
 	public static function help_rewrite() {
 		add_rewrite_rule( '^help$', 'index.php?help=help', 'top' );
+		add_rewrite_rule( '^ayuda$', 'index.php?help=ayuda', 'top' );
 	}
 
 	/**

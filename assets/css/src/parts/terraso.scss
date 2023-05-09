@@ -230,8 +230,13 @@ header.tg-page-header.tg-page-header--left-right {
 	}
 }
 
-.slug-landscapes,
-.slug-faq {
+.slug-landscapes, // en
+.slug-paysages, // fr
+.slug-paisajes, // es
+.slug-paisagens, // pt
+.slug-preguntas-frecuentes, // es
+.slug-perguntas-frequentes, // pt
+.slug-faq { // en fr
 	.entry-content {
 		h2 {
 			margin-top: 6rem;
