@@ -374,6 +374,10 @@ header.tg-page-header.tg-page-header--left-right {
 }
 
 .wp-block-group {
+	.wp-block-image figcaption {
+		text-align: left;
+	}
+
 	&.who-terraso-is-for {
 		img {
 			border-radius: 50%;
