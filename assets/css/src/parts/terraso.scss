@@ -66,8 +66,7 @@
 
 .entry-content > div:not(.full-bleed),
 .hero-image .wp-block-columns,
-.how-it-works.full-bleed > *,
-.announcement.full-bleed > *,
+.full-bleed:not(.hero-image) > *,
 .tg-header-sticky-wrapper .tg-header-container {
 	max-width: 1200px;
 	margin: 0 auto;
