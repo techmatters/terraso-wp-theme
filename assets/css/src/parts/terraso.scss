@@ -489,6 +489,10 @@ header.tg-page-header.tg-page-header--left-right {
 		height: 100px;
 		display: flex;
 		align-items: center;
+
+		@media screen and (max-width: 490px) {
+			clear: both;
+		}
 	}
 
 	p {
