@@ -571,6 +571,15 @@ header.tg-page-header.tg-page-header--left-right {
 		a {
 			color: white;
 		}
+
+		@media screen and (max-width: 768px) {
+			padding-left: 0;
+			padding-right: 0;
+
+			.login-join {
+				padding-left: 0;
+			}
+		}
 	}
 }
 
