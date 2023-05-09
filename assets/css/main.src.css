@@ -93,14 +93,14 @@ html body .tg-icon {
 /**
   * Buttons
   */
-.wp-block-button .wp-block-button__link {
+.wp-block-buttons .wp-block-button .wp-block-button__link {
   background-color: #028843;
   padding: 12px 25px;
   color: white;
   text-decoration: none;
   font-size: 1.2em;
 }
-.wp-block-button .wp-block-button__link:hover {
+.wp-block-buttons .wp-block-button .wp-block-button__link:hover {
   background-color: #006130;
   text-decoration: none;
   color: white;
@@ -340,6 +340,9 @@ header.tg-page-header.tg-page-header--left-right {
 /**
   * Footer
   */
+.tg-site-footer a {
+  text-decoration: none;
+}
 .tg-site-footer a:hover {
   text-decoration: underline;
 }

@@ -18,7 +18,7 @@
 /**
   * Buttons
   */
-.wp-block-button .wp-block-button__link {
+.wp-block-buttons .wp-block-button .wp-block-button__link {
 	background-color: v.$green;
 	padding: 12px 25px;
 	color: white;
@@ -306,6 +306,8 @@ header.tg-page-header.tg-page-header--left-right {
   */
 .tg-site-footer {
 	a {
+		text-decoration: none;
+
 		&:hover {
 			text-decoration: underline;
 		}
