@@ -477,6 +477,11 @@ header.tg-page-header.tg-page-header--left-right {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 490px) {
+  .ilm-group h3 {
+    clear: both;
+  }
+}
 .ilm-group p {
   clear: left;
 }
