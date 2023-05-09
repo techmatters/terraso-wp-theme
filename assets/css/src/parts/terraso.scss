@@ -571,6 +571,10 @@ header.tg-page-header.tg-page-header--left-right {
 
 /* remove whitespace below main content area */
 #primary {
+	&.content-area {
+		margin-bottom: 0;
+	}
+
 	.entry-content {
 		margin-bottom: 0;
 	}
