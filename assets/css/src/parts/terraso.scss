@@ -384,6 +384,12 @@ header.tg-page-header.tg-page-header--left-right {
 		}
 
 		.terraso-users {
+			div:nth-child(odd) {
+				> div {
+					padding-left: 4%;
+				}
+			}
+
 			p {
 				font-size: 14px;
 				margin-bottom: 0;
