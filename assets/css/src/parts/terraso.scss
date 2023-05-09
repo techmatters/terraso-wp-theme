@@ -394,8 +394,18 @@ header.tg-page-header.tg-page-header--left-right {
 			}
 
 			@media screen and (max-width: 768px) {
-				figure {
-					width: 224px;
+				/* the important ooverrides inline styles from the block editor */
+				> div {
+			    grid-template-columns: 1fr 1fr ! important;
+			    margin-left: 0 ! important;
+
+					figure {
+						width: 224px;
+					}
+
+					div {
+						padding-left: 0;
+					}
 				}
 			}
 		}
