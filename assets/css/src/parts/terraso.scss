@@ -291,6 +291,10 @@ main {
 
 	&.key-funding .wp-block-column + .wp-block-column {
 		margin-left: 20px;
+
+		@media screen and (max-width: 768px) {
+			margin-left: 0;
+		}
 	}
 }
 

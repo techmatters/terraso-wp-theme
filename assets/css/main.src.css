@@ -326,6 +326,11 @@ main {
 .wp-block-columns.key-funding .wp-block-column + .wp-block-column {
   margin-left: 20px;
 }
+@media screen and (max-width: 768px) {
+  .wp-block-columns.key-funding .wp-block-column + .wp-block-column {
+    margin-left: 0;
+  }
+}
 
 .slug-toolkit .entry-content h3 {
   scroll-margin-top: 102px;
