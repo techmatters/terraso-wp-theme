@@ -602,6 +602,13 @@ header.tg-page-header.tg-page-header--left-right {
 				margin-top: -0.3rem;
 			}
 		}
+
+		@media screen and (max-width: 768px) {
+			.wp-block-media-text__content {
+				margin-top: 2rem;
+				padding-left: 0;
+			}
+		}
 	}
 
 	.hero-image {
