@@ -359,6 +359,14 @@ header.tg-page-header.tg-page-header--left-right {
 	}
 }
 
+.tg-scroll-to-top {
+	background-color: v.$button;
+
+	&:hover {
+		background-color: v.$button-hover;
+	}
+}
+
 .tg-icon-arrow-up::after {
 	content: "\f106";
 	font-weight: bold;
