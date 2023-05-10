@@ -363,6 +363,8 @@ main {
   scroll-margin-top: 102px;
 }
 
+.slug-help .entry-content h2,
+.slug-ayuda .entry-content h2,
 .slug-landscapes .entry-content h2,
 .slug-paysages .entry-content h2,
 .slug-paisajes .entry-content h2,
@@ -372,6 +374,8 @@ main {
   margin-top: 6rem;
   font-weight: bold;
 }
+.slug-help .entry-content h3,
+.slug-ayuda .entry-content h3,
 .slug-landscapes .entry-content h3,
 .slug-paysages .entry-content h3,
 .slug-paisajes .entry-content h3,
@@ -380,6 +384,8 @@ main {
 .slug-perguntas-frequentes .entry-content h3 {
   font-size: 1.5rem;
 }
+.slug-help .entry-content h3 + p,
+.slug-ayuda .entry-content h3 + p,
 .slug-landscapes .entry-content h3 + p,
 .slug-paysages .entry-content h3 + p,
 .slug-paisajes .entry-content h3 + p,
@@ -389,6 +395,8 @@ main {
   -webkit-margin-before: 0;
           margin-block-start: 0;
 }
+.slug-help .entry-content ul,
+.slug-ayuda .entry-content ul,
 .slug-landscapes .entry-content ul,
 .slug-paysages .entry-content ul,
 .slug-paisajes .entry-content ul,
