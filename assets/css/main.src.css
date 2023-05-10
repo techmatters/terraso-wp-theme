@@ -592,6 +592,9 @@ header.tg-page-header.tg-page-header--left-right {
 .home .hero-image a {
   color: white;
 }
+.home .hero-image a:hover {
+  color: white;
+}
 @media screen and (max-width: 768px) {
   .home .hero-image {
     padding-left: 0;

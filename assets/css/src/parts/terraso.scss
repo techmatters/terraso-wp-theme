@@ -607,6 +607,10 @@ header.tg-page-header.tg-page-header--left-right {
 	.hero-image {
 		a {
 			color: white;
+
+			&:hover {
+				color: white;
+			}
 		}
 
 		@media screen and (max-width: 768px) {
