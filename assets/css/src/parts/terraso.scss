@@ -96,11 +96,6 @@
 		border-bottom: 4px solid v.$green;
 	}
 
-	&.current_page_ancestor .current_page_item a {
-		border-bottom: none;
-		color: inherit;
-	}
-
 	&.tg-header-button-one a {
 		&:hover {
 			background: v.$blue;
