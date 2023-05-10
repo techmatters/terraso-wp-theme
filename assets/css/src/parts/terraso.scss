@@ -293,20 +293,21 @@ main {
 	}
 }
 
-.slug-toolkit {
-	.entry-content {
-		h3 {
-			scroll-margin-top: 102px;
-		}
-
-		img[src$='.png'] {
-			border: 1px solid v.$border;
-		}
+.slug-toolkit, // en fr
+.slug-kit-de-herramientas, // es
+.slug-kit-de-ferramentas { // pt
+	img[src$='.png'] {
+		border: 1px solid v.$border;
 	}
 }
 
-.slug-toolkit,
-.slug-project {
+.slug-toolkit, // en fr
+.slug-kit-de-herramientas, // es
+.slug-kit-de-ferramentas, // pt
+.slug-project, // en
+.slug-programme, // fr
+.slug-programa, // es pt
+ {
 	.entry-content {
 		img[src$='.png'],
 		img[src$='.jpg'] {
@@ -315,13 +316,26 @@ main {
 	}
 }
 
+.slug-faq, // en fr
+.slug-preguntas-frecuentes, // es
+.slug-perguntas-frequentes, // pt
+.slug-toolkit, // en fr
+.slug-kit-de-herramientas, // es
+.slug-kit-de-ferramentas { // pt
+	.entry-content {
+		h2, h3 {
+			scroll-margin-top: 102px;
+		}
+	}
+}
+
 .slug-landscapes, // en
 .slug-paysages, // fr
 .slug-paisajes, // es
 .slug-paisagens, // pt
+.slug-faq // en fr
 .slug-preguntas-frecuentes, // es
-.slug-perguntas-frequentes, // pt
-.slug-faq { // en fr
+.slug-perguntas-frequentes { // pt
 	.entry-content {
 		h2 {
 			margin-top: 6rem;
@@ -561,8 +575,17 @@ main {
 }
 
 .wp-block-group {
-	.wp-block-image figcaption {
-		text-align: left;
+	.wp-block-image {
+		figcaption {
+			text-align: left;
+		}
+
+		&.ilm-wheel {
+			figcaption {
+				text-align: center;
+				margin-right: 1em; // parent wp-block-image has 1em right margin
+			}
+		}
 	}
 
 	// home page

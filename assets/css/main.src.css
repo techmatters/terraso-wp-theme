@@ -328,27 +328,47 @@ main {
   }
 }
 
-.slug-toolkit .entry-content h3 {
-  scroll-margin-top: 102px;
-}
-.slug-toolkit .entry-content img[src$=".png"] {
+.slug-toolkit img[src$=".png"],
+.slug-kit-de-herramientas img[src$=".png"],
+.slug-kit-de-ferramentas img[src$=".png"] {
   border: 1px solid #ddd;
 }
 
 .slug-toolkit .entry-content img[src$=".png"],
 .slug-toolkit .entry-content img[src$=".jpg"],
+.slug-kit-de-herramientas .entry-content img[src$=".png"],
+.slug-kit-de-herramientas .entry-content img[src$=".jpg"],
+.slug-kit-de-ferramentas .entry-content img[src$=".png"],
+.slug-kit-de-ferramentas .entry-content img[src$=".jpg"],
 .slug-project .entry-content img[src$=".png"],
-.slug-project .entry-content img[src$=".jpg"] {
+.slug-project .entry-content img[src$=".jpg"],
+.slug-programme .entry-content img[src$=".png"],
+.slug-programme .entry-content img[src$=".jpg"],
+.slug-programa .entry-content img[src$=".png"],
+.slug-programa .entry-content img[src$=".jpg"] {
   border-radius: 4px;
+}
+
+.slug-faq .entry-content h2, .slug-faq .entry-content h3,
+.slug-preguntas-frecuentes .entry-content h2,
+.slug-preguntas-frecuentes .entry-content h3,
+.slug-perguntas-frequentes .entry-content h2,
+.slug-perguntas-frequentes .entry-content h3,
+.slug-toolkit .entry-content h2,
+.slug-toolkit .entry-content h3,
+.slug-kit-de-herramientas .entry-content h2,
+.slug-kit-de-herramientas .entry-content h3,
+.slug-kit-de-ferramentas .entry-content h2,
+.slug-kit-de-ferramentas .entry-content h3 {
+  scroll-margin-top: 102px;
 }
 
 .slug-landscapes .entry-content h2,
 .slug-paysages .entry-content h2,
 .slug-paisajes .entry-content h2,
 .slug-paisagens .entry-content h2,
-.slug-preguntas-frecuentes .entry-content h2,
-.slug-perguntas-frequentes .entry-content h2,
-.slug-faq .entry-content h2 {
+.slug-faq .slug-preguntas-frecuentes .entry-content h2,
+.slug-perguntas-frequentes .entry-content h2 {
   margin-top: 6rem;
   font-weight: bold;
 }
@@ -356,18 +376,16 @@ main {
 .slug-paysages .entry-content h3,
 .slug-paisajes .entry-content h3,
 .slug-paisagens .entry-content h3,
-.slug-preguntas-frecuentes .entry-content h3,
-.slug-perguntas-frequentes .entry-content h3,
-.slug-faq .entry-content h3 {
+.slug-faq .slug-preguntas-frecuentes .entry-content h3,
+.slug-perguntas-frequentes .entry-content h3 {
   font-size: 1.5rem;
 }
 .slug-landscapes .entry-content h3 + p,
 .slug-paysages .entry-content h3 + p,
 .slug-paisajes .entry-content h3 + p,
 .slug-paisagens .entry-content h3 + p,
-.slug-preguntas-frecuentes .entry-content h3 + p,
-.slug-perguntas-frequentes .entry-content h3 + p,
-.slug-faq .entry-content h3 + p {
+.slug-faq .slug-preguntas-frecuentes .entry-content h3 + p,
+.slug-perguntas-frequentes .entry-content h3 + p {
   -webkit-margin-before: 0;
           margin-block-start: 0;
 }
@@ -375,9 +393,8 @@ main {
 .slug-paysages .entry-content ul,
 .slug-paisajes .entry-content ul,
 .slug-paisagens .entry-content ul,
-.slug-preguntas-frecuentes .entry-content ul,
-.slug-perguntas-frequentes .entry-content ul,
-.slug-faq .entry-content ul {
+.slug-faq .slug-preguntas-frecuentes .entry-content ul,
+.slug-perguntas-frequentes .entry-content ul {
   margin-top: 0;
 }
 
@@ -564,6 +581,10 @@ main {
 
 .wp-block-group .wp-block-image figcaption {
   text-align: left;
+}
+.wp-block-group .wp-block-image.ilm-wheel figcaption {
+  text-align: center;
+  margin-right: 1em;
 }
 .wp-block-group.who-terraso-is-for img {
   border-radius: 50%;
