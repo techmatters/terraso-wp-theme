@@ -1,21 +1,6 @@
 @use "variables" as v;
 
-@mixin blue-link() {
-	color: v.$link;
-	text-decoration: underline;
-
-	&:hover {
-		color: v.$link-hover;
-	}
-}
-
-.entry-content {
-	a {
-		@include blue-link();
-	}
-}
-
-/**
+/****************************************************************
   * Buttons
   */
 .wp-block-buttons .wp-block-button .wp-block-button__link {
@@ -42,9 +27,29 @@
 	}
 }
 
-/**
+/****************************************************************
   * Content well
   */
+
+#content.site-content {
+	margin: 0;
+	padding: 0;
+}
+
+/* remove whitespace below main content area */
+#primary {
+	&.content-area {
+		margin-bottom: 0;
+	}
+
+	.entry-content {
+		margin-bottom: 0;
+	}
+
+	.page.hentry {
+		margin-bottom: 0;
+	}
+}
 
 /* add margins around page content */
 .wp-block-group__inner-container {
@@ -76,32 +81,8 @@
 	}
 }
 
-.announcement {
-	// this is media + text and doesn't have the same padding by default.
-	// match column padding.
-	> * {
-		padding-left: 32px;
-		padding-right: 32px;
-	}
 
-	.wp-block-media-text__content {
-		padding-left: 1rem;
-	}
-
-	&.full-bleed > * {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-}
-
-/**
-  * Home page
-  */
-.wp-block-image.intro-footer-image {
-	margin-bottom: 0;
-}
-
-/**
+/****************************************************************
   * Header
   */
 #primary-menu .menu-item {
@@ -148,17 +129,122 @@
 	margin-left: 0 !important;
 }
 
-header.tg-page-header.tg-page-header--left-right {
-	padding: 120px 0;
+header {
+	&.tg-page-header.tg-page-header--left-right {
+		padding: 120px 0;
+	}
+
+	/* recipe: ensure headline stays flush left */
+	.uag-toc__heading-anchor {
+		display: none;
+
+		+ .tg-page-header__title {
+			margin-bottom: v.$title-bottom-space;
+		}
+	}
 }
 
 .tg-mobile-navigation li.menu-item-has-children .tg-submenu-toggle::after {
 	font-size: 15px;
 }
 
-/**
+
+/****************************************************************
+  * Footer
+  */
+.tg-site-footer {
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	p {
+		margin-bottom: 0.5em;
+	}
+
+	// copyright line
+	.tg-site-footer-bar {
+		font-size: 0.8rem;
+	}
+
+	// social media icons
+	section.widget_media_image {
+		display: inline-block;
+
+		& + section.widget_media_image figure {
+			margin-left: 0.5rem;
+		}
+	}
+
+	section {
+		margin-bottom: 0;
+	}
+
+	.tg-footer-widget-container > div:first-child {
+		h3 {
+			@media screen and (max-width: 768px) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	h3 {
+		color: white;
+		text-transform: uppercase;
+		font-size: 1rem;
+		font-weight: bold;
+
+		@media screen and (max-width: 768px) {
+			margin-bottom: 0.5rem;
+			margin-top: 3rem;
+		}
+	}
+}
+
+.tg-scroll-to-top {
+	background-color: v.$button;
+
+	&:hover {
+		background-color: v.$button-hover;
+	}
+}
+
+.tg-icon-arrow-up::after {
+	content: "\f106";
+	font-weight: bold;
+	font-size: 20px;
+	font-family: fontAwesome, sans-serif !important;
+}
+
+/****************************************************************
   * General
   */
+
+/* page layout; stick footer to bottom of viewport */
+div#page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1;
+	overflow: auto;
+}
+
+.entry-content {
+	a {
+		color: v.$link;
+		text-decoration: underline;
+
+		&:hover {
+			color: v.$link-hover;
+		}
+	}
+}
 
 .site-main .tg-page-header,
 .wp-block-columns {
@@ -257,6 +343,9 @@ header.tg-page-header.tg-page-header--left-right {
 	}
 }
 
+/****************************************************************
+  * Archive pages
+  */
 .archive-description a,
 .author-description a {
 	color: v.$dark-brown;
@@ -268,11 +357,23 @@ header.tg-page-header.tg-page-header--left-right {
 	color: v.$dark-brown;
 }
 
-.tg-mobile-navigation li.menu-item-has-children.submenu--show > ul {
-	overflow-y: hidden;
+// author archive: space below title
+.author {
+	.archive-description,
+	.tg-page-header__title {
+		margin-bottom: v.$title-bottom-space;
+	}
 }
 
-/**
+// blog index page
+.content-area {
+	.tg-meta-style-two .entry-meta .posted-on::before,
+	.tg-meta-style-two .entry-meta .byline::before {
+		content: none;
+	}
+}
+
+/****************************************************************
   * Toolkit page
   */
 .data-collection-image {
@@ -281,8 +382,7 @@ header.tg-page-header.tg-page-header--left-right {
 	}
 }
 
-
-/**
+/****************************************************************
   * Project page
   */
 .wp-block-group.core-partners-logos {
@@ -304,81 +404,157 @@ header.tg-page-header.tg-page-header--left-right {
 	}
 }
 
-/**
-  * Footer
+/****************************************************************
+  * Home page
   */
-.tg-site-footer {
-	a {
-		text-decoration: none;
+.home {
+	// workaround Zakra bug where you can't hide header on home page
+	h1.entry-title {
+		display: none;
+	}
 
-		&:hover {
-			text-decoration: underline;
+	.announcement {
+		// this is media + text and doesn't have the same padding by default.
+		// match column padding.
+		> * {
+			padding-left: 32px;
+			padding-right: 32px;
 		}
-	}
 
-	p {
-		margin-bottom: 0.5em;
-	}
-
-	// copyright line
-	.tg-site-footer-bar {
-		font-size: 0.8rem;
-	}
-
-	// social media icons
-	section.widget_media_image {
-		display: inline-block;
-
-		& + section.widget_media_image figure {
-			margin-left: 0.5rem;
+		&.full-bleed > * {
+			margin-top: 0;
+			margin-bottom: 0;
 		}
-	}
 
-	section {
-		margin-bottom: 0;
-	}
+		h2 {
+			img {
+				margin-top: -0.3rem;
+			}
+		}
 
-	.tg-footer-widget-container > div:first-child {
-		h3 {
-			@media screen and (max-width: 768px) {
-				margin-top: 0;
+		.wp-block-media-text__content {
+			padding-left: 2rem;
+		}
+
+		@media screen and (max-width: 768px) {
+			.wp-block-media-text__content {
+				margin-top: 2rem;
+				padding-left: 0;
 			}
 		}
 	}
 
-	h3 {
-		color: white;
-		text-transform: uppercase;
-		font-size: 1rem;
-		font-weight: bold;
+	.hero-image {
+		a {
+			color: white;
+
+			&:hover {
+				color: white;
+			}
+		}
 
 		@media screen and (max-width: 768px) {
-			margin-bottom: 0.5rem;
-			margin-top: 3rem;
+			padding-left: 0;
+			padding-right: 0;
+
+			.login-join {
+				padding-left: 0;
+			}
+		}
+	}
+
+	// remove space below image / above footer
+	.wp-block-image.intro-footer-image {
+		margin-bottom: 0;
+	}
+}
+
+/****************************************************************
+  * ILM overview
+  */
+.ilm-group {
+	h3 {
+		height: 100px;
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: 490px) {
+			clear: both;
+		}
+	}
+
+	p {
+		clear: left;
+	}
+
+	.wp-block-group {
+		padding: 20px;
+		border-left: 3px solid;
+
+		.wp-block-group__inner-container {
+			padding: 0;
+		}
+
+		&:nth-child(1) h3 {
+			color: v.$compost;
+		}
+
+		&:nth-child(2) h3 {
+			color: v.$orange;
+		}
+
+		&:nth-child(3) h3 {
+			color: v.$yellow;
+		}
+
+		&:nth-child(4) h3 {
+			color: v.$green;
+		}
+
+		&:nth-child(5) h3 {
+			color: v.$blue;
 		}
 	}
 }
 
-.tg-scroll-to-top {
-	background-color: v.$button;
-
-	&:hover {
-		background-color: v.$button-hover;
-	}
+.ilm-list li {
+	margin: 0 0 5px;
+	padding: 5px 0 5px 15px;
+	border-style: solid;
+	border-width: 0 0 0 3px;
+	box-shadow: 2px 2px 2px 2px rgba(227, 227, 227, 50%);
 }
 
-.tg-icon-arrow-up::after {
-	content: "\f106";
-	font-weight: bold;
-	font-size: 20px;
-	font-family: fontAwesome, sans-serif !important;
+.ilm-group.wp-block-group:nth-child(1),
+.ilm-list li:nth-child(1) {
+	border-color: v.$compost;
 }
 
+.ilm-group.wp-block-group:nth-child(2),
+.ilm-list li:nth-child(2) {
+	border-color: v.$orange;
+}
+
+.ilm-group.wp-block-group:nth-child(3),
+.ilm-list li:nth-child(3) {
+	border-color: v.$yellow;
+}
+
+.ilm-group.wp-block-group:nth-child(4),
+.ilm-list li:nth-child(4) {
+	border-color: v.$green;
+}
+
+.ilm-group.wp-block-group:nth-child(5),
+.ilm-list li:nth-child(5) {
+	border-color: v.$blue;
+}
+
+/****************************************************************
 /* override zakra */
 
-#content.site-content {
-	margin: 0;
-	padding: 0;
+.tg-mobile-navigation li.menu-item-has-children.submenu--show > ul {
+	overflow-y: hidden;
 }
 
 .ilm-list {
@@ -390,6 +566,7 @@ header.tg-page-header.tg-page-header--left-right {
 		text-align: left;
 	}
 
+	// home page
 	&.who-terraso-is-for {
 		img {
 			border-radius: 50%;
@@ -489,89 +666,6 @@ header.tg-page-header.tg-page-header--left-right {
 			}
 		}
 	}
-
-	&.green-group .wp-block-column:first-child {
-		border-right: 3px solid v.$green;
-		padding-right: 1.5em;
-	}
-}
-
-.ilm-group {
-	h3 {
-		height: 100px;
-		display: flex;
-		align-items: center;
-
-		@media screen and (max-width: 490px) {
-			clear: both;
-		}
-	}
-
-	p {
-		clear: left;
-	}
-
-	.wp-block-group {
-		padding: 20px;
-		border-left: 3px solid;
-
-		.wp-block-group__inner-container {
-			padding: 0;
-		}
-
-		&:nth-child(1) h3 {
-			color: v.$compost;
-		}
-
-		&:nth-child(2) h3 {
-			color: v.$orange;
-		}
-
-		&:nth-child(3) h3 {
-			color: v.$yellow;
-		}
-
-		&:nth-child(4) h3 {
-			color: v.$green;
-		}
-
-		&:nth-child(5) h3 {
-			color: v.$blue;
-		}
-	}
-}
-
-.ilm-list li {
-	margin: 0 0 5px;
-	padding: 5px 0 5px 15px;
-	border-style: solid;
-	border-width: 0 0 0 3px;
-	box-shadow: 2px 2px 2px 2px rgba(227, 227, 227, 50%);
-}
-
-.ilm-group.wp-block-group:nth-child(1),
-.ilm-list li:nth-child(1) {
-	border-color: v.$compost;
-}
-
-.ilm-group.wp-block-group:nth-child(2),
-.ilm-list li:nth-child(2) {
-	border-color: v.$orange;
-}
-
-.ilm-group.wp-block-group:nth-child(3),
-.ilm-list li:nth-child(3) {
-	border-color: v.$yellow;
-}
-
-.ilm-group.wp-block-group:nth-child(4),
-.ilm-list li:nth-child(4) {
-	border-color: v.$green;
-}
-
-.ilm-group.wp-block-group:nth-child(5),
-.ilm-list li:nth-child(5) {
-	border-color: v.$blue;
 }
 
 .invisible {
@@ -590,62 +684,6 @@ header.tg-page-header.tg-page-header--left-right {
 	}
 }
 
-/* workaround Zakra bug where you can't hide header on home page */
-.home {
-	h1.entry-title {
-		display: none;
-	}
-
-	.announcement {
-		h2 {
-			img {
-				margin-top: -0.3rem;
-			}
-		}
-
-		@media screen and (max-width: 768px) {
-			.wp-block-media-text__content {
-				margin-top: 2rem;
-				padding-left: 0;
-			}
-		}
-	}
-
-	.hero-image {
-		a {
-			color: white;
-
-			&:hover {
-				color: white;
-			}
-		}
-
-		@media screen and (max-width: 768px) {
-			padding-left: 0;
-			padding-right: 0;
-
-			.login-join {
-				padding-left: 0;
-			}
-		}
-	}
-}
-
-/* remove whitespace below main content area */
-#primary {
-	&.content-area {
-		margin-bottom: 0;
-	}
-
-	.entry-content {
-		margin-bottom: 0;
-	}
-
-	.page.hentry {
-		margin-bottom: 0;
-	}
-}
-
 .error-404 {
 	margin: 2em 0;
 	font-size: 2em;
@@ -657,43 +695,6 @@ header.tg-page-header.tg-page-header--left-right {
 	.search-form label::before {
 		content: none;
 	}
-}
-
-/* author archive: space below title */
-.author {
-	.archive-description,
-	.tg-page-header__title {
-		margin-bottom: v.$title-bottom-space;
-	}
-}
-
-/* recipe: ensure headline stays flush left */
-header .uag-toc__heading-anchor {
-	display: none;
-
-	+ .tg-page-header__title {
-		margin-bottom: v.$title-bottom-space;
-	}
-}
-
-/* blog index page */
-.content-area {
-	.tg-meta-style-two .entry-meta .posted-on::before,
-	.tg-meta-style-two .entry-meta .byline::before {
-		content: none;
-	}
-}
-
-/* page layout; stick footer to bottom of viewport */
-div#page {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
-
-main {
-	flex: 1;
-	overflow: auto;
 }
 
 @media screen and (max-width: 768px) {
