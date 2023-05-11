@@ -666,27 +666,9 @@ main {
 	&.contact-form {
 		h3 {
 			margin: 0;
-		}
 
-		.wp-block-table {
-			td {
-				border: none;
-				padding-right: 0;
-			}
-
-			tr td:first-child {
-				text-align: right;
-				vertical-align: top;
-				width: 37px;
-			}
-		}
-
-		svg {
-			width: 37px;
-			height: auto;
-
-			path {
-				fill: v.$green;
+			+ p {
+				margin-block-start: 0;
 			}
 		}
 	}

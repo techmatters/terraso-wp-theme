@@ -648,21 +648,9 @@ main {
 .wp-block-group.contact-form h3 {
   margin: 0;
 }
-.wp-block-group.contact-form .wp-block-table td {
-  border: none;
-  padding-right: 0;
-}
-.wp-block-group.contact-form .wp-block-table tr td:first-child {
-  text-align: right;
-  vertical-align: top;
-  width: 37px;
-}
-.wp-block-group.contact-form svg {
-  width: 37px;
-  height: auto;
-}
-.wp-block-group.contact-form svg path {
-  fill: #028843;
+.wp-block-group.contact-form h3 + p {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
 }
 
 .invisible {
