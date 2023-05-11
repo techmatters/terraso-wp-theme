@@ -326,6 +326,30 @@ main {
 		h2, h3 {
 			scroll-margin-top: 102px;
 		}
+
+		.simpletoc-title {
+			text-transform: uppercase;
+			font-size: 1rem;
+			margin-top: 1rem;
+		}
+
+		.simpletoc-list {
+			list-style: none;
+			margin-left: 0;
+			font-size: 1.4rem;
+
+			li {
+				line-height: 2;
+			}
+
+			a {
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
 	}
 }
 
@@ -540,27 +564,27 @@ main {
 	box-shadow: 2px 2px 2px 2px rgba(227, 227, 227, 50%);
 }
 
-.ilm-group.wp-block-group:nth-child(1),
+.ilm-group .wp-block-group:nth-child(1),
 .ilm-list li:nth-child(1) {
 	border-color: v.$compost;
 }
 
-.ilm-group.wp-block-group:nth-child(2),
+.ilm-group .wp-block-group:nth-child(2),
 .ilm-list li:nth-child(2) {
 	border-color: v.$orange;
 }
 
-.ilm-group.wp-block-group:nth-child(3),
+.ilm-group .wp-block-group:nth-child(3),
 .ilm-list li:nth-child(3) {
 	border-color: v.$yellow;
 }
 
-.ilm-group.wp-block-group:nth-child(4),
+.ilm-group .wp-block-group:nth-child(4),
 .ilm-list li:nth-child(4) {
 	border-color: v.$green;
 }
 
-.ilm-group.wp-block-group:nth-child(5),
+.ilm-group .wp-block-group:nth-child(5),
 .ilm-list li:nth-child(5) {
 	border-color: v.$blue;
 }
