@@ -26,6 +26,7 @@ class Terraso {
 		add_action( 'init', [ __CLASS__, 'help_rewrite' ] );
 		add_filter( 'auto_update_translation', '__return_true' );
 		add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
+		add_filter( 'jetpack_open_graph_image_default', [ __CLASS__, 'jetpack_open_graph_image_default' ] );
 	}
 
 	/**
@@ -140,6 +141,13 @@ class Terraso {
 		}
 
 		return $classes;
+	}
+
+	/**
+	 * Fallback image for open graph tags
+	 */
+	public static function jetpack_open_graph_image_default() {
+		return get_stylesheet_directory_uri() . '/assets/img/terraso.png';
 	}
 }
 
