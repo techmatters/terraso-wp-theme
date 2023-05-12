@@ -206,6 +206,16 @@ header .uag-toc__heading-anchor + .tg-page-header__title {
   margin-bottom: 1em;
 }
 
+.tg-header-sticky-wrapper .tg-header-container {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+@media screen and (min-width: 1300px) {
+  .tg-header-sticky-wrapper .tg-header-container .custom-logo {
+    margin-left: -64px;
+  }
+}
+
 .tg-mobile-navigation li.menu-item-has-children .tg-submenu-toggle::after {
   font-size: 15px;
 }
