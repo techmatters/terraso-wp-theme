@@ -157,6 +157,7 @@ class Terraso {
 			'supports'              => [ 'title', 'editor', 'thumbnail', 'revisions' ],
 			'show_in_graphql'       => false,
 			'menu_position'         => 20,
+			'menu_icon'             => 'dashicons-editor-help',
 		];
 
 		register_post_type( 'help', $args );
