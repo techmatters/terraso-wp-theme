@@ -125,9 +125,9 @@ class Terraso {
 	 */
 	public static function help_rewrite() {
 		add_rewrite_rule( '^help$', 'index.php?help=help', 'top' );
-		add_rewrite_rule( '^ayuda$', 'index.php?help=ayuda', 'top' ); // es
-		add_rewrite_rule( '^aide$', 'index.php?help=aide', 'top' );   // fr
-		add_rewrite_rule( '^ajuda$', 'index.php?help=ajuda', 'top' ); // pt
+		add_rewrite_rule( '^ayuda$', 'index.php?help=ayuda', 'top' ); // es.
+		add_rewrite_rule( '^aide$', 'index.php?help=aide', 'top' );   // fr.
+		add_rewrite_rule( '^ajuda$', 'index.php?help=ajuda', 'top' ); // pt.
 	}
 
 	/**

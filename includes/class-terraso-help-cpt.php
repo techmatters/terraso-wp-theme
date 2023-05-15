@@ -34,7 +34,7 @@ class Terraso_Help_CPT {
 			'fr_FR' => 'aide',
 			'pt_PT' => 'ajuda',
 		];
-		$slug = $slug_map[ $language ] ?: 'help';
+		$slug     = $slug_map[ $language ] ?: 'help';
 
 		$args = [
 			'label'                 => esc_html__( 'Help pages', 'terraso' ),
