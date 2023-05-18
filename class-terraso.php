@@ -27,6 +27,7 @@ class Terraso {
 		add_filter( 'auto_update_translation', '__return_true' );
 		add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
 		add_filter( 'jetpack_open_graph_image_default', [ __CLASS__, 'jetpack_open_graph_image_default' ] );
+		add_action( 'zakra_action_footer_bottom_bar_one', [ __CLASS__, 'zakra_action_footer_bottom_bar_one' ] );
 	}
 
 	/**
@@ -150,6 +151,13 @@ class Terraso {
 	 */
 	public static function jetpack_open_graph_image_default() {
 		return get_stylesheet_directory_uri() . '/assets/img/terraso.png';
+	}
+
+	/**
+	 * Copyright message
+	 */
+	public static function zakra_action_footer_bottom_bar_one() {
+		echo wp_kses_post( '© ' . esc_html( gmdate( 'Y' ) ) . " <a href='https://techmatters.org/'>Tech Matters</a>." );
 	}
 }
 
