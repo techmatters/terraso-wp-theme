@@ -28,6 +28,7 @@ class Terraso {
 		add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
 		add_filter( 'jetpack_open_graph_image_default', [ __CLASS__, 'jetpack_open_graph_image_default' ] );
 		add_action( 'zakra_action_footer_bottom_bar_one', [ __CLASS__, 'zakra_action_footer_bottom_bar_one' ] );
+		add_action( 'init', [ __CLASS__, 'kses_allow_additional_tags' ] );
 	}
 
 	/**
@@ -158,6 +159,45 @@ class Terraso {
 	 */
 	public static function zakra_action_footer_bottom_bar_one() {
 		echo wp_kses_post( '© ' . esc_html( gmdate( 'Y' ) ) . " <a href='https://techmatters.org/'>Tech Matters</a>." );
+	}
+
+	/**
+	 * Allow additional tags and attributes.
+	 */
+	public static function kses_allow_additional_tags() {
+		global $allowedposttags;
+
+		$style_attributes = [
+			'class' => true,
+			'id'    => true,
+			'style' => true,
+		];
+
+		$allowed_tags_data = [
+			'iframe' => array_merge(
+				$style_attributes,
+				[
+					'height'         => true,
+					'loading'        => true,
+					'name'           => true,
+					'referrerpolicy' => true,
+					'sandbox'        => true,
+					'src'            => true,
+					'srcdoc'         => true,
+					'title'          => true,
+					'width'          => true,
+				]
+			),
+		];
+
+
+		foreach ( $allowed_tags_data as $tag => $new_attributes ) {
+			if ( ! isset( $allowedposttags[ $tag ] ) || ! is_array( $allowedposttags[ $tag ] ) ) {
+				$allowedposttags[ $tag ] = []; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+			}
+
+			$allowedposttags[ $tag ] = array_merge( $allowedposttags[ $tag ], $new_attributes ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+		}
 	}
 }
 
