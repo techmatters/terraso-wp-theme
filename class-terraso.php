@@ -24,11 +24,14 @@ class Terraso {
 		add_action( 'after_setup_theme', [ __CLASS__, 'setup' ] );
 		add_filter( 'document_title_separator', [ __CLASS__, 'document_title_separator' ] );
 		add_action( 'init', [ __CLASS__, 'help_rewrite' ] );
-		add_filter( 'auto_update_translation', '__return_true' );
 		add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
 		add_filter( 'jetpack_open_graph_image_default', [ __CLASS__, 'jetpack_open_graph_image_default' ] );
 		add_action( 'zakra_action_footer_bottom_bar_one', [ __CLASS__, 'zakra_action_footer_bottom_bar_one' ] );
 		add_action( 'init', [ __CLASS__, 'kses_allow_additional_tags' ] );
+		// Automatic update-related filters. Update silently.
+		add_filter( 'auto_update_translation', '__return_true' );
+		add_filter( 'auto_theme_update_send_email', '__return_false' );
+		add_filter( 'auto_plugin_update_send_email', '__return_false' );
 	}
 
 	/**
