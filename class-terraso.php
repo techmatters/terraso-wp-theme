@@ -16,18 +16,19 @@ class Terraso {
 	 * Add actions and filters.
 	 */
 	public static function hooks() {
-		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'zakra_child_enqueue_styles' ] );
-		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'remove_fontawesome' ], 20 );
-		add_filter( 'get_custom_logo_image_attributes', [ __CLASS__, 'get_custom_logo_image_attributes' ], 10, 3 );
-		add_filter( 'zakra_header_search_icon_data_attrs', [ __CLASS__, 'zakra_header_search_icon_data_attrs' ] );
-		add_action( 'wp_head', [ __CLASS__, 'meta_tags' ] );
 		add_action( 'after_setup_theme', [ __CLASS__, 'setup' ] );
-		add_filter( 'document_title_separator', [ __CLASS__, 'document_title_separator' ] );
 		add_action( 'init', [ __CLASS__, 'help_rewrite' ] );
-		add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
-		add_filter( 'jetpack_open_graph_image_default', [ __CLASS__, 'jetpack_open_graph_image_default' ] );
-		add_action( 'zakra_action_footer_bottom_bar_one', [ __CLASS__, 'zakra_action_footer_bottom_bar_one' ] );
 		add_action( 'init', [ __CLASS__, 'kses_allow_additional_tags' ] );
+		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'remove_fontawesome' ], 20 );
+		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'zakra_child_enqueue_styles' ] );
+		add_action( 'wp_head', [ __CLASS__, 'meta_tags' ] );
+		add_action( 'zakra_action_footer_bottom_bar_one', [ __CLASS__, 'zakra_action_footer_bottom_bar_one' ] );
+		add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
+		add_filter( 'document_title_separator', [ __CLASS__, 'document_title_separator' ] );
+		add_filter( 'get_custom_logo_image_attributes', [ __CLASS__, 'get_custom_logo_image_attributes' ], 10, 3 );
+		add_filter( 'jetpack_open_graph_image_default', [ __CLASS__, 'jetpack_open_graph_image_default' ] );
+		add_filter( 'zakra_header_search_icon_data_attrs', [ __CLASS__, 'zakra_header_search_icon_data_attrs' ] );
+
 		// Automatic update-related filters. Update silently.
 		add_filter( 'auto_update_translation', '__return_true' );
 		add_filter( 'auto_theme_update_send_email', '__return_false' );
