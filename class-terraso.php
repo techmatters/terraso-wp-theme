@@ -16,6 +16,7 @@ class Terraso {
 	 * Add actions and filters.
 	 */
 	public static function hooks() {
+		add_action( 'add_meta_boxes', [ __CLASS__, 'remove_meta_boxes' ] );
 		add_action( 'after_setup_theme', [ __CLASS__, 'setup' ] );
 		add_action( 'init', [ __CLASS__, 'help_rewrite' ] );
 		add_action( 'init', [ __CLASS__, 'kses_allow_additional_tags' ] );
@@ -33,6 +34,13 @@ class Terraso {
 		add_filter( 'auto_update_translation', '__return_true' );
 		add_filter( 'auto_theme_update_send_email', '__return_false' );
 		add_filter( 'auto_plugin_update_send_email', '__return_false' );
+	}
+
+	/**
+	 * Remvoe Zakra Page Settings box from blog posts.
+	 */
+	public static function remove_meta_boxes() {
+		remove_meta_box( 'zakra-page-setting', 'post', 'advanced' );
 	}
 
 	/**
