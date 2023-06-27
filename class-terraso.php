@@ -37,7 +37,7 @@ class Terraso {
 	}
 
 	/**
-	 * Remvoe Zakra Page Settings box from blog posts.
+	 * Remove Zakra Page Settings box from blog posts.
 	 */
 	public static function remove_meta_boxes() {
 		remove_meta_box( 'zakra-page-setting', 'post', 'advanced' );
