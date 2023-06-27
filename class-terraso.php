@@ -17,6 +17,7 @@ class Terraso {
 	 */
 	public static function hooks() {
 		add_action( 'add_meta_boxes', [ __CLASS__, 'remove_meta_boxes' ] );
+		add_action( 'after_setup_theme', [ __CLASS__, 'add_ppma_capacbilities' ] );
 		add_action( 'after_setup_theme', [ __CLASS__, 'setup' ] );
 		add_action( 'init', [ __CLASS__, 'help_rewrite' ] );
 		add_action( 'init', [ __CLASS__, 'kses_allow_additional_tags' ] );
@@ -37,7 +38,16 @@ class Terraso {
 	}
 
 	/**
-	 * Remvoe Zakra Page Settings box from blog posts.
+	 * Allow editors to manage PublishPress Authors settings.
+	 */
+	public static function add_ppma_capacbilities() {
+		$role = get_role( 'editor' );
+		$role->add_cap( 'ppma_manage_authors', true );
+		$role->add_cap( 'ppma_edit_post_authors', true );
+	}
+
+	/**
+	 * Remove Zakra Page Settings box from blog posts.
 	 */
 	public static function remove_meta_boxes() {
 		remove_meta_box( 'zakra-page-setting', 'post', 'advanced' );
