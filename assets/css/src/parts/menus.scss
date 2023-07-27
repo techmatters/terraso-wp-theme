@@ -41,7 +41,7 @@ html body .tg-icon {
 	background-position: center 7px;
 }
 
-#masthead .tg-icon-bars::after {
+#zak-masthead .tg-icon-bars::after {
 	background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M20 5V2H0v3h20zm0 6V8H0v3h20zm0 6v-3H0v3h20z'/%3E%3C/g%3E%3C/svg%3E");
 	background-position: 0 8px;
 }
@@ -79,6 +79,6 @@ html body .tg-icon {
 #mobile-primary-menu .tg-submenu-toggle::after,
 #mobile-primary-menu .search-form label::before,
 #primary-menu .search-form label::before,
-#masthead .tg-icon-bars::after {
+#zak-masthead .tg-icon-bars::after {
 	@include search-icon;
 }

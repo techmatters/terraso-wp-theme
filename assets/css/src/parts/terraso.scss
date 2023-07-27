@@ -72,7 +72,7 @@
 .entry-content > div:not(.full-bleed),
 .hero-image .wp-block-columns,
 .full-bleed:not(.hero-image) > *,
-.tg-header-sticky-wrapper .tg-header-container {
+.tg-header-sticky-wrapper .zak-top-bar-container {
 	max-width: 1200px;
 	margin: 0 auto;
 
@@ -104,7 +104,7 @@
 	}
 }
 
-.tg-site-header {
+.tg.zak-header {
 	box-shadow: rgba(0, 0, 0, 10%) 0 3px 4px 0;
 	margin-bottom: 4px;
 }
@@ -139,7 +139,7 @@ header {
 	}
 }
 
-.tg-header-sticky-wrapper .tg-header-container {
+.tg-header-sticky-wrapper .zak-top-bar-container {
 	padding-left: 2em;
 	padding-right: 2em;
 
@@ -752,7 +752,7 @@ main {
 		margin-top: 20px;
 	}
 
-	.page #content .tg-container {
+	.page #content .zak-container {
 		padding-left: 0;
 		padding-right: 0;
 	}
