@@ -28,7 +28,7 @@
 		"grunt-contrib-watch": "^1.1.0",
 		"grunt-eslint": "^24.2.0",
 		"grunt-sass": "^3.1.0",
-		"grunt-stylelint": "^0.18.0",
+		"grunt-stylelint": "^0.19.0",
 		"matchdep": "^2.0.0",
 		"sass": "^1.63.6",
 		"stylelint": "^15.10.2",
