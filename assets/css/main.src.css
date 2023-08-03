@@ -234,6 +234,9 @@ header .uag-toc__heading-anchor + .zak-page-header__title {
 .zak-footer .zak-site-footer-bar {
   font-size: 0.8rem;
 }
+.zak-footer .zak-footer-col {
+  gap: 0;
+}
 .zak-footer section.widget_media_image {
   display: inline-block;
 }
@@ -251,8 +254,9 @@ header .uag-toc__heading-anchor + .zak-page-header__title {
 .zak-footer h3 {
   color: white;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: bold;
+  border-bottom: none;
 }
 @media screen and (max-width: 768px) {
   .zak-footer h3 {
