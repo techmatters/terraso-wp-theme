@@ -30,6 +30,7 @@ class Terraso {
 		add_filter( 'get_custom_logo_image_attributes', [ __CLASS__, 'get_custom_logo_image_attributes' ], 10, 3 );
 		add_filter( 'jetpack_open_graph_image_default', [ __CLASS__, 'jetpack_open_graph_image_default' ] );
 		add_filter( 'zakra_header_search_icon_data_attrs', [ __CLASS__, 'zakra_header_search_icon_data_attrs' ] );
+		add_filter( 'get_search_form', [ __CLASS__, 'zakra_search_placeholder' ], 10, 2 );
 
 		// Automatic update-related filters. Update silently.
 		add_filter( 'auto_update_translation', '__return_true' );
@@ -108,6 +109,17 @@ class Terraso {
 	 */
 	public static function zakra_header_search_icon_data_attrs() {
 		return 'aria-label="' . esc_attr( 'Search' ) . '"';
+	}
+
+	/**
+	 * Add Aria label to Zakra search field.
+	 *
+	 * @param string $form The search form HTML output.
+	 * @param array  $args The array of arguments for building the search form.
+	 *                     See get_search_form() for information on accepted arguments.
+	 */
+	public static function zakra_search_placeholder( $form, $args ) {
+		return str_replace( 'Type &amp; hit Enter &hellip;', 'Search &hellip;', $form );
 	}
 
 	/**
