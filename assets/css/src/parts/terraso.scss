@@ -725,16 +725,26 @@ main {
 	}
 }
 
-.error-404 {
-	margin: 2em 0;
+.zak-error-404 {
 	font-size: 2em;
 
-	.search-field {
-		border-radius: 1em;
+	.zak-search-form {
+		.zak-search-field-label {
+			border-radius: 1em;
+		}
+
+		.zak-search-field {
+			padding-left: 1em;
+
+			&:focus {
+				color: black;
+			}
+		}
 	}
 
-	.search-form label::before {
-		content: none;
+	img {
+		width: 100%;
+		height: auto;
 	}
 }
 
