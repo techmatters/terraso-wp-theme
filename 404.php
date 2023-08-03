@@ -22,18 +22,12 @@ get_header();
 				</header><!-- .page-header -->
 			<?php endif; ?>
 
-			<img
-					src="<?php echo esc_url( get_template_directory_uri() . '/assets/svg/404.svg' ); ?>" alt=""
-			/>
+			<div class="zak-page-content zak-no-results">
+				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links above or a search?', 'terraso' ); ?></p>
 
-			<header class="zak-content-header">
-				<p><?php esc_html_e( 'Oops! Page Not Found', 'zakra' ); ?></p>
-			</header>
+				<?php get_search_form(); ?>
 
-			<div class="zak-page-content">
-				<p>
-					<?php esc_html_e( 'We’re sorry, the page you requested could not be found. Please go back to the homepage', 'zakra' ); ?>
-				</p>
+				<p><img src="/wp-content/uploads/2021/04/man-looking-through-binoculars.jpg"></p>
 			</div><!-- .zak-page-content -->
 
 			<a class="zak-button" href="<?php echo esc_url( home_url( '/' ) ); ?>">
