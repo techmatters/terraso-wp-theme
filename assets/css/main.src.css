@@ -236,6 +236,7 @@ header .uag-toc__heading-anchor + .zak-page-header__title {
 }
 .zak-footer .zak-footer-col {
   gap: 0;
+  display: block;
 }
 .zak-footer .zak-footer-col h3 {
   border-bottom: none;
