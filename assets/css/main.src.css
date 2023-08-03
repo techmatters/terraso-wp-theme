@@ -35,7 +35,7 @@ html body .tg-icon {
   background-position: center 7px;
 }
 
-#masthead .tg-icon-bars::after {
+#zak-masthead .tg-icon-bars::after {
   background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M20 5V2H0v3h20zm0 6V8H0v3h20zm0 6v-3H0v3h20z'/%3E%3C/g%3E%3C/svg%3E");
   background-position: 0 8px;
 }
@@ -71,7 +71,7 @@ html body .tg-icon {
 #mobile-primary-menu .tg-submenu-toggle::after,
 #mobile-primary-menu .search-form label::before,
 #primary-menu .search-form label::before,
-#masthead .tg-icon-bars::after {
+#zak-masthead .tg-icon-bars::after {
   width: 18px;
   height: 24px;
   display: inline-block;
@@ -145,7 +145,7 @@ html body .tg-icon {
 .entry-content > div:not(.full-bleed),
 .hero-image .wp-block-columns,
 .full-bleed:not(.hero-image) > *,
-.tg-header-sticky-wrapper .tg-header-container {
+.tg-header-sticky-wrapper .zak-top-bar-container {
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -153,7 +153,7 @@ html body .tg-icon {
   .entry-content > div:not(.full-bleed),
   .hero-image .wp-block-columns,
   .full-bleed:not(.hero-image) > *,
-  .tg-header-sticky-wrapper .tg-header-container {
+  .tg-header-sticky-wrapper .zak-top-bar-container {
     max-width: 100%;
   }
 }
@@ -173,7 +173,7 @@ html body .tg-icon {
   color: white;
 }
 
-.tg-site-header {
+.tg.zak-header {
   box-shadow: rgba(0, 0, 0, 0.1) 0 3px 4px 0;
   margin-bottom: 4px;
 }
@@ -206,12 +206,12 @@ header .uag-toc__heading-anchor + .tg-page-header__title {
   margin-bottom: 1em;
 }
 
-.tg-header-sticky-wrapper .tg-header-container {
+.tg-header-sticky-wrapper .zak-top-bar-container {
   padding-left: 2em;
   padding-right: 2em;
 }
 @media screen and (min-width: 1300px) {
-  .tg-header-sticky-wrapper .tg-header-container .custom-logo {
+  .tg-header-sticky-wrapper .zak-top-bar-container .custom-logo {
     margin-left: -64px;
   }
 }
@@ -728,15 +728,21 @@ main {
   }
 }
 
-.error-404 {
-  margin: 2em 0;
+.zak-error-404 {
   font-size: 2em;
 }
-.error-404 .search-field {
+.zak-error-404 .zak-search-form .zak-search-field-label {
   border-radius: 1em;
 }
-.error-404 .search-form label::before {
-  content: none;
+.zak-error-404 .zak-search-form .zak-search-field {
+  padding-left: 1em;
+}
+.zak-error-404 .zak-search-form .zak-search-field:focus {
+  color: black;
+}
+.zak-error-404 img {
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -750,7 +756,7 @@ main {
   .wp-block-columns.our-values .wp-block-column + .wp-block-column {
     margin-top: 20px;
   }
-  .page #content .tg-container {
+  .page #content .zak-container {
     padding-left: 0;
     padding-right: 0;
   }
