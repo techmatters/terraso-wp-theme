@@ -22,7 +22,7 @@ class Terraso {
 		add_action( 'init', [ __CLASS__, 'help_rewrite' ] );
 		add_action( 'init', [ __CLASS__, 'kses_allow_additional_tags' ] );
 		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'remove_fontawesome' ], 20 );
-		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'zakra_child_enqueue_styles' ],9 );
+		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'zakra_child_enqueue_styles' ], 9 );
 		add_action( 'wp_head', [ __CLASS__, 'meta_tags' ] );
 		add_action( 'zakra_action_footer_bottom_bar_one', [ __CLASS__, 'zakra_action_footer_bottom_bar_one' ] );
 		add_filter( 'body_class', [ __CLASS__, 'filter_body_class' ] );
