@@ -173,6 +173,7 @@ header {
 
 	.zak-footer-col {
 		gap: 0;
+		display: block; // flex prevents social media icons' display-inline from working
 
 		h3 {
 			border-bottom: none;
