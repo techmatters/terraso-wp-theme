@@ -92,9 +92,10 @@
 /****************************************************************
   * Header
   */
-#primary-menu .menu-item {
+#zak-primary-menu .menu-item {
 	// need to override Zakra styles
 	a {
+		font-size: 1.6rem;
 		text-decoration: none;
 	}
 
@@ -102,6 +103,7 @@
 		color: v.$green;
 		border-bottom: 4px solid v.$green;
 	}
+}
 
 #zak-masthead {
 	.zak-header-button a {
