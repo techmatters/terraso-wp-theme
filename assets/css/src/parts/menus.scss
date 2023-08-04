@@ -68,6 +68,12 @@ html body .zak-icon {
 }
 // stylelint-enable selector-class-pattern
 
+#zak-scroll-to-top .zak-icon-arrow-up::after {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' d='M0 0h20v20H0z'/%3E%3Cpath fill='%23ffffff' d='M11 18H9V6l-4 4-2-1 7-7 7 7-2 1-4-4v12z'/%3E%3C/svg%3E");
+	background-position: -3px -3px;
+}
+
+#zak-scroll-to-top .zak-icon-arrow-up::after,
 #mobile-navigation .zak-mobile-navigation-close::before,
 #site-navigation .zak-icon-search::after,
 #mobile-primary-menu .zak-submenu-toggle::after,
