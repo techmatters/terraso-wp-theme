@@ -3,17 +3,29 @@
 /****************************************************************
   * Buttons
   */
-.wp-block-buttons .wp-block-button .wp-block-button__link {
-	background-color: v.$green;
-	padding: 12px 25px;
-	color: white;
-	text-decoration: none;
-	font-size: 1.2em;
+.wp-block-buttons.wp-block-buttons .wp-block-button {
 
-	&:hover {
-		background-color: v.$green-hover;
-		text-decoration: none;
+	// override zakra dark green border
+	&__link {
+		border-color: transparent;
+
+		&:hover {
+			border-color: transparent;
+		}
+	}
+
+	.wp-block-button__link {
+		background-color: v.$green;
+		padding: 12px 25px;
 		color: white;
+		text-decoration: none;
+		font-size: 1.2em;
+
+		&:hover {
+			background-color: v.$green-hover;
+			text-decoration: none;
+			color: white;
+		}
 	}
 }
 
