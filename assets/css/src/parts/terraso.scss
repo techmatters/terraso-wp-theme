@@ -188,8 +188,19 @@ header {
 	}
 
 	// copyright line
-	.zak-site-footer-bar {
-		font-size: 0.8rem;
+	.zak-footer-bar {
+		border-top: none;
+		font-size: 1.2rem;
+
+		&.zak-style-2 {
+			.zak-row {
+				display: block;
+			}
+
+			.zak-footer-bar__1 {
+				text-align: left;
+			}
+		}
 	}
 
 	.zak-footer-col {
