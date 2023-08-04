@@ -1,5 +1,5 @@
 .search-form label::before,
-html body .tg-icon {
+html body .zak-icon {
 	font-family: sans-serif !important;
 }
 
@@ -20,7 +20,7 @@ html body .tg-icon {
 .search .search-form label::before,
 #mobile-navigation .search-form label::before,
 #header-action .search-form label::before,
-#header-action .tg-icon-search::after {
+#header-action .zak-icon-search::after {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' d='M0 0h20v20H0z'/%3E%3Cpath fill='%23adb5bd' d='M12.14 4.18a5.504 5.504 0 01.72 6.89c.12.1.22.21.36.31.2.16.47.36.81.59.34.24.56.39.66.47.42.31.73.57.94.78.32.32.6.65.84 1 .25.35.44.69.59 1.04.14.35.21.68.18 1-.02.32-.14.59-.36.81s-.49.34-.81.36c-.31.02-.65-.04-.99-.19-.35-.14-.7-.34-1.04-.59-.35-.24-.68-.52-1-.84-.21-.21-.47-.52-.77-.93-.1-.13-.25-.35-.47-.66-.22-.32-.4-.57-.56-.78-.16-.2-.29-.35-.44-.5a5.503 5.503 0 01-6.44-.98c-2.14-2.15-2.14-5.64 0-7.78a5.498 5.498 0 017.78 0zm-1.41 6.36a3.513 3.513 0 000-4.95 3.495 3.495 0 00-4.95 0 3.495 3.495 0 000 4.95 3.495 3.495 0 004.95 0z'/%3E%3C/svg%3E");
 	content: " ";
 	height: 20px;
@@ -32,33 +32,33 @@ html body .tg-icon {
 	background-position: center 0;
 }
 
-#header-action .tg-icon-search::after {
+#header-action .zak-icon-search::after {
 	background-position: center 3px;
 }
 
-#site-navigation .tg-icon-search::after {
+#site-navigation .zak-icon-search::after {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' d='M0 0h20v20H0z'/%3E%3Cpath d='M12.14 4.18a5.504 5.504 0 01.72 6.89c.12.1.22.21.36.31.2.16.47.36.81.59.34.24.56.39.66.47.42.31.73.57.94.78.32.32.6.65.84 1 .25.35.44.69.59 1.04.14.35.21.68.18 1-.02.32-.14.59-.36.81s-.49.34-.81.36c-.31.02-.65-.04-.99-.19-.35-.14-.7-.34-1.04-.59-.35-.24-.68-.52-1-.84-.21-.21-.47-.52-.77-.93-.1-.13-.25-.35-.47-.66-.22-.32-.4-.57-.56-.78-.16-.2-.29-.35-.44-.5a5.503 5.503 0 01-6.44-.98c-2.14-2.15-2.14-5.64 0-7.78a5.498 5.498 0 017.78 0zm-1.41 6.36a3.513 3.513 0 000-4.95 3.495 3.495 0 00-4.95 0 3.495 3.495 0 000 4.95 3.495 3.495 0 004.95 0z'/%3E%3C/svg%3E");
 	background-position: center 7px;
 }
 
-#masthead .tg-icon-bars::after {
+#zak-masthead .zak-icon-bars::after {
 	background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M20 5V2H0v3h20zm0 6V8H0v3h20zm0 6v-3H0v3h20z'/%3E%3C/g%3E%3C/svg%3E");
 	background-position: 0 8px;
 }
 
-#mobile-primary-menu .tg-submenu-toggle::after {
+#mobile-primary-menu .zak-submenu-toggle::after {
 	background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M17 7v3h-5v5H9v-5H4V7h5V2h3v5h5z'/%3E%3C/g%3E%3C/svg%3E");
 	background-position: 0 4px;
 }
 
-#mobile-navigation .tg-mobile-navigation-close::before {
+#mobile-navigation .zak-mobile-navigation-close::before {
 	background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M12.12 10l3.53 3.53-2.12 2.12L10 12.12l-3.54 3.54-2.12-2.12L7.88 10 4.34 6.46l2.12-2.12L10 7.88l3.54-3.53 2.12 2.12z'/%3E%3C/g%3E%3C/svg%3E");
 	background-position: 0 10px;
 }
 
 // stylelint-disable selector-class-pattern
-.tg-primary-menu > div ul#primary-menu li.menu-item-has-children > a::after,
-.tg-primary-menu > div ul#primary-menu li.page_item_has_children > a::after {
+.zak-primary-menu > div ul#primary-menu li.menu-item-has-children > a::after,
+.zak-primary-menu > div ul#primary-menu li.page_item_has_children > a::after {
 	vertical-align: middle;
 	content: "";
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='0' fill='none' width='20' height='20'/%3E%3Cg%3E%3Cpath d='M5 6l5 5 5-5 2 1-7 7-7-7z'/%3E%3C/g%3E%3C/svg%3E");
@@ -68,17 +68,17 @@ html body .tg-icon {
 }
 // stylelint-enable selector-class-pattern
 
-#tg-scroll-to-top .tg-icon-arrow-up::after {
+#zak-scroll-to-top .zak-icon-arrow-up::after {
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' d='M0 0h20v20H0z'/%3E%3Cpath fill='%23ffffff' d='M11 18H9V6l-4 4-2-1 7-7 7 7-2 1-4-4v12z'/%3E%3C/svg%3E");
-	background-position: 0 6px;
+	background-position: -3px -3px;
 }
 
-#tg-scroll-to-top .tg-icon-arrow-up::after,
-#mobile-navigation .tg-mobile-navigation-close::before,
-#site-navigation .tg-icon-search::after,
-#mobile-primary-menu .tg-submenu-toggle::after,
+#zak-scroll-to-top .zak-icon-arrow-up::after,
+#mobile-navigation .zak-mobile-navigation-close::before,
+#site-navigation .zak-icon-search::after,
+#mobile-primary-menu .zak-submenu-toggle::after,
 #mobile-primary-menu .search-form label::before,
 #primary-menu .search-form label::before,
-#masthead .tg-icon-bars::after {
+#zak-masthead .zak-icon-bars::after {
 	@include search-icon;
 }
