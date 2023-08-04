@@ -103,10 +103,14 @@
 		border-bottom: 4px solid v.$green;
 	}
 
-	&.zak-header-button-one a {
+#zak-masthead {
+	.zak-header-button a {
+		border-color: v.$blue;
+
 		&:hover {
 			background: v.$blue;
 			color: white;
+			border-color: v.$blue;
 		}
 	}
 }
