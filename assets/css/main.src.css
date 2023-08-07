@@ -81,7 +81,8 @@ html body .zak-icon {
 
 /*
  * Colors
- */ /****************************************************************
+ */
+/****************************************************************
   * Buttons
   */
 .wp-block-buttons.wp-block-buttons .wp-block-button__link {
@@ -296,7 +297,7 @@ body .zak-scroll-to-top {
   background-color: #076b8e;
 }
 body .zak-scroll-to-top:hover {
-  background-color: #358EAE;
+  background-color: #358eae;
 }
 
 .zak-icon-arrow-up::after {
@@ -393,7 +394,8 @@ main {
   border-radius: 4px;
 }
 
-.slug-faq .entry-content h2, .slug-faq .entry-content h3,
+.slug-faq .entry-content h2,
+.slug-faq .entry-content h3,
 .slug-preguntas-frecuentes .entry-content h2,
 .slug-preguntas-frecuentes .entry-content h3,
 .slug-perguntas-frequentes .entry-content h2,
@@ -737,9 +739,6 @@ main {
 .wp-block-group.mobile-header .wp-block-group__inner-container {
   padding: 0;
 }
-.wp-block-group.contact-form h3 {
-  margin: 0;
-}
 .wp-block-group.contact-form h3 + p {
   -webkit-margin-before: 0;
           margin-block-start: 0;
@@ -764,6 +763,7 @@ main {
 
 .zak-error-404 {
   font-size: 2em;
+  margin-bottom: 2em;
 }
 .zak-error-404 .zak-search-form .zak-search-field-label {
   border-radius: 1em;
