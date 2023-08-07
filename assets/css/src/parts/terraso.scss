@@ -82,11 +82,10 @@
 	max-width: 1200px;
 	margin: 0 auto;
 
-	@media screen and (max-width:992px) {
+	@media screen and (max-width: 992px) {
 		max-width: 100%;
 	}
 }
-
 
 /****************************************************************
   * Header
@@ -169,7 +168,6 @@ header {
 .zak-mobile-navigation li.menu-item-has-children .zak-submenu-toggle::after {
 	font-size: 15px;
 }
-
 
 /****************************************************************
   * Footer
@@ -351,7 +349,7 @@ main {
 .slug-toolkit, // en fr
 .slug-kit-de-herramientas, // es
 .slug-kit-de-ferramentas { // pt
-	img[src$='.png'] {
+	img[src$=".png"] {
 		border: 1px solid v.$border;
 	}
 }
@@ -361,11 +359,10 @@ main {
 .slug-kit-de-ferramentas, // pt
 .slug-project, // en
 .slug-programme, // fr
-.slug-programa, // es pt
- {
+.slug-programa, {
 	.entry-content {
-		img[src$='.png'],
-		img[src$='.jpg'] {
+		img[src$=".png"],
+		img[src$=".jpg"] {
 			border-radius: 4px;
 		}
 	}
@@ -378,7 +375,8 @@ main {
 .slug-kit-de-herramientas, // es
 .slug-kit-de-ferramentas { // pt
 	.entry-content {
-		h2, h3 {
+		h2,
+		h3 {
 			scroll-margin-top: 102px;
 		}
 
@@ -391,7 +389,7 @@ main {
 		.simpletoc-list {
 			list-style: none;
 			margin-left: 0;
-			font-size: 2.0rem;
+			font-size: 2rem;
 
 			li {
 				line-height: 2;
@@ -699,8 +697,8 @@ main {
 			@media screen and (max-width: 768px) {
 				/* the important ooverrides inline styles from the block editor */
 				> div {
-			    grid-template-columns: 1fr 1fr ! important;
-			    margin-left: 0 ! important;
+					grid-template-columns: 1fr 1fr !important;
+					margin-left: 0 !important;
 
 					figure {
 						width: 224px;
