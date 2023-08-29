@@ -278,7 +278,7 @@ class Terraso_CLI extends WP_CLI_Command {
 		$item_count = 0;
 		foreach ( $data as $item => $output_data ) {
 			WP_CLI::line( "Found item {$item}." );
-			$item_count++;
+			++$item_count;
 
 			self::import_data( trim( $item ), $output_data, $type, $dry_run );
 
