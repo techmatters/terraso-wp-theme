@@ -6,10 +6,10 @@
     "pablo-sg-pacheco/wp-namespace-autoloader": "dev-master"
   },
   "require-dev": {
-    "automattic/vipwpcs": "^2.3",
-    "wp-coding-standards/wpcs": "^2.3",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
-    "phpcompatibility/phpcompatibility-wp": "^2.1.3"
+    "automattic/vipwpcs": "dev-develop#64aa799",
+    "wp-coding-standards/wpcs": "^3.0.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
+    "phpcompatibility/phpcompatibility-wp": "^2.1.4"
   },
   "license": "GPL-2.0-or-later",
   "config": {
