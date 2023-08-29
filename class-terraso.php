@@ -31,6 +31,7 @@ class Terraso {
 		add_filter( 'jetpack_open_graph_image_default', [ __CLASS__, 'jetpack_open_graph_image_default' ] );
 		add_filter( 'zakra_header_search_icon_data_attrs', [ __CLASS__, 'zakra_header_search_icon_data_attrs' ] );
 		add_filter( 'get_search_form', [ __CLASS__, 'zakra_search_placeholder' ], 10, 2 );
+		add_filter( 'zakra_current_layout', [ __CLASS__, 'zakra_current_layout' ] );
 
 		// Automatic update-related filters. Update silently.
 		add_filter( 'auto_update_translation', '__return_true' );
@@ -234,6 +235,21 @@ class Terraso {
 
 			$allowedposttags[ $tag ] = array_merge( $allowedposttags[ $tag ], $new_attributes ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 		}
+	}
+
+	/**
+	 * Hides the sidebar on help pages.
+	 *
+	 * @param string $layout   Current Zakra page layout.
+	 *
+	 * @return string
+	 */
+	public static function zakra_current_layout( $layout ) {
+		if ( get_post_type() === Terraso_Help_CPT::CPT_SLUG ) {
+			return 'zak-site-layout--contained';
+		}
+
+		return $layout;
 	}
 }
 
