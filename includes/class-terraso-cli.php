@@ -96,7 +96,7 @@ class Terraso_CLI extends WP_CLI_Command {
 			return;
 		}
 
-		$handle = fopen( $csv_file, 'r' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fopen
+		$handle = fopen( $csv_file, 'r' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen
 		if ( false === $handle ) {
 			return;
 		}
