@@ -105,9 +105,10 @@ class Terraso {
 	 * @param array $custom_logo_attr Custom logo image attributes.
 	 * @param int   $custom_logo_id   Custom logo attachment ID.
 	 * @param int   $blog_id          ID of the blog to get the custom logo for.
+	 *
 	 * @return array
 	 */
-	public static function get_custom_logo_image_attributes( $custom_logo_attr, $custom_logo_id, $blog_id ) {
+	public static function get_custom_logo_image_attributes( $custom_logo_attr, $custom_logo_id, $blog_id ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 		$custom_logo_attr['width']  = 145;
 		$custom_logo_attr['height'] = 41;
 
@@ -132,7 +133,7 @@ class Terraso {
 	 *
 	 * @return string
 	 */
-	public static function zakra_search_placeholder( $form, $args ) {
+	public static function zakra_search_placeholder( $form, $args ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 		return str_replace( 'Type &amp; hit Enter &hellip;', 'Search &hellip;', $form );
 	}
 
