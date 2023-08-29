@@ -170,6 +170,8 @@ class Terraso {
 	 * Adds the post name slug to the body class list.
 	 *
 	 * @param array $classes   List of CSS classes.
+	 *
+	 * @return array
 	 */
 	public static function filter_body_class( $classes ) {
 		$queried_obj = get_queried_object();
