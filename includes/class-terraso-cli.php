@@ -75,7 +75,7 @@ class Terraso_CLI extends WP_CLI_Command {
 	public static function make_p_blocks( $contents ) {
 		$paragraphs         = explode( "\n\n", $contents );
 		$wrapped_paragraphs = array_map(
-			function( $text ) {
+			function ( $text ) {
 				return "<!-- wp:paragraph -->\n<p>{$text}</p>\n<!-- /wp:paragraph -->";
 			},
 			$paragraphs
