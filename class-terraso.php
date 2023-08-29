@@ -40,6 +40,17 @@ class Terraso {
 	}
 
 	/**
+	 * Add actions and filters.
+	 */
+	public static function late_hooks() {
+
+		// Hide post navigation on help pages.
+		if ( get_post_type() === Terraso_Help_CPT::CPT_SLUG ) {
+			remove_action( 'zakra_after_single_post_content', 'zakra_post_navigation' );
+		}
+	}
+
+	/**
 	 * Allow editors to manage PublishPress Authors settings.
 	 */
 	public static function add_ppma_capabilities() {
@@ -254,3 +265,4 @@ class Terraso {
 }
 
 add_action( 'after_setup_theme', [ 'Terraso', 'hooks' ] );
+add_action( 'wp', [ 'Terraso', 'late_hooks' ] );
