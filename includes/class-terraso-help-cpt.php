@@ -29,14 +29,17 @@ class Terraso_Help_CPT {
 			'singular_name' => esc_html__( 'Help page', 'terraso' ),
 		];
 
-		$language = get_option( 'WPLANG' ) ?: 'en_US';
-		$slug_map = [
+		$language_option = get_option( 'WPLANG' );
+		$language        = $language_option ? $language_option : 'en_US';
+		$slug_map        = [
 			'en_US' => 'help',
 			'es_ES' => 'ayuda',
 			'fr_FR' => 'aide',
 			'pt_PT' => 'ajuda',
 		];
-		$slug     = $slug_map[ $language ] ?: 'help';
+
+		$localized_slug = $slug_map[ $language ];
+		$slug           = $localized_slug ? $localized_slug : 'help';
 
 		$args = [
 			'label'                 => esc_html__( 'Help pages', 'terraso' ),
