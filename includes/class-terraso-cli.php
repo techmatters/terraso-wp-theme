@@ -18,17 +18,34 @@ class Terraso_CLI extends WP_CLI_Command {
 	/**
 	 * Insert the outputs in to the database.
 	 *
-	 * @param string $parent            The ILM element (output) these outputs (tools) belong to.
+	 * @param string $parent_element    The ILM element (output) these outputs (tools) belong to.
 	 * @param array  $data              Array of element titles and contents.
 	 * @param string $type              Item type (output or tool).
 	 * @param bool   $dry_run           If performing a try run.
 	 */
-	public static function import_data( $parent, $data, $type, $dry_run ) {
+	public static function import_data( $parent_element, $data, $type, $dry_run ) {
 
-		$post_parent = get_page_by_title( $parent, OBJECT, self::POST_TYPE );
+		$query = new WP_Query(
+			[
+				'post_type'              => self::POST_TYPE,
+				'title'                  => $parent_element,
+				'post_status'            => 'all',
+				'numberposts'            => 1,
+				'update_post_term_cache' => false,
+				'update_post_meta_cache' => false,
+				'orderby'                => 'date',
+				'order'                  => 'ASC',
+			]
+		);
+
+		if ( ! empty( $query->post ) ) {
+			$post_parent = $query->post;
+		} else {
+			$post_parent = null;
+		}
 
 		if ( ! $post_parent ) {
-			WP_CLI::error( "Could not find post for parent item {$parent}" );
+			WP_CLI::error( "Could not find post for parent item {$parent_element}" );
 		}
 
 		foreach ( $data as $item ) {
