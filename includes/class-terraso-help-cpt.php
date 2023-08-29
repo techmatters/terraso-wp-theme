@@ -11,6 +11,8 @@
  */
 class Terraso_Help_CPT {
 
+	const CPT_SLUG = 'help';
+
 	/**
 	 * Add actions and filters.
 	 */
@@ -67,7 +69,7 @@ class Terraso_Help_CPT {
 			'menu_icon'             => 'dashicons-editor-help',
 		];
 
-		register_post_type( 'help', $args );
+		register_post_type( self::CPT_SLUG, $args ); // phpcs:ignore WordPress.NamingConventions.ValidPostTypeSlug.NotStringLiteral
 	}
 }
 
