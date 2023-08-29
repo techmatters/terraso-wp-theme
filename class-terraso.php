@@ -129,6 +129,8 @@ class Terraso {
 	 * @param string $form The search form HTML output.
 	 * @param array  $args The array of arguments for building the search form.
 	 *                     See get_search_form() for information on accepted arguments.
+	 *
+	 * @return string
 	 */
 	public static function zakra_search_placeholder( $form, $args ) {
 		return str_replace( 'Type &amp; hit Enter &hellip;', 'Search &hellip;', $form );
