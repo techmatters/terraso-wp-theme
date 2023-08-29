@@ -31,11 +31,23 @@ class Terraso {
 		add_filter( 'jetpack_open_graph_image_default', [ __CLASS__, 'jetpack_open_graph_image_default' ] );
 		add_filter( 'zakra_header_search_icon_data_attrs', [ __CLASS__, 'zakra_header_search_icon_data_attrs' ] );
 		add_filter( 'get_search_form', [ __CLASS__, 'zakra_search_placeholder' ], 10, 2 );
+		add_filter( 'zakra_current_layout', [ __CLASS__, 'zakra_current_layout' ] );
 
 		// Automatic update-related filters. Update silently.
 		add_filter( 'auto_update_translation', '__return_true' );
 		add_filter( 'auto_theme_update_send_email', '__return_false' );
 		add_filter( 'auto_plugin_update_send_email', '__return_false' );
+	}
+
+	/**
+	 * Add actions and filters.
+	 */
+	public static function late_hooks() {
+
+		// Hide post navigation on help pages.
+		if ( get_post_type() === Terraso_Help_CPT::CPT_SLUG ) {
+			remove_action( 'zakra_after_single_post_content', 'zakra_post_navigation' );
+		}
 	}
 
 	/**
@@ -170,6 +182,8 @@ class Terraso {
 	 * Adds the post name slug to the body class list.
 	 *
 	 * @param array $classes   List of CSS classes.
+	 *
+	 * @return array
 	 */
 	public static function filter_body_class( $classes ) {
 		$queried_obj = get_queried_object();
@@ -233,6 +247,22 @@ class Terraso {
 			$allowedposttags[ $tag ] = array_merge( $allowedposttags[ $tag ], $new_attributes ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 		}
 	}
+
+	/**
+	 * Hides the sidebar on help pages.
+	 *
+	 * @param string $layout   Current Zakra page layout.
+	 *
+	 * @return string
+	 */
+	public static function zakra_current_layout( $layout ) {
+		if ( get_post_type() === Terraso_Help_CPT::CPT_SLUG ) {
+			return 'zak-site-layout--contained';
+		}
+
+		return $layout;
+	}
 }
 
 add_action( 'after_setup_theme', [ 'Terraso', 'hooks' ] );
+add_action( 'wp', [ 'Terraso', 'late_hooks' ] );
