@@ -11,7 +11,7 @@
 		"> .1% and last 2 versions"
 	],
 	"dependencies": {
-		"postcss-scss": "^4.0.8",
+		"postcss-scss": "^4.0.9",
 		"set-value": ">=4.1.0"
 	},
 	"peerDependencies": {
