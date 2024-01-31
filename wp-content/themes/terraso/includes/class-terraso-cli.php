@@ -18,17 +18,17 @@ class Terraso_CLI extends WP_CLI_Command {
 	/**
 	 * Insert the outputs in to the database.
 	 *
-	 * @param string $parent            The ILM element (output) these outputs (tools) belong to.
+	 * @param string $parent_post       The ILM element (output) these outputs (tools) belong to.
 	 * @param array  $data              Array of element titles and contents.
 	 * @param string $type              Item type (output or tool).
 	 * @param bool   $dry_run           If performing a try run.
 	 */
-	public static function import_data( $parent, $data, $type, $dry_run ) {
+	public static function import_data( $parent_post, $data, $type, $dry_run ) {
 
-		$post_parent = get_page_by_title( $parent, OBJECT, self::POST_TYPE );
+		$post_parent = get_page_by_title( $parent_post, OBJECT, self::POST_TYPE );
 
 		if ( ! $post_parent ) {
-			WP_CLI::error( "Could not find post for parent item {$parent}" );
+			WP_CLI::error( "Could not find post for parent item {$parent_post}" );
 		}
 
 		foreach ( $data as $item ) {
@@ -75,7 +75,7 @@ class Terraso_CLI extends WP_CLI_Command {
 	public static function make_p_blocks( $contents ) {
 		$paragraphs         = explode( "\n\n", $contents );
 		$wrapped_paragraphs = array_map(
-			function( $text ) {
+			function ( $text ) {
 				return "<!-- wp:paragraph -->\n<p>{$text}</p>\n<!-- /wp:paragraph -->";
 			},
 			$paragraphs
@@ -96,7 +96,7 @@ class Terraso_CLI extends WP_CLI_Command {
 			return;
 		}
 
-		$handle = fopen( $csv_file, 'r' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fopen
+		$handle = fopen( $csv_file, 'r' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen
 		if ( false === $handle ) {
 			return;
 		}
@@ -278,7 +278,7 @@ class Terraso_CLI extends WP_CLI_Command {
 		$item_count = 0;
 		foreach ( $data as $item => $output_data ) {
 			WP_CLI::line( "Found item {$item}." );
-			$item_count++;
+			++$item_count;
 
 			self::import_data( trim( $item ), $output_data, $type, $dry_run );
 

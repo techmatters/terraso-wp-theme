@@ -84,7 +84,7 @@ class Terraso {
 
 		wp_enqueue_style(
 			'zakra_child_style',
-			get_stylesheet_directory_uri() . "/assets/css/main.${ext}.css",
+			get_stylesheet_directory_uri() . "/assets/css/main.{$ext}.css",
 			[ $parent_style ],
 			THEME_VERSION
 		);
@@ -107,7 +107,7 @@ class Terraso {
 	 * @param int   $blog_id          ID of the blog to get the custom logo for.
 	 * @return array
 	 */
-	public static function get_custom_logo_image_attributes( $custom_logo_attr, $custom_logo_id, $blog_id ) {
+	public static function get_custom_logo_image_attributes( $custom_logo_attr, $custom_logo_id, $blog_id ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 		$custom_logo_attr['width']  = 145;
 		$custom_logo_attr['height'] = 41;
 
@@ -130,7 +130,7 @@ class Terraso {
 	 * @param array  $args The array of arguments for building the search form.
 	 *                     See get_search_form() for information on accepted arguments.
 	 */
-	public static function zakra_search_placeholder( $form, $args ) {
+	public static function zakra_search_placeholder( $form, $args ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 		return str_replace( 'Type &amp; hit Enter &hellip;', 'Search &hellip;', $form );
 	}
 
