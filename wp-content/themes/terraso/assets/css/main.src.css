@@ -347,7 +347,7 @@ main {
 
 .wp-block-columns p.what-terraso-is,
 .wp-block-columns h2.intro-subhead {
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 .wp-block-columns.key-funding .wp-block-column, .wp-block-columns.our-values .wp-block-column {
   border: 1px solid #ddd;
@@ -485,8 +485,7 @@ main {
 .slug-faq .entry-content h3 + p,
 .slug-preguntas-frecuentes .entry-content h3 + p,
 .slug-perguntas-frequentes .entry-content h3 + p {
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
+  margin-block-start: 0;
 }
 .slug-help .entry-content ul,
 .slug-ayuda .entry-content ul,
@@ -580,11 +579,20 @@ main {
     padding-left: 0;
   }
 }
+.home .hero-image p {
+  color: white;
+}
 .home .hero-image a {
   color: white;
+  text-decoration: none;
 }
 .home .hero-image a:hover {
   color: white;
+  -webkit-text-decoration: hover;
+          text-decoration: hover;
+}
+.home .hero-image .wp-block-buttons {
+  margin-bottom: 1em;
 }
 @media screen and (max-width: 768px) {
   .home .hero-image {
@@ -740,8 +748,7 @@ main {
   padding: 0;
 }
 .wp-block-group.contact-form h3 + p {
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
+  margin-block-start: 0;
 }
 
 .invisible {
