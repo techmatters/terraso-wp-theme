@@ -312,7 +312,7 @@ main {
 .wp-block-columns {
 	p.what-terraso-is,
 	h2.intro-subhead {
-		font-size: 1.4rem;
+		font-size: 2rem;
 	}
 
 	// roundeed boxes with shadows
@@ -537,12 +537,22 @@ main {
 	}
 
 	.hero-image {
+		p {
+			color: white;
+		}
+
 		a {
 			color: white;
+			text-decoration: none;
 
 			&:hover {
 				color: white;
+				text-decoration: hover;
 			}
+		}
+
+		.wp-block-buttons {
+			margin-bottom: 1em;
 		}
 
 		@media screen and (max-width: 768px) {
