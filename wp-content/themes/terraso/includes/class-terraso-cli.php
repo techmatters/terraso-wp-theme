@@ -9,7 +9,7 @@
  * Holds methods for WP_CLI command related to Terraso
  * Class Terraso_CLI
  */
-class Terraso_CLI extends WP_CLI_Command {
+class Terraso_CLI extends WP_CLI_Command { // phpcs:ignore WordPressVIPMinimum.Classes.RestrictedExtendClasses.wp_cli,Generic.Classes.OpeningBraceSameLine.ContentAfterBrace
 
 	const POST_TYPE     = 'guide';
 	const TAG_TAXONOMY  = 'ilm_tag';
@@ -116,7 +116,7 @@ class Terraso_CLI extends WP_CLI_Command {
 			return;
 		}
 
-		$handle = fopen( $csv_file, 'r' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen
+		$handle = fopen( $csv_file, 'r' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen,WordPress.WP.AlternativeFunctions.file_system_read_fopen
 		if ( false === $handle ) {
 			return;
 		}
