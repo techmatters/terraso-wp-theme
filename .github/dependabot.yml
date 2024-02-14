@@ -6,14 +6,14 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/wp-content/themese/terraso"
+    directory: "/wp-content/themes/terraso"
     schedule:
       interval: "weekly"
     allow:
       - dependency-type: all
 
   - package-ecosystem: "composer"
-    directory: "/wp-content/themese/terraso"
+    directory: "/wp-content/themes/terraso"
     schedule:
       interval: "weekly"
     allow:
