@@ -186,6 +186,9 @@ html body .zak-icon {
 #zak-masthead .zak-main-header {
   background: white;
 }
+#zak-masthead .zak-header-search--opened .zak-search-field-label input {
+  color: #3f3f46;
+}
 
 .zak-header {
   box-shadow: rgba(0, 0, 0, 0.1) 0 3px 4px 0;
