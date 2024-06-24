@@ -1,10 +1,9 @@
-@use "variables" as v;
+@use 'variables' as v;
 
 /****************************************************************
   * Buttons
   */
 .wp-block-buttons.wp-block-buttons .wp-block-button {
-
 	// override zakra dark green border
 	&__link {
 		border-color: transparent;
@@ -261,7 +260,7 @@ body .zak-scroll-to-top {
 }
 
 .zak-icon-arrow-up::after {
-	content: "\f106";
+	content: '\f106';
 	font-weight: bold;
 	font-size: 20px;
 	font-family: fontAwesome, sans-serif !important;
@@ -319,7 +318,7 @@ main {
 		font-size: 2rem;
 	}
 
-	// roundeed boxes with shadows
+	// rounded boxes with shadows
 	&.key-funding .wp-block-column,
 	&.our-values .wp-block-column {
 		border: 1px solid v.$border;
@@ -352,8 +351,9 @@ main {
 
 .slug-toolkit, // en fr
 .slug-kit-de-herramientas, // es
-.slug-kit-de-ferramentas { // pt
-	img[src$=".png"] {
+.slug-kit-de-ferramentas {
+	// pt
+	img[src$='.png'] {
 		border: 1px solid v.$border;
 	}
 }
@@ -365,8 +365,8 @@ main {
 .slug-programme, // fr
 .slug-programa, {
 	.entry-content {
-		img[src$=".png"],
-		img[src$=".jpg"] {
+		img[src$='.png'],
+		img[src$='.jpg'] {
 			border-radius: 4px;
 		}
 	}
@@ -377,7 +377,8 @@ main {
 .slug-perguntas-frequentes, // pt
 .slug-toolkit, // en fr
 .slug-kit-de-herramientas, // es
-.slug-kit-de-ferramentas { // pt
+.slug-kit-de-ferramentas {
+	// pt
 	.entry-content {
 		h2,
 		h3 {
@@ -418,7 +419,8 @@ main {
 .slug-paisagens, // pt
 .slug-faq, // en fr
 .slug-preguntas-frecuentes, // es
-.slug-perguntas-frequentes { // pt
+.slug-perguntas-frequentes {
+	// pt
 	.entry-content {
 		h2 {
 			margin-top: 6rem;
@@ -824,7 +826,9 @@ main {
 }
 
 @media screen and (min-width: 768px) {
-	.zak-header-action-list .zak-header-action__item.zak-mobile-toggle .zak-icon-bars {
+	.zak-header-action-list
+		.zak-header-action__item.zak-mobile-toggle
+		.zak-icon-bars {
 		padding-left: 5px;
 	}
 }
