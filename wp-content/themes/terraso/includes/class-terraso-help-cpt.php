@@ -18,6 +18,17 @@ class Terraso_Help_CPT {
 	 */
 	public static function hooks() {
 		add_action( 'init', [ __CLASS__, 'register_post_type' ] );
+		add_action( 'init', [ __CLASS__, 'help_rewrite' ] );
+	}
+
+	/**
+	 * Treat /help/ as an index page.
+	 */
+	public static function help_rewrite() {
+		add_rewrite_rule( '^help$', 'index.php?help=help', 'top' ); // en.
+		add_rewrite_rule( '^ayuda$', 'index.php?help=ayuda', 'top' ); // es.
+		add_rewrite_rule( '^aide$', 'index.php?help=aide', 'top' );   // fr.
+		add_rewrite_rule( '^ajuda$', 'index.php?help=ajuda', 'top' ); // pt.
 	}
 
 	/**

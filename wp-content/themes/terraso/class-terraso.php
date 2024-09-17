@@ -19,7 +19,6 @@ class Terraso {
 		add_action( 'add_meta_boxes', [ __CLASS__, 'remove_meta_boxes' ] );
 		add_action( 'after_switch_theme', [ __CLASS__, 'add_ppma_capabilities' ] );
 		add_action( 'after_setup_theme', [ __CLASS__, 'setup' ] );
-		add_action( 'init', [ __CLASS__, 'help_rewrite' ] );
 		add_action( 'init', [ __CLASS__, 'kses_allow_additional_tags' ] );
 		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'remove_fontawesome' ], 20 );
 		add_action( 'wp_enqueue_scripts', [ __CLASS__, 'zakra_child_enqueue_styles' ], 9 );
@@ -166,16 +165,6 @@ class Terraso {
 	 */
 	public static function document_title_separator() {
 		return '|';
-	}
-
-	/**
-	 * Treat /help/ as an index page.
-	 */
-	public static function help_rewrite() {
-		add_rewrite_rule( '^help$', 'index.php?help=help', 'top' );
-		add_rewrite_rule( '^ayuda$', 'index.php?help=ayuda', 'top' ); // es.
-		add_rewrite_rule( '^aide$', 'index.php?help=aide', 'top' );   // fr.
-		add_rewrite_rule( '^ajuda$', 'index.php?help=ajuda', 'top' ); // pt.
 	}
 
 	/**
