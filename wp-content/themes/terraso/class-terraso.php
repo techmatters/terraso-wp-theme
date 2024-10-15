@@ -31,6 +31,7 @@ class Terraso {
 		add_filter( 'zakra_header_search_icon_data_attrs', [ __CLASS__, 'zakra_header_search_icon_data_attrs' ] );
 		add_filter( 'get_search_form', [ __CLASS__, 'zakra_search_placeholder' ], 10, 2 );
 		add_filter( 'zakra_current_layout', [ __CLASS__, 'zakra_current_layout' ] );
+		add_filter( 'the_content', [ __CLASS__, 'the_content' ] );
 
 		// Automatic update-related filters. Update silently.
 		add_filter( 'auto_update_translation', '__return_true' );
@@ -250,6 +251,15 @@ class Terraso {
 		}
 
 		return $layout;
+	}
+
+	/**
+	 * Prepend title to ILM content.
+	 *
+	 * @param string $content           Post content HTML.
+	 */
+	public static function the_content( $content ) {
+		return str_replace("youtube.com/embed", "youtube-nocookie.com/embed", $content);
 	}
 }
 
