@@ -13,7 +13,7 @@ updates:
       - dependency-type: all
 
   - package-ecosystem: "composer"
-    directory: "/wp-content/themes/terraso"
+    directory: "/"
     schedule:
       interval: "weekly"
     allow:
