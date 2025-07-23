@@ -259,7 +259,7 @@ class Terraso {
 	 * @param string $content           Post content HTML.
 	 */
 	public static function the_content( $content ) {
-		return str_replace("youtube.com/embed", "youtube-nocookie.com/embed", $content);
+		return str_replace( 'youtube.com/embed', 'youtube-nocookie.com/embed', $content );
 	}
 }
 
